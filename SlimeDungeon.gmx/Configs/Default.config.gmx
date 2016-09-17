@@ -633,5 +633,11 @@
     <option_xbone_texture_page>1024</option_xbone_texture_page>
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
-  <ConfigConstants/>
+  <ConfigConstants>
+    <constants number="3">
+      <constant name="RETURN">0</constant>
+      <constant name="NEW_ROOM">1</constant>
+      <constant name="LOAD">2</constant>
+    </constants>
+  </ConfigConstants>
 </Config>

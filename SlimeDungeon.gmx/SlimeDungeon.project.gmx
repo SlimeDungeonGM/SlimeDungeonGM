@@ -19,6 +19,14 @@
   <scripts name="scripts">
     <script>scripts\scr_menu.gml</script>
     <script>scripts\scr_text.gml</script>
+    <scripts name="helper script">
+      <script>scripts\scr_get_input.gml</script>
+      <script>scripts\scr_get_face.gml</script>
+      <script>scripts\scr_chance.gml</script>
+      <script>scripts\scr_string_copy_words.gml</script>
+      <script>scripts\scr_swap_weapon.gml</script>
+      <script>scripts\animation_hit_frame.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>

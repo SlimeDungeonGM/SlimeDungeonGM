@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>/// Buttons
 
+title = "Slime Dungeon";
 //This is the layout of the screen
 menu[0] = "Start";
 menu[1] = "Continue";
@@ -36,7 +37,7 @@ menu[4] = "Quit";
 
 
 //Distance between each of the menu labels
-space = 64;
+space = 48;
 mpos = 0;
 
 </string>
@@ -110,24 +111,28 @@ if(push == 1) scr_menu();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Creation of screen
+            <string>/// draw the menu
+var xx = display_get_gui_width()/2;
+var yy = display_get_gui_height()/2;
 
-draw_set_halign(fa_center);
-draw_set_valign(fa_middle);
-draw_set_font(fnt_HUD);
+/// Creation of screen
 draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_set_font(fnt_HUD);
+
+draw_text(xx,yy-256,title);
 
 // draws the menu screen, labels
-var m;
-for (m = 0; m &lt; array_length_1d(menu); m += 1)
+
+for (var i = 0; i &lt; array_length_1d(menu); i++)
 {
-    draw_text(x + space,y + (m * space), string(menu[m]));
+    draw_text(xx, y + (i*space), string(menu[i]));
 }
 //draws the pointer.
-draw_sprite(spr_pointer_m, 0 , x + space, y + (mpos * space));
+draw_sprite(spr_pointer_m, 0, xx, y + (mpos * space));
 
-// * space
-
+draw_set_colour(c_white);
+draw_set_halign(fa_left);
 </string>
           </argument>
         </arguments>
