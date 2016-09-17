@@ -1,3 +1,6 @@
+
+// When the user selects a label on the menu
+
 switch(mpos)
 {
     case 0: 

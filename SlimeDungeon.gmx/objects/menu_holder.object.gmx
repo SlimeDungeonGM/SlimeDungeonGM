@@ -27,12 +27,15 @@
             <kind>1</kind>
             <string>/// Buttons
 
+//This is the layout of the screen
 menu[0] = "Start";
 menu[1] = "Continue";
 menu[2] = "Help";
 menu[3] = "Settings";
 menu[4] = "Quit";
 
+
+//Distance between each of the menu labels
 space = 64;
 mpos = 0;
 
@@ -76,9 +79,11 @@ if(move != 0)
 
 
 
-
+//When you push enter and would select the label that the pointer is on.
 var push;
 push = max(keyboard_check_released( vk_enter),keyboard_check_released(vk_shift),keyboard_check_released(vk_space), 0);
+
+//Runs the script.
 if(push == 1) scr_menu();
 
 
@@ -112,12 +117,13 @@ draw_set_valign(fa_middle);
 draw_set_font(fnt_HUD);
 draw_set_color(c_white);
 
+// draws the menu screen, labels
 var m;
 for (m = 0; m &lt; array_length_1d(menu); m += 1)
 {
     draw_text(x + space,y + (m * space), string(menu[m]));
 }
-
+//draws the pointer.
 draw_sprite(spr_pointer_m, 0 , x + space, y + (mpos * space));
 
 // * space
