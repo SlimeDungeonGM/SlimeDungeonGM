@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TPE>
+  <w>16</w>
+  <h>10</h>
+  <name>Default</name>
+  <hasAlpha>True</hasAlpha>
+  <hash>788833535</hash>
+  <xoffset>0</xoffset>
+  <yoffset>5</yoffset>
+  <cropWidth>16</cropWidth>
+  <cropHeight>10</cropHeight>
+  <ow>16</ow>
+  <oh>16</oh>
+  <image>m_sp_slime_14.tpe.png</image>
+</TPE>

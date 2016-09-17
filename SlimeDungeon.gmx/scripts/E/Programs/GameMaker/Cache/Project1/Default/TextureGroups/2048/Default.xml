@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureGroup>
+  <texture scale="0">Default_0.png</texture>
+  <tpe x="0" y="2" tpage="Default_0" entry="31">fnt_HUD_0.tpe</tpe>
+  <tpe x="2" y="262" tpage="Default_0" entry="1">spr_highlight_h_0.tpe</tpe>
+  <tpe x="2" y="318" tpage="Default_0" entry="22">spr_tile_unclaimed_0.tpe</tpe>
+  <tpe x="2" y="374" tpage="Default_0" entry="23">spr_locked_0.tpe</tpe>
+  <tpe x="2" y="430" tpage="Default_0" entry="3">spr_button_small_0.tpe</tpe>
+  <tpe x="2" y="474" tpage="Default_0" entry="0">spr_pointer_0.tpe</tpe>
+  <tpe x="38" y="262" tpage="Default_0" entry="2">spr_highlight_l_0.tpe</tpe>
+  <tpe x="38" y="474" tpage="Default_0" entry="4">spr_black_0.tpe</tpe>
+  <tpe x="38" y="298" tpage="Default_0" entry="21">spr_tile_basic_0.tpe</tpe>
+  <tpe x="40" y="336" tpage="Default_0" entry="29">background0_0.tpe</tpe>
+  <tpe x="40" y="376" tpage="Default_0" entry="30">background1_0.tpe</tpe>
+  <tpe x="46" y="414" tpage="Default_0" entry="26">spr_w_basic_u_0.tpe</tpe>
+  <tpe x="46" y="434" tpage="Default_0" entry="27">spr_mask_wall_td_0.tpe</tpe>
+  <tpe x="74" y="262" tpage="Default_0" entry="28">spr_mask_wall_lr_0.tpe</tpe>
+  <tpe x="82" y="434" tpage="Default_0" entry="24">sprite11_0.tpe</tpe>
+  <tpe x="78" y="298" tpage="Default_0" entry="25">spr_w_basic_s_0.tpe</tpe>
+  <tpe x="46" y="454" tpage="Default_0" entry="11">m_sp_slime_6.tpe</tpe>
+  <tpe x="74" y="486" tpage="Default_0" entry="10">m_sp_slime_5.tpe</tpe>
+  <tpe x="94" y="262" tpage="Default_0" entry="12">m_sp_slime_7.tpe</tpe>
+  <tpe x="110" y="262" tpage="Default_0" entry="14">m_sp_slime_9.tpe</tpe>
+  <tpe x="78" y="350" tpage="Default_0" entry="5">m_sp_slime_0.tpe</tpe>
+  <tpe x="130" y="262" tpage="Default_0" entry="6">m_sp_slime_1.tpe</tpe>
+  <tpe x="150" y="262" tpage="Default_0" entry="9">m_sp_slime_4.tpe</tpe>
+  <tpe x="170" y="262" tpage="Default_0" entry="15">m_sp_slime_10.tpe</tpe>
+  <tpe x="190" y="262" tpage="Default_0" entry="16">m_sp_slime_11.tpe</tpe>
+  <tpe x="210" y="262" tpage="Default_0" entry="17">m_sp_slime_12.tpe</tpe>
+  <tpe x="230" y="262" tpage="Default_0" entry="18">m_sp_slime_13.tpe</tpe>
+  <tpe x="78" y="350" tpage="Default_0" entry="19">m_sp_slime_14.tpe</tpe>
+  <tpe x="78" y="350" tpage="Default_0" entry="20">m_sp_slime_15.tpe</tpe>
+  <tpe x="66" y="454" tpage="Default_0" entry="13">m_sp_slime_8.tpe</tpe>
+  <tpe x="78" y="366" tpage="Default_0" entry="7">m_sp_slime_2.tpe</tpe>
+  <tpe x="78" y="378" tpage="Default_0" entry="8">m_sp_slime_3.tpe</tpe>
+</TextureGroup>

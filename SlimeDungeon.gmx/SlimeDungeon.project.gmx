@@ -5,9 +5,36 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\basic_floor_tile</sprite>
+    <sprite>sprites\select_tile</sprite>
+    <sprite>sprites\basic_slime</sprite>
+    <sprite>sprites\spr_pointer</sprite>
+    <sprite>sprites\spr_pointer_m</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\grass_basic</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_menu.gml</script>
+    <script>scripts\scr_text.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_HUD</font>
+  </fonts>
+  <objects name="objects">
+    <objects name="Test Player">
+      <object>objects\Player_Slime</object>
+    </objects>
+    <objects name="UI">
+      <object>objects\menu_holder</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\Start_Menu</room>
+    <room>rooms\world_Layer</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
