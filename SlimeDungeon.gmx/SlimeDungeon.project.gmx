@@ -4,13 +4,49 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_expr</sound>
+    <sound>sound\snd_player_takes_damage</sound>
+    <sound>sound\snd_sword_attack</sound>
+    <sound>sound\snd_enemy_die</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\basic_floor_tile</sprite>
     <sprite>sprites\select_tile</sprite>
     <sprite>sprites\basic_slime</sprite>
     <sprite>sprites\spr_pointer</sprite>
     <sprite>sprites\spr_pointer_m</sprite>
+    <sprites name="creatures">
+      <sprites name="chinlin">
+        <sprite>sprites\spr_chinlin_run_down</sprite>
+        <sprite>sprites\spr_chinlin_run_right</sprite>
+        <sprite>sprites\spr_chinlin_run_up</sprite>
+        <sprite>sprites\spr_chinlin_stand_down</sprite>
+        <sprite>sprites\spr_chinlin_stand_right</sprite>
+        <sprite>sprites\spr_chinlin_stand_up</sprite>
+      </sprites>
+      <sprites name="player">
+        <sprite>sprites\spr_player_attack_down</sprite>
+        <sprite>sprites\spr_player_attack_left</sprite>
+        <sprite>sprites\spr_player_attack_right</sprite>
+        <sprite>sprites\spr_player_attack_up</sprite>
+        <sprite>sprites\spr_player_down</sprite>
+        <sprite>sprites\spr_player_left</sprite>
+        <sprite>sprites\spr_player_right</sprite>
+        <sprite>sprites\spr_player_shadow</sprite>
+        <sprite>sprites\spr_player_up</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="pickups">
+      <sprite>sprites\spr_health</sprite>
+      <sprite>sprites\spr_expr</sprite>
+    </sprites>
+    <sprite>sprites\spr_damage</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprites name="weapons">
+      <sprite>sprites\spr_axe</sprite>
+      <sprite>sprites\spr_sword</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\grass_basic</background>
@@ -27,9 +63,30 @@
       <script>scripts\scr_swap_weapon.gml</script>
       <script>scripts\animation_hit_frame.gml</script>
     </scripts>
+    <scripts name="bot state">
+      <script>scripts\scr_bot_idle_state.gml</script>
+      <script>scripts\scr_bot_stall_state.gml</script>
+      <script>scripts\scr_bot_wander_state.gml</script>
+      <script>scripts\scr_bot_chase_state.gml</script>
+      <scripts name="enemy helper scripts">
+        <script>scripts\scr_move_axis.gml</script>
+        <script>scripts\scr_check_for_player.gml</script>
+        <script>scripts\scr_bot_chose_next_state.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="player state">
+      <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_dash_state.gml</script>
+      <script>scripts\scr_attack_state.gml</script>
+    </scripts>
+    <scripts name="game">
+      <script>scripts\scr_load_game.gml</script>
+      <script>scripts\scr_save_game.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
+    <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
     <objects name="Test Player">
@@ -38,10 +95,47 @@
     <objects name="UI">
       <object>objects\menu_holder</object>
     </objects>
+    <objects name="creatures">
+      <object>objects\obj_player</object>
+      <object>objects\obj_lifeform_parent</object>
+      <object>objects\obj_player_stats</object>
+      <object>objects\obj_enemy_chinlin</object>
+    </objects>
+    <objects name="buildings">
+      <object>objects\obj_wall</object>
+    </objects>
+    <objects name="projectiles">
+      <object>objects\obj_projectile</object>
+    </objects>
+    <objects name="inputs">
+      <object>objects\obj_input</object>
+      <object>objects\obj_pause_menu</object>
+      <object>objects\obj_view</object>
+    </objects>
+    <objects name="animation">
+      <object>objects\obj_weapon_animation</object>
+      <object>objects\obj_weapon_item</object>
+    </objects>
+    <objects name="dialog">
+      <object>objects\obj_speaker</object>
+      <object>objects\obj_dialog</object>
+      <object>objects\obj_sign</object>
+    </objects>
+    <objects name="damages">
+      <object>objects\obj_damage</object>
+    </objects>
+    <objects name="effects">
+      <object>objects\obj_dash_effect</object>
+    </objects>
+    <objects name="pickup">
+      <object>objects\obj_expr</object>
+      <object>objects\obj_health</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\Start_Menu</room>
     <room>rooms\world_Layer</room>
+    <room>rooms\rm_pause</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

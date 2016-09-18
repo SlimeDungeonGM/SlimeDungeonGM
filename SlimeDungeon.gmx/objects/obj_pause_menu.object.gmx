@@ -25,22 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Buttons
+            <string>///initialize the menu
 
-title = "Slime Dungeon";
-//This is the layout of the screen
-menu[0] = "Start";
-menu[1] = "Continue";
-menu[2] = "Help";
-menu[3] = "Settings";
-menu[4] = "Quit";
+title = "Game Paused!";
+
+option[0] = "Return";
+option[1] = "Save";
+option[2] = "Load";
+option[3] = "Quit";
 
 //menu index
 menu_index = 0;
-
-//Distance between each of the menu labels
-space = 48;
-mpos = 0;
 
 </string>
           </argument>
@@ -64,7 +59,7 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// menu delay
+            <string>/// menu alarm
 </string>
           </argument>
         </arguments>
@@ -87,12 +82,11 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-/// control the menu
+            <string>/// control the menu
 if(alarm[0] &lt;= 0){
     
     if(obj_input.down_key or obj_input.yaxis &gt; 0.5){
-        if(menu_index &lt; array_length_1d(menu)-1){
+        if(menu_index &lt; array_length_1d(option)-1){
             menu_index++;
         }else{
             menu_index = 0;
@@ -104,7 +98,7 @@ if(alarm[0] &lt;= 0){
         if(menu_index &gt; 0){
             menu_index--;
         }else{
-            menu_index = array_length_1d(menu)-1;
+            menu_index = array_length_1d(option)-1;
         }
         alarm[0] = room_speed/6;
     }
@@ -112,28 +106,27 @@ if(alarm[0] &lt;= 0){
     if(obj_input.dash_key){
         switch(menu_index){
             case 0:
-                //Start
-                //obj_player_stats.room_start_action = RETURN;
-                room_goto(world_Layer);
+                obj_player_stats.room_start_action = RETURN;
+                room_goto(obj_player_stats.previous_room);
                 break;
             case 1:
-                //Continue
+                //show_debug_message("save data?");
+                scr_save_game();
                 break;
             case 2:
-                //Help
+                obj_player_stats.room_start_action = LOAD;
+                room_goto(obj_player_stats.previous_room)
                 break;
             case 3:
-                //Settings
-                break;
-            case 4:
                 game_end();
-                break;                
+                break;
             default:
                 break;
         }
         obj_input.dash_key = false;
     }
 }
+
 </string>
           </argument>
         </arguments>
@@ -157,29 +150,19 @@ if(alarm[0] &lt;= 0){
           <argument>
             <kind>1</kind>
             <string>/// draw the menu
+
 var xx = display_get_gui_width()/2;
 var yy = display_get_gui_height()/2;
-
-/// Creation of screen
-draw_set_color(c_white);
 draw_set_halign(fa_center);
-draw_set_font(fnt_HUD);
+draw_text(xx,yy-64,title);
 
-draw_text(xx,yy-128,title);
-
-// draws the menu screen, labels
-
-for (var i = 0; i &lt; array_length_1d(menu); i++)
-{
+for(var i=0; i&lt;= array_length_1d(option)-1;i++){
     draw_set_colour(c_gray)
     if(i == menu_index){
         draw_set_colour(c_white);
     }
-    draw_text(xx, yy + (i*space), string(menu[i]));
+    draw_text(xx,yy+(i*32),option[i]);
 }
-//draws the pointer.
-draw_sprite(spr_pointer_m, 0, xx, yy + (menu_index * space));
-
 draw_set_colour(c_white);
 draw_set_halign(fa_left);
 </string>

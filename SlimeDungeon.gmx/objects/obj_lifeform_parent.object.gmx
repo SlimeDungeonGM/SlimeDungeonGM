@@ -25,46 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Buttons
-
-title = "Slime Dungeon";
-//This is the layout of the screen
-menu[0] = "Start";
-menu[1] = "Continue";
-menu[2] = "Help";
-menu[3] = "Settings";
-menu[4] = "Quit";
-
-//menu index
-menu_index = 0;
-
-//Distance between each of the menu labels
-space = 48;
-mpos = 0;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// menu delay
+            <string>///initialize the lifeform
+phy_fixed_rotation = true;
+hp = 3;
 </string>
           </argument>
         </arguments>
@@ -87,59 +50,18 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-/// control the menu
-if(alarm[0] &lt;= 0){
-    
-    if(obj_input.down_key or obj_input.yaxis &gt; 0.5){
-        if(menu_index &lt; array_length_1d(menu)-1){
-            menu_index++;
-        }else{
-            menu_index = 0;
-        }
-        alarm[0] = room_speed/6;
-    }
-    
-    if(obj_input.up_key or obj_input.yaxis &lt; -0.5){
-        if(menu_index &gt; 0){
-            menu_index--;
-        }else{
-            menu_index = array_length_1d(menu)-1;
-        }
-        alarm[0] = room_speed/6;
-    }
-    
-    if(obj_input.dash_key){
-        switch(menu_index){
-            case 0:
-                //Start
-                //obj_player_stats.room_start_action = RETURN;
-                room_goto(world_Layer);
-                break;
-            case 1:
-                //Continue
-                break;
-            case 2:
-                //Help
-                break;
-            case 3:
-                //Settings
-                break;
-            case 4:
-                game_end();
-                break;                
-            default:
-                break;
-        }
-        obj_input.dash_key = false;
-    }
+            <string>/// control depth
+depth = -y;
+
+if(hp &lt;= 0){
+    instance_destroy();
 }
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="4" ename="obj_wall">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -156,32 +78,30 @@ if(alarm[0] &lt;= 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw the menu
-var xx = display_get_gui_width()/2;
-var yy = display_get_gui_height()/2;
-
-/// Creation of screen
-draw_set_color(c_white);
-draw_set_halign(fa_center);
-draw_set_font(fnt_HUD);
-
-draw_text(xx,yy-128,title);
-
-// draws the menu screen, labels
-
-for (var i = 0; i &lt; array_length_1d(menu); i++)
-{
-    draw_set_colour(c_gray)
-    if(i == menu_index){
-        draw_set_colour(c_white);
-    }
-    draw_text(xx, yy + (i*space), string(menu[i]));
-}
-//draws the pointer.
-draw_sprite(spr_pointer_m, 0, xx, yy + (menu_index * space));
-
-draw_set_colour(c_white);
-draw_set_halign(fa_left);
+            <string>/// collide
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_lifeform_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// collide
 </string>
           </argument>
         </arguments>
