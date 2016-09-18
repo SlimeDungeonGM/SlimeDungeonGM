@@ -55,15 +55,6 @@
             <kind>1</kind>
             <string>///Spawner
 
-
-
-var wave_count = 1;
-
-// Current amount of creatures on the field.
-var creature_count = 0;
-
-
-
 if(instance_exists(obj_enemy_chinlin))
 {
     // nothing
@@ -71,13 +62,13 @@ if(instance_exists(obj_enemy_chinlin))
 
 else
 {
-    for(var i = creature_count; i &lt;= wave_count; i++)
+    for(var i = obj_dungeon_stats.creature_count; i &lt;= obj_dungeon_stats.wave_count; i++)
     {
-        creature_count ++;  
+        obj_dungeon_stats.creature_count ++;  
         instance_create(x +(i+2),y+(i+1),obj_enemy_chinlin);
     }
         
-    wave_count += 2;                                 
+    obj_dungeon_stats.wave_count += 2;                                 
 }
 
  

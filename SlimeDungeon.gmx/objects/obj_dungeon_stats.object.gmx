@@ -34,6 +34,10 @@ expr = 0;
 maxexpr = 3;
 level = 1;
 attack = 1;
+
+creature_count = 0;
+wave_count = 1;
+
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
 
