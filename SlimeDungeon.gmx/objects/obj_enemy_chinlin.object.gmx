@@ -37,6 +37,7 @@ xaxis = 0;
 yaxis = 0;
 
 
+
 movement = IDLE;
 face = RIGHT;
 
@@ -55,6 +56,9 @@ sprite[UP, IDLE] = spr_chinlin_stand_up;
 sprite[DOWN, IDLE] = spr_chinlin_stand_down;
 sprite[RIGHT, IDLE] = spr_chinlin_stand_right;
 sprite[LEFT, IDLE] = spr_chinlin_stand_right;
+
+
+
 </string>
           </argument>
         </arguments>
@@ -85,7 +89,7 @@ instance_create(x,y,obj_expr);
 
 audio_play_sound(snd_enemy_die,5,false);
 
-//creature_count -= 1;
+//obj_dungeon_stats.creature_count -= 1;
 
 //drop health pack
 if (scr_chance(0.5)){
@@ -166,6 +170,8 @@ event_inherited();
 script_execute(state);
 //sprite move or attack animation sprite
 sprite_index = sprite[face, movement];
+
+
 </string>
           </argument>
         </arguments>

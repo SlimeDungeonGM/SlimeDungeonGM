@@ -35,7 +35,7 @@ maxexpr = 3;
 level = 1;
 attack = 1;
 
-creature_count = 0;
+creature_count = 1;
 wave_count = 1;
 
 draw_set_font(fnt_text);
@@ -121,6 +121,17 @@ if(obj_input.dungeonmenu_key){
         }
     }
 }
+/*if(instance_exists(obj_enemy_chinlin))
+{
+    if(obj_dungeon_stats.wave_count != 1)
+    {
+        if(obj_dungeon_stats.wave_count = obj_dungeon_stats.creature_count)
+        {
+            obj_dungeon_stats.wave_count++;
+        }
+    }
+}
+*/
 </string>
           </argument>
         </arguments>

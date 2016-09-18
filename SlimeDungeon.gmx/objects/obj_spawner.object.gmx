@@ -55,21 +55,34 @@
             <kind>1</kind>
             <string>///Spawner
 
-if(instance_exists(obj_enemy_chinlin))
+/*if(instance_exists(obj_enemy_chinlin))
 {
     // nothing
 }
 
 else
+{*/
+
+var c_count= 2;
+
+for(var j= 0;j &lt; 60; j++)
 {
-    for(var i = obj_dungeon_stats.creature_count; i &lt;= obj_dungeon_stats.wave_count; i++)
+    /*for(var i = obj_dungeon_stats.creature_count; i &lt;= obj_dungeon_stats.wave_count; i++)
     {
         obj_dungeon_stats.creature_count ++;  
-        instance_create(x +(i+2),y+(i+1),obj_enemy_chinlin);
+        instance_create(x +random_range(1,5),y+random_range(1,5),obj_enemy_chinlin);
     }
-        
-    obj_dungeon_stats.wave_count += 2;                                 
+    */
+   if(j= 59)
+   { 
+        for(var i =0; i &lt;= c_count;i++)
+        {
+            //obj_dungeon_stats.creature_count ++;  
+            instance_create(x +random_range(1,10),y+random_range(1,5),obj_enemy_chinlin);
+        }
+    }                     
 }
+//obj_dungeon_stats.wave_count= obj_dungeon_stats.creature_count;
 
  
 </string>
