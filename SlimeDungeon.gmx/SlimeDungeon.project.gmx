@@ -83,6 +83,23 @@
       <script>scripts\scr_load_game.gml</script>
       <script>scripts\scr_save_game.gml</script>
     </scripts>
+    <scripts name="dungeonmenus">
+      <script>scripts\scr_statusmenu.gml</script>
+      <script>scripts\scr_skillsmenu.gml</script>
+      <script>scripts\scr_dungeonmenuselect.gml</script>
+      <script>scripts\scr_creatures.gml</script>
+      <script>scripts\scr_abilitiesmenu.gml</script>
+      <script>scripts\scr_researchmenu.gml</script>
+      <script>scripts\scr_itemsmenu.gml</script>
+    </scripts>
+    <scripts name="dungeon_state">
+      <script>scripts\scr_statusmenu_state.gml</script>
+      <script>scripts\scr_itemsmenu_state.gml</script>
+      <script>scripts\scr_researchmenu_state.gml</script>
+      <script>scripts\scr_creaturesmenu_state.gml</script>
+      <script>scripts\scr_abilitiesmenu_state.gml</script>
+      <script>scripts\scr_dungeonmenu_state.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -99,6 +116,7 @@
       <object>objects\obj_player</object>
       <object>objects\obj_lifeform_parent</object>
       <object>objects\obj_player_stats</object>
+      <object>objects\obj_dungeon_stats</object>
       <object>objects\obj_enemy_chinlin</object>
     </objects>
     <objects name="buildings">
@@ -111,6 +129,7 @@
       <object>objects\obj_input</object>
       <object>objects\obj_pause_menu</object>
       <object>objects\obj_view</object>
+      <object>objects\obj_dungeon_menu</object>
     </objects>
     <objects name="animation">
       <object>objects\obj_weapon_animation</object>
@@ -133,8 +152,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\Start_Menu</room>
     <room>rooms\world_Layer</room>
+    <room>rooms\Start_Menu</room>
     <room>rooms\rm_pause</room>
   </rooms>
   <help>

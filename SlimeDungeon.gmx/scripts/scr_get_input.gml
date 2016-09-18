@@ -5,10 +5,16 @@ down_key = keyboard_check(vk_down);
 up_key = keyboard_check(vk_up);
 //dash
 dash_key = keyboard_check_pressed(ord('C'));
+//attack
 attack_key = keyboard_check_pressed(ord('X'));
+//switch weapon
 swap_key = keyboard_check_pressed(ord('Z'));
+//fire projectile
 spell_key = keyboard_check_pressed(ord('V'));
+//pause menu
 pause_key = keyboard_check_pressed(vk_escape);
+dungeonmenu_key = keyboard_check_pressed(ord('A'));
+
 
 //check if gamepad input
 xaxis = (right_key - left_key);
@@ -23,5 +29,5 @@ if(gamepad_is_connected(0)){
     spell_key = gamepad_button_check_pressed(0,gp_face2);    
     pause_key = gamepad_button_check_pressed(0,gp_start);
     swap_key = gamepad_button_check_pressed(0,gp_face4);
-
+    dungeonmenu_key = gamepad_button_check_pressed(0,gp_select);
 }

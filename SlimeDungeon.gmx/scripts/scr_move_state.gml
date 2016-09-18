@@ -2,6 +2,13 @@
 movement = MOVE;
 DASH_COST = 5;
 
+if(instance_exists(obj_dungeon_menu)){
+    if(obj_dungeon_menu.bdisplay){
+        if(len == 0) image_index = 0;
+        exit;
+    }
+}
+
 if (obj_input.dash_key){
     var xdir = lengthdir_x(8, face*90);
     var ydir = lengthdir_y(8, face*90);
