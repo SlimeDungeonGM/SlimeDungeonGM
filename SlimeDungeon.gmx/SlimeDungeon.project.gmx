@@ -45,7 +45,7 @@
     <sprites name="Pickups">
       <sprite>sprites\spr_health</sprite>
       <sprite>sprites\spr_expr</sprite>
-      <sprite>sprites\Key</sprite>
+      <sprite>sprites\spr_key</sprite>
     </sprites>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_wall</sprite>
@@ -66,7 +66,7 @@
       <sprite>sprites\spr_w_basic_u</sprite>
       <sprite>sprites\sprite11</sprite>
     </sprites>
-    <sprite>sprites\Dungeon_Door</sprite>
+    <sprite>sprites\spr_spawner</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass_basic</background>
@@ -153,7 +153,7 @@
     </objects>
     <objects name="buildings">
       <object>objects\obj_wall</object>
-      <object>objects\b_Dungeon_Door</object>
+      <object>objects\obj_spawner</object>
     </objects>
     <objects name="Tiles">
       <object>objects\t_basic</object>
@@ -187,7 +187,7 @@
     <objects name="pickup">
       <object>objects\obj_expr</object>
       <object>objects\obj_health</object>
-      <object>objects\obj_Key</object>
+      <object>objects\obj_key</object>
     </objects>
   </objects>
   <rooms name="rooms">

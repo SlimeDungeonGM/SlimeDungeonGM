@@ -84,6 +84,8 @@ instance_create(x,y,obj_expr);
 
 audio_play_sound(snd_enemy_die,5,false);
 
+creature_count -= 1;
+
 //drop health pack
 if (scr_chance(0.5)){
     instance_create(x + random_range(-4,4), y+ random_range(-4,4) ,obj_health);

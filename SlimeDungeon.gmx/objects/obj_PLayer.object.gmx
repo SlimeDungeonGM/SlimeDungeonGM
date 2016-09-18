@@ -120,7 +120,7 @@ if(obj_player_stats.hp &lt;= 0){
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Key">
+    <event eventtype="4" ename="obj_key">
       <action>
         <libid>1</libid>
         <id>603</id>

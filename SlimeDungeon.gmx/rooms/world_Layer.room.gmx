@@ -64,7 +64,7 @@
     <instance objName="obj_wall" x="224" y="96" name="inst_A2AE7290" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dungeon_stats" x="32" y="32" name="inst_F14F80C1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dungeon_menu" x="32" y="64" name="inst_C8129B42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="b_Dungeon_Door" x="192" y="288" name="inst_580825E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spawner" x="320" y="352" name="inst_DC1E7975" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
