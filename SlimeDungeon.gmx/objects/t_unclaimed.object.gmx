@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>1001</depth>
   <persistent>0</persistent>
-  <parentName>p_tile_unclaimed</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_highlight_h</maskName>
   <events>
     <event eventtype="0" enumb="0">

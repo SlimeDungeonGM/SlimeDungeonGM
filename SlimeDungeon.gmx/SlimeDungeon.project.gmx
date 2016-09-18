@@ -11,12 +11,16 @@
     <sound>sound\snd_enemy_die</sound>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\basic_floor_tile</sprite>
-    <sprite>sprites\select_tile</sprite>
-    <sprite>sprites\basic_slime</sprite>
-    <sprite>sprites\spr_pointer</sprite>
-    <sprite>sprites\spr_pointer_m</sprite>
-    <sprites name="creatures">
+    <sprites name="System">
+      <sprite>sprites\spr_control</sprite>
+      <sprite>sprites\spr_highlight_h</sprite>
+      <sprite>sprites\spr_highlight_l</sprite>
+      <sprite>sprites\spr_black</sprite>
+      <sprite>sprites\spr_pointer</sprite>
+      <sprite>sprites\spr_button_small</sprite>
+      <sprite>sprites\spr_pointer_m</sprite>
+    </sprites>
+    <sprites name="Creatures">
       <sprites name="chinlin">
         <sprite>sprites\spr_chinlin_run_down</sprite>
         <sprite>sprites\spr_chinlin_run_right</sprite>
@@ -36,23 +40,40 @@
         <sprite>sprites\spr_player_shadow</sprite>
         <sprite>sprites\spr_player_up</sprite>
       </sprites>
+      <sprite>sprites\basic_slime</sprite>
     </sprites>
-    <sprites name="pickups">
+    <sprites name="Pickups">
       <sprite>sprites\spr_health</sprite>
       <sprite>sprites\spr_expr</sprite>
     </sprites>
     <sprite>sprites\spr_damage</sprite>
     <sprite>sprites\spr_wall</sprite>
-    <sprites name="weapons">
+    <sprites name="Weapons">
       <sprite>sprites\spr_axe</sprite>
       <sprite>sprites\spr_sword</sprite>
+    </sprites>
+    <sprites name="Tiles">
+      <sprite>sprites\basic_floor_tile</sprite>
+      <sprite>sprites\select_tile</sprite>
+      <sprite>sprites\spr_tile_unclaimed</sprite>
+      <sprite>sprites\spr_locked</sprite>
+    </sprites>
+    <sprites name="Other">
+      <sprite>sprites\spr_w_basic_s</sprite>
+      <sprite>sprites\spr_mask_wall_td</sprite>
+      <sprite>sprites\spr_mask_wall_lr</sprite>
+      <sprite>sprites\spr_w_basic_u</sprite>
+      <sprite>sprites\sprite11</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\grass_basic</background>
+    <background>background\Dirt</background>
+    <background>background\Empty</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <script>scripts\Change_Tile.gml</script>
     <script>scripts\scr_menu.gml</script>
     <script>scripts\scr_text.gml</script>
     <scripts name="helper script">
@@ -109,6 +130,15 @@
     <objects name="Test Player">
       <object>objects\Player_Slime</object>
     </objects>
+    <objects name="System">
+      <object>objects\s_Camera</object>
+      <object>objects\s_Edit_Tiles_Pointer</object>
+      <object>objects\s_highlight</object>
+      <object>objects\s_HUD</object>
+      <object>objects\s_HUD_button</object>
+      <object>objects\s_Menu</object>
+      <object>objects\obj_text</object>
+    </objects>
     <objects name="UI">
       <object>objects\menu_holder</object>
     </objects>
@@ -121,6 +151,12 @@
     </objects>
     <objects name="buildings">
       <object>objects\obj_wall</object>
+      <object>objects\b_Dungeon_Door</object>
+    </objects>
+    <objects name="Tiles">
+      <object>objects\t_basic</object>
+      <object>objects\t_unclaimed</object>
+      <object>objects\t_locked</object>
     </objects>
     <objects name="projectiles">
       <object>objects\obj_projectile</object>
@@ -155,6 +191,11 @@
     <room>rooms\world_Layer</room>
     <room>rooms\Start_Menu</room>
     <room>rooms\rm_pause</room>
+    <rooms name="Floors">
+      <room>rooms\f1</room>
+      <room>rooms\f2</room>
+      <room>rooms\f3</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
