@@ -190,8 +190,11 @@ var yy = display_get_gui_height()/2;
 //draw_text(32,48, "LEVEL: " + string(level) );
 
 //draw_text(xx,yy-128, "Dungeon Display");
-draw_text(0,0, "Dungeon Menu[A]");
 
+//Fix when player death and presistent draw.
+if(room != Start_Menu){
+draw_text(0,0, "Dungeon Menu[A]");
+}
 
 
 

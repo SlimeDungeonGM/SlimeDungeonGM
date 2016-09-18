@@ -183,10 +183,13 @@ room_start_action = NEW_ROOM;
           <argument>
             <kind>1</kind>
             <string>/// draw the stats
+
+//Fixed the menu when player dies and the stats remain after death
+if(room != Start_Menu){
 draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
 draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
 draw_text(32,48, "LEVEL: " + string(level) );
-
+}
 </string>
           </argument>
         </arguments>

@@ -78,12 +78,18 @@ sprite[LEFT, IDLE] = spr_chinlin_stand_right;
             <kind>1</kind>
             <string>/// create the experience
 instance_create(x,y,obj_expr);
+
+//Create the key to open the door
+//instance_create(x,y+2,obj_Key);
+
 audio_play_sound(snd_enemy_die,5,false);
 
 //drop health pack
 if (scr_chance(0.5)){
     instance_create(x + random_range(-4,4), y+ random_range(-4,4) ,obj_health);
 }
+
+
 </string>
           </argument>
         </arguments>
