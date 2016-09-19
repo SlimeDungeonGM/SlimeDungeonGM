@@ -147,7 +147,7 @@
       <object>objects\obj_text</object>
     </objects>
     <objects name="UI">
-      <object>objects\menu_holder</object>
+      <object>objects\obj_start_menu</object>
     </objects>
     <objects name="creatures">
       <object>objects\obj_player</object>
@@ -197,11 +197,11 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\world_Layer</room>
+    <room>rooms\rm_start_menu</room>
+    <room>rooms\rm_world_layer</room>
     <room>rooms\rm_writer</room>
-    <room>rooms\Start_Menu</room>
     <room>rooms\rm_pause</room>
-    <rooms name="Floors">
+    <rooms name="floors">
       <room>rooms\f1</room>
       <room>rooms\f2</room>
       <room>rooms\f3</room>

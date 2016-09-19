@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize the player stats
+if(instance_number(obj_player_stats) &gt; 1) instance_destroy();
 hp = 5;
 maxhp = hp;
 stamina = 10;
@@ -98,8 +99,21 @@ room_start_action = NEW_ROOM;
           <argument>
             <kind>1</kind>
             <string>/// control the stats
-if(hp &lt; 0){
+
+//check for death
+if(hp &lt;= 0){
     hp = 0;
+    
+    if(room != rm_start_menu){
+        if(instance_exists(obj_player)){
+            obj_player.persistent = false;
+        }
+        //previous_room = room;
+        room_persistent = false;
+        room_goto(rm_start_menu);
+    }else{
+        //room_goto(previous_room);
+    }
 }
 
 //stamina regen
@@ -187,7 +201,7 @@ room_start_action = NEW_ROOM;
             <string>/// draw the stats
 
 //Fixed the menu when player dies and the stats remain after death
-if(room != Start_Menu){
+if(room != rm_start_menu){
 draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
 draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
 draw_text(32,48, "LEVEL: " + string(level) );
