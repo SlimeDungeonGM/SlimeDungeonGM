@@ -52,8 +52,7 @@ else
 }
 
 //0 2 4 6 8...58 60 62
-for (var i=0;i&lt;64;i=i+2)
-    {
+for (var i=0;i&lt;64;i=i+2){
     for (var j=0;j&lt;32;j++)
     {
         if (i&gt; 0 and i/2 &lt;31 and j &gt; 0 and j &lt; 31) then
@@ -69,8 +68,8 @@ for (var i=0;i&lt;64;i=i+2)
     }
 }
 with (global.Tile[16,24]){
-instance_change(t_basic,true);
-global.Tile[17,24]=object_get_name(t_basic);
+    instance_change(t_basic,true);
+    global.Tile[17,24]=object_get_name(t_basic);
 }
 </string>
           </argument>
@@ -97,20 +96,20 @@ global.Tile[17,24]=object_get_name(t_basic);
             <string>
 global.count=global.count+1;
 if (global.count=10) then {
-global.mana = global.mana + global.manaregen 
-global.hp = global.hp + global.healthregen 
-global.count=0;
+    global.mana = global.mana + global.manaregen 
+    global.hp = global.hp + global.healthregen 
+    global.count=0;
 }
 
-    if (global.mana &lt; 0) then
+if (global.mana &lt; 0) then
 { global.mana = 0 }
-    if (global.hp &lt; 0) then
+if (global.hp &lt; 0) then
 { global.hp = 0 }
 
 
-    if (global.mana &gt; global.manacapacity) then
+if (global.mana &gt; global.manacapacity) then
 { global.mana = global.manacapacity }
-    if (global.hp &gt; global.maxhealth) then
+if (global.hp &gt; global.maxhealth) then
 { global.hp = global.maxhealth }
 </string>
           </argument>

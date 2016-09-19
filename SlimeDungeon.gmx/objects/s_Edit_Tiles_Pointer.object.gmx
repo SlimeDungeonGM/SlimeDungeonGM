@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spawnme =0;
+            <string>spawnme = 0;
 </string>
           </argument>
         </arguments>
@@ -73,7 +73,8 @@
           <argument>
             <kind>1</kind>
             <string>if (mouse_x div 32&lt; 31 and mouse_y div 32 &lt; 31 and mouse_x div 32 &gt;0 and mouse_y div 32 &gt;0){
-global.currenttile = global.Tile[(mouse_x div 32 )*2+1,mouse_y div 32];}
+    global.currenttile = global.Tile[(mouse_x div 32 )*2+1,mouse_y div 32];
+}
 
 if (!instance_exists(s_highlight) and position_meeting(x,y,s_Edit_Tiles_Pointer) and (mouse_x div 32) = (x div 32) &amp;&amp; (mouse_y div 32) = (y div 32)) then
 {
@@ -107,42 +108,48 @@ if (!instance_exists(s_highlight) and position_meeting(x,y,s_Edit_Tiles_Pointer)
             <string>s_Edit_Tiles_Pointer.tile = t_basic;
 
 if (mouse_x div 32&lt; 31 and mouse_y div 32 &lt; 31 and mouse_x div 32 &gt;0 and mouse_y div 32 &gt;0){
-vartile = global.Tile[(x div 32)*2, y div 32]
+    vartile = global.Tile[(x div 32)*2, y div 32];
 
-with (vartile)
+    with (vartile)
     {
-    mx = mouse_x div 32;
-    my = mouse_y div 32;
-    ox = x div 32;
-    oy = y div 32;
-    if (mx = ox and my = oy) then
-        {
-        
-        //left
-        with (global.Tile[mx*2+2,my]){
-        if (object_is_ancestor(object_index,p_tile_d))
-        {s_Edit_Tiles_Pointer.spawnme=1;}
-        }
-        //right
-        with (global.Tile[mx*2-2,my]){
-        if (object_is_ancestor(object_index,p_tile_d))
-        {s_Edit_Tiles_Pointer.spawnme=1;}
-        }
-        //Up
-        with (global.Tile[mx*2,my-1]){
-        if (object_is_ancestor(object_index,p_tile_d))
-        {s_Edit_Tiles_Pointer.spawnme=1;}
-        }
-        //Down
-        with (global.Tile[mx*2,my+1]){
-        if (object_is_ancestor(object_index,p_tile_d))
-        {s_Edit_Tiles_Pointer.spawnme=1;}
-        }
-        
-        if (s_Edit_Tiles_Pointer.spawnme = 1) then
-        {Change_Tile(global.Tile[(mouse_x div 32)*2,y div 32]);
-        s_Edit_Tiles_Pointer.spawnme=0;}
-        
+        mx = mouse_x div 32;
+        my = mouse_y div 32;
+        ox = x div 32;
+        oy = y div 32;
+        if (mx = ox and my = oy) then
+        {    
+            /*  //unknown var p_tile_d
+            //left
+            with (global.Tile[mx*2+2,my]){
+                if (object_is_ancestor(object_index,p_tile_d)){
+                    s_Edit_Tiles_Pointer.spawnme=1;
+                }
+            }
+            //right
+            with (global.Tile[mx*2-2,my]){
+                if (object_is_ancestor(object_index,p_tile_d)){
+                    s_Edit_Tiles_Pointer.spawnme=1;
+                }
+            }
+            //Up
+            with (global.Tile[mx*2,my-1]){
+                if (object_is_ancestor(object_index,p_tile_d)){
+                    s_Edit_Tiles_Pointer.spawnme=1;
+                }
+            }
+            //Down
+            with (global.Tile[mx*2,my+1]){
+                if (object_is_ancestor(object_index,p_tile_d)){
+                    s_Edit_Tiles_Pointer.spawnme=1;
+                }
+            }
+            */
+            
+            if (s_Edit_Tiles_Pointer.spawnme = 1) then
+            {
+                Change_Tile(global.Tile[(mouse_x div 32)*2,y div 32]);
+                s_Edit_Tiles_Pointer.spawnme=0;
+            }
         } 
     }
 }
@@ -179,12 +186,10 @@ switch (global.rm)
    
 with (global.Tile[(mouse_x div 32)*2, mouse_y div 32])
 { 
-if (object_is_ancestor(object_index,p_tile_d)){
-instance_create(mouse_x,mouse_y,m_slime); 
-
-instance_create(mouse_x,mouse_y+1,obj_PLayer);
-
-    }
+    //if (object_is_ancestor(object_index,p_tile_d)){
+        instance_create(mouse_x,mouse_y,Player_Slime); 
+        //instance_create(mouse_x,mouse_y+1,obj_player);
+    //}
 }
 </string>
           </argument>

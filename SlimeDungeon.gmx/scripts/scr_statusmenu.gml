@@ -12,3 +12,4 @@ for(var i=0; i<= array_length_1d(status)-1;i++){
     }
     draw_text((xx)-256,yy-64+(i*32),status[i]+"");
 }
+

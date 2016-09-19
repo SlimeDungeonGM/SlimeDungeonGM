@@ -115,6 +115,7 @@
       <script>scripts\scr_abilitiesmenu.gml</script>
       <script>scripts\scr_researchmenu.gml</script>
       <script>scripts\scr_itemsmenu.gml</script>
+      <script>scripts\scr_dungeon_survival_hud.gml</script>
     </scripts>
     <scripts name="dungeon_state">
       <script>scripts\scr_statusmenu_state.gml</script>
@@ -123,6 +124,7 @@
       <script>scripts\scr_creaturesmenu_state.gml</script>
       <script>scripts\scr_abilitiesmenu_state.gml</script>
       <script>scripts\scr_dungeonmenu_state.gml</script>
+      <script>scripts\scr_dungeon_survival_state.gml</script>
     </scripts>
     <scripts name="dungonwave">
       <script>scripts\scr_dungeon_wave_hud.gml</script>
@@ -199,8 +201,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start_menu</room>
+    <room>rooms\rm_dungeon</room>
     <room>rooms\rm_world_layer</room>
-    <room>rooms\rm_waves</room>
+    <room>rooms\rm_dungeon_waves</room>
     <room>rooms\rm_writer</room>
     <room>rooms\rm_pause</room>
     <rooms name="floors">

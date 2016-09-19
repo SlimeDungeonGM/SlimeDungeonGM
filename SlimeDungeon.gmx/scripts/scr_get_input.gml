@@ -14,7 +14,7 @@ spell_key = keyboard_check_pressed(ord('V'));
 //pause menu
 pause_key = keyboard_check_pressed(vk_escape);
 dungeonmenu_key = keyboard_check_pressed(ord('A'));
-
+camtoggle_key = keyboard_check_pressed(vk_tab);
 
 //check if gamepad input
 xaxis = (right_key - left_key);

@@ -29,11 +29,12 @@
 
 title = "Slime Dungeon";
 //This is the layout of the screen
-menu[0] = "Start";
-menu[1] = "Continue";
-menu[2] = "Help";
-menu[3] = "Settings";
-menu[4] = "Quit";
+menu[0] = "Create Dungeon";
+menu[1] = "Dungeon Waves";
+menu[2] = "Continue";
+menu[3] = "Help";
+menu[4] = "Settings";
+menu[5] = "Quit";
 
 //menu index
 menu_index = 0;
@@ -116,20 +117,32 @@ if(alarm[0] &lt;= 0){
                 //need to reset if start over if death.
                 //show_debug_message("click???");
                 obj_player_stats.hp = 5;
+                obj_player_stats.reset_player = true;
+                obj_dungeon_stats.reset_wave = true;
+                obj_dungeon_stats.dungeon_ui = scr_dungeon_survival_hud;
+                obj_dungeon_stats.dungeon_mode = scr_dungeon_survival_state;              
                 //obj_player_stats.room_start_action = RETURN;
-                room_goto(rm_world_layer);
+                room_goto(rm_dungeon);
                 break;
             case 1:
+                obj_player_stats.hp = 5;
+                obj_player_stats.reset_player = true;                
+                obj_dungeon_stats.reset_wave = true;
+                obj_dungeon_stats.dungeon_ui = scr_dungeon_wave_hud;
+                obj_dungeon_stats.dungeon_mode = scr_dungeon_wave_state;
+                room_goto(rm_dungeon_waves);
+                break;
+            case 2:
                 //Continue
                 //room_goto(rm_world_layer);
                 break;
-            case 2:
+            case 3:
                 //Help
                 break;
-            case 3:
+            case 4:
                 //Settings
                 break;
-            case 4:
+            case 5:
                 game_end();
                 break;                
             default:

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize the player stats
+if(instance_number(obj_dungeon_stats) &gt; 1) instance_destroy();
 hp = 5;
 maxhp = hp;
 stamina = 10;
@@ -35,16 +36,21 @@ maxexpr = 3;
 level = 1;
 attack = 1;
 
+dp = 1000;
+maxdp = 1000;
+
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
 
-// save the previous room
-//previous_room = room;
-//room_start_action = NEW_ROOM;
+//dungeon_ui = scr_dungeon_wave_hud;
+//dungeon_mode = scr_dungeon_wave_state;
 
-dungeon_ui = scr_dungeon_wave_hud;
-dungeon_mode = scr_dungeon_wave_state;
+dungeon_ui = scr_dungeon_survival_hud;
+dungeon_mode = scr_dungeon_survival_state;
 
+toggle_camera = false;
+
+//wave control variables
 creature_count = 0;
 creature_deathcount = 0;
 creature_maxcount = 3;
@@ -57,7 +63,7 @@ wave_count = 0;
 wave_maxcount = 2;
 
 bfinish_wave = false;
-
+reset_wave = false;
 </string>
           </argument>
         </arguments>
@@ -136,6 +142,30 @@ bfinish_wave = false;
 //    stamina++;
 //}
 
+if(reset_wave){
+    //player reset
+    hp = 5;
+    maxhp = hp;
+    stamina = 10;
+    maxstamina = stamina;
+    expr = 0;
+    maxexpr = 3;
+    level = 1;
+    attack = 1;    
+    //wave reset
+    creature_count = 0;
+    creature_deathcount = 0;
+    creature_maxcount = 3;
+    bstop_spawn = false;
+    
+    next_wave_time = 5;//delay the wave
+    start_wave = true;
+    start_next_wave = false;
+    wave_count = 0;
+    wave_maxcount = 2;
+    reset_wave = false;
+}
+
 //pause the game
 if(obj_input.dungeonmenu_key){
     //if(room != rm_pause){
@@ -150,6 +180,29 @@ if(obj_input.dungeonmenu_key){
 }
 
 script_execute(dungeon_mode);
+
+if(obj_input.camtoggle_key){
+    if(toggle_camera){
+        toggle_camera = false;
+    }else{
+        toggle_camera = true;
+    }
+}
+
+if(toggle_camera){
+    if(obj_input.right_key){
+        obj_view.x+=10;
+    }
+    if(obj_input.left_key){
+        obj_view.x-=10;
+    }
+    if(obj_input.up_key){
+        obj_view.y -= 10;
+    }
+    if(obj_input.down_key){
+        obj_view.y += 10;
+    }
+}
 
 </string>
           </argument>
@@ -222,8 +275,12 @@ var yy = display_get_gui_height()/2;
 
 //Fix when player death and presistent draw.
 if(room != rm_start_menu){
+    draw_set_colour(c_white);
     draw_text(0,0, "Dungeon Menu[A]");
+    draw_text(0,64, "Camera[TAB]:"+  string(toggle_camera));
+    draw_text(0,64+16,"[&lt;][V][&gt;][^]:Move Camera");    
     script_execute(dungeon_ui);
+    draw_set_colour(c_white);
 }
 </string>
           </argument>

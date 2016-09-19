@@ -52,6 +52,8 @@ phy_fixed_rotation = true;
             <kind>1</kind>
             <string>/// User controlled movement
 
+depth = -y;
+
 if keyboard_check(vk_right)
 {
     phy_position_x += basic_motion;

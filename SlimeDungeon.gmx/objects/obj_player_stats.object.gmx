@@ -36,6 +36,7 @@ maxexpr = 3;
 level = 1;
 attack = 1;
 
+reset_player = false;
 
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
@@ -99,6 +100,19 @@ room_start_action = NEW_ROOM;
           <argument>
             <kind>1</kind>
             <string>/// control the stats
+
+if(reset_player){
+    //player reset
+    hp = 5;
+    maxhp = hp;
+    stamina = 10;
+    maxstamina = stamina;
+    expr = 0;
+    maxexpr = 3;
+    level = 1;
+    attack = 1;
+    reset_player = false;  
+}
 
 //check for death
 if(hp &lt;= 0){

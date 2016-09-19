@@ -40,7 +40,6 @@ status[3] = "Titles:";
 
 status_index = 0;
 
-
 //menu index
 menu_index = 0;
 bdisplay = false;
