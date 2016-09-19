@@ -126,6 +126,7 @@
     </scripts>
     <scripts name="dungonwave">
       <script>scripts\scr_dungeon_wave_hud.gml</script>
+      <script>scripts\scr_dungeon_wave_state.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -199,6 +200,7 @@
   <rooms name="rooms">
     <room>rooms\rm_start_menu</room>
     <room>rooms\rm_world_layer</room>
+    <room>rooms\rm_waves</room>
     <room>rooms\rm_writer</room>
     <room>rooms\rm_pause</room>
     <rooms name="floors">

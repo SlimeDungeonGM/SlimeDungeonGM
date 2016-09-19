@@ -12,3 +12,4 @@ if(wave_count >= creature_maxcount){
 }
 draw_text(192,48, "Wave Count: " + string(wavecount)+"/"+string(wave_maxcount) );
 draw_text(192,64, "Killed: " + string(creature_deathcount) + "/" + string(creature_maxcount));
+draw_text(192,80, "start wave?: " +string(alarm[1]));

@@ -43,6 +43,7 @@ draw_set_colour(c_white);
 //room_start_action = NEW_ROOM;
 
 dungeon_ui = scr_dungeon_wave_hud;
+dungeon_mode = scr_dungeon_wave_state;
 
 creature_count = 0;
 creature_deathcount = 0;
@@ -50,7 +51,9 @@ creature_maxcount = 3;
 bstop_spawn = false;
 
 next_wave_time = 5;//delay the wave
-wave_count = 1;
+start_wave = true;
+start_next_wave = false;
+wave_count = 0;
 wave_maxcount = 2;
 
 bfinish_wave = false;
@@ -145,44 +148,8 @@ if(obj_input.dungeonmenu_key){
         }
     }
 }
-//spawn number of creature for the one wave at the time
-if(creature_count &gt;= creature_maxcount and bstop_spawn == false){
-    //stop summon ceatures
-    if(instance_exists(obj_spawner)){
-        with(obj_spawner){//loop all object room matching this?
-            bspawn = false;
-        }
-    }
-    show_debug_message("Max ceatures reached. Stopping summon creatures!");
-    bstop_spawn = true;
-}
-//check monster death and wave next start
-if(creature_deathcount &gt;= creature_maxcount){
-    show_debug_message("starting next wave!");
-    bstop_spawn = true;
-    creature_deathcount = 0;
-    creature_count = 0;
-    wave_count++;
-    
-    if(instance_exists(obj_spawner)){
-        with(obj_spawner){
-            bspawn = true;
-        }
-    }
-    
-    if(wave_count &gt; wave_maxcount){
-        show_debug_message("All Wave Are Finished...");
-        bfinish_wave = true;
-        with(obj_spawner){
-            bspawn = false;
-        }
-    }
-    alarm[1] = room_speed * next_wave_time;
-    bstop_spawn = false;
-}
 
-
-
+script_execute(dungeon_mode);
 
 </string>
           </argument>
