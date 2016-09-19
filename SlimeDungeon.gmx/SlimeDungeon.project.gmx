@@ -124,6 +124,9 @@
       <script>scripts\scr_abilitiesmenu_state.gml</script>
       <script>scripts\scr_dungeonmenu_state.gml</script>
     </scripts>
+    <scripts name="dungonwave">
+      <script>scripts\scr_dungeon_wave_hud.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -195,8 +198,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\world_Layer</room>
-    <room>rooms\Start_Menu</room>
     <room>rooms\rm_writer</room>
+    <room>rooms\Start_Menu</room>
     <room>rooms\rm_pause</room>
     <rooms name="Floors">
       <room>rooms\f1</room>

@@ -89,7 +89,10 @@ instance_create(x,y,obj_expr);
 
 audio_play_sound(snd_enemy_die,5,false);
 
-//obj_dungeon_stats.creature_count -= 1;
+//creature_count -= 1;
+if(instance_exists(obj_dungeon_stats)){
+    obj_dungeon_stats.creature_deathcount++;
+}
 
 //drop health pack
 if (scr_chance(0.5)){
