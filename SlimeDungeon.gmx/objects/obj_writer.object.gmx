@@ -37,11 +37,9 @@ for(var i= 0; i&lt;36; i++)
     else char = i+7;
     
     c[i] = chr(48+char);
+    show_debug_message(c[i] );
 }
-
-
 //Cursor
-
 horz = 0;
 vert = 0;
 menu = 0;
@@ -84,88 +82,45 @@ for(var i = 0; i &lt; array_length_1d(c); i++)
         line++;
     }
     draw_set_colour(c_white);
-    draw_text(16+(space*25), (view_hview-90)+(line*17),c[i]);
-    
+    draw_text( (view_wview/2)+(space*25)-128,(view_hview/2)+(line*17)+32,c[i]);
     space++;
 }
 
 //Draw 2 extra Buttons
 draw_set_colour(c_white);
-draw_text(view_wview/2+70, view_hview-40, "DEL");
-draw_text(view_wview/2+112, view_hview-40, "END");
+draw_text((view_wview/2)-30, (view_hview/2), "DEL[D]");
+draw_text((view_wview/2)+30, (view_hview/2), "END[C]");
 
-
-//Draw Cursor
-
-if(menu == 0)
-{
-    draw_sprite(s_keyboard_curser, 0, 20+(horz*25), (view_hview-81)+(vert*17));
-    
-    if(keyboard_check_pressed(vk_left)) horz--;
-    if(keyboard_check_pressed(vk_right)) horz++;
-    if(horz &lt; 0) horz = 11;
-    if(horz &gt; 11) horz = 0;
-    
-    if(keyboard_check_pressed(vk_up)) vert--;
-    if(keyboard_check_pressed(vk_down)) vert++;
-   
-    if(horz &lt;12 &amp;&amp; horz &gt; 7)
-    {
-        if(vert &lt; 0){menu = 1; vert = 3; horz = 0;}
-        if(vert &lt; 2){menu = 1; vert = 3; horz = 0;}
-    }
-    else
-    {
-        if(vert &lt; 0) vert = 2;
-        if(vert &gt; 2) vert = 0;
-    }
-}
-else
-{
-    draw_sprite(s_keyboard_curser, 0, (view_wview/2+82)+(horz*42), view_hview-31);
-    
-    if(keyboard_check_pressed(vk_left)) horz--;
-    if(keyboard_check_pressed(vk_right)) horz++;
-    if(horz &lt; 0) horz = 1;
-    if(horz &gt; 1) horz = 0;
-    
-    if(keyboard_check_pressed(vk_up))
-    {
-        menu = 0;
-        vert = 2;
-        if(horz == 0) horz = 9;
-        if(horz == 1) horz = 11;
-    }
-    
-    if(keyboard_check_pressed(vk_down))
-    {
-        menu = 0;
-        vert = 0;
-        if(horz == 0) horz = 9;
-        if(horz == 1) horz = 11;
-    }
-}    
-
+if(keyboard_check_pressed(vk_up)) vert--;
+if(keyboard_check_pressed(vk_down)) vert++;
+if(keyboard_check_pressed(vk_left)) horz--;
+if(keyboard_check_pressed(vk_right)) horz++;
+if(horz &lt; 0) horz = 11;
+if(horz &gt; 11) horz = 0;
+if(vert &lt; 0) vert = 2;
+if(vert &gt; 2) vert = 0;
+draw_sprite(s_keyboard_curser, 0, (view_wview/2)+(horz*25)-128-8, (view_hview/2)+(vert*17)+32);
 // Interact with Menu
+if(keyboard_check_pressed(ord('D'))){
+    //show_debug_message("D");
+    global.username = string_copy(global.username, 0, string_length(global.username)-1);
+}
+
+if(keyboard_check_pressed(ord('C'))){
+    //show_debug_message("C");
+}
+
 if(keyboard_check_pressed(ord('S')))
 {
-    if(menu == 0)
-    {
+    if(string_length(global.username) &lt; 32){//limited character letters
         global.username += c[horz+(12*vert)];
-    }
-    else
-    {
-        if(horz == 0) global.username = string_copy(global.username, 0, string_length(global.username)+1);
-        if(horz == 1)
-        {
-        
-        }
     }
 }
 
 //Draw Name
-draw_set_halign(fa_center);
-draw_text(view_wview/2,view_hview/2.3, global.username);
+draw_text((view_wview/2),(view_hview/2)- 32, "NAME:[ "+global.username+ " ]");
+//reset align text
+draw_set_halign(fa_left);
     
 </string>
           </argument>
