@@ -215,7 +215,8 @@ room_start_action = NEW_ROOM;
             <string>/// draw the stats
 
 //Fixed the menu when player dies and the stats remain after death
-if(room != rm_start_menu){
+//Added for extra room added. You need to put || after the last statement in the if.
+if(room != rm_start_menu ){
 draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
 draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
 draw_text(32,48, "LEVEL: " + string(level) );
