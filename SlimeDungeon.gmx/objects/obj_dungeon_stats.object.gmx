@@ -50,6 +50,9 @@ dungeon_mode = scr_dungeon_survival_state;
 
 toggle_camera = false;
 
+// build menu
+isbuild = false;
+
 //wave control variables
 creature_count = 0;
 creature_deathcount = 0;
@@ -173,8 +176,10 @@ if(obj_input.dungeonmenu_key){
     if(instance_exists(obj_dungeon_menu)){
         if(obj_dungeon_menu.bdisplay){
             obj_dungeon_menu.bdisplay = false;
+            g_ishud = true;
         }else{
             obj_dungeon_menu.bdisplay = true;
+            g_ishud = false;
         }
     }
 }
@@ -201,6 +206,18 @@ if(toggle_camera){
     }
     if(obj_input.down_key){
         obj_view.y += 10;
+    }
+}
+
+if(obj_input.build_key){
+    if(instance_exists(obj_build_menu)){
+        if(isbuild){
+            isbuild = false;
+            obj_build_menu.isbuild = false;
+        }else{
+            isbuild = true;
+            obj_build_menu.isbuild = true;
+        }
     }
 }
 
@@ -277,9 +294,10 @@ var yy = display_get_gui_height()/2;
 if(room != rm_start_menu){
     if(g_ishud){
         draw_set_colour(c_white);
-        draw_text(0+4,0+4, "Dungeon Menu[A]");
-        draw_text(0+4,0+16+4, "Camera[TAB]:"+  string(toggle_camera));
-        draw_text(0+4,0+32+4,"Move Camera:[Arrow Key]");    
+        draw_text(0+4,0+4, "Dungeon Menu: [A]");
+        draw_text(0+4,0+16+4, "Camera: [TAB]:"+  string(toggle_camera));
+        draw_text(0+4,0+32+4,"Move Camera: [Arrow Key]");
+        draw_text(xx,0,"Build Mode: [B]");
         script_execute(dungeon_ui);
         draw_set_colour(c_white);
     }

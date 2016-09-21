@@ -177,6 +177,7 @@
       <object>objects\obj_help_menu</object>
       <object>objects\obj_view</object>
       <object>objects\obj_dungeon_menu</object>
+      <object>objects\obj_build_menu</object>
     </objects>
     <objects name="animation">
       <object>objects\obj_weapon_animation</object>

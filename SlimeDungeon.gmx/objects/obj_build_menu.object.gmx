@@ -25,79 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>title = "Dungeon Menu!";
+            <string>/// initialize build
+isbuild = false;
 
-option[0] = "Status";
-option[1] = "Creatures";
-option[2] = "Abilities";
-option[3] = "Research";
-option[4] = "Items";
-
-status[0] = "Name:";
-status[1] = "Gender:";
-status[2] = "Race:";
-status[3] = "Titles:";
-
-status_index = 0;
-
-//menu index
-menu_index = 0;
-bdisplay = false;
-
-currentmenu = scr_statusmenu;
-current_state = scr_dungeonmenu_state;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// menu alarm
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// control the menu
-
-script_execute(current_state);
-
-//if(alarm[0] &lt;= 0){  
-//}
-
+buildmenu[0] = "Tools";
+buildmenu[1] = "Traps";
+buildmenu[2] = "Creatures";
+buildmenu[3] = "Blocks";
 </string>
           </argument>
         </arguments>
@@ -120,28 +54,16 @@ script_execute(current_state);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw the menu
-if(bdisplay){
-    //show_debug_message("show menu?");
+            <string>if(isbuild){
     var xx = display_get_gui_width()/2;
     var yy = display_get_gui_height()/2;
-    draw_set_halign(fa_center);
-    draw_set_colour(c_white);
-    draw_text(xx,yy-128-32,title);
+    draw_text(xx,16,"BUILD MODE");
     
-    for(var i=0; i&lt;= array_length_1d(option)-1;i++){
-        draw_set_colour(c_gray)
-        var displaytext = option[i];
-        if(i == menu_index){
-            draw_set_colour(c_white);
-            displaytext += "[C]";
-        }
-        draw_text((xx + (i*128))-256,yy-128,displaytext);
+    for (var i = 0; i &lt; array_length_1d(buildmenu); i++)
+    {
+        draw_text(xx+(i*80)-128, 64, string(buildmenu[i]));
     }
-    draw_set_colour(c_white);
-    draw_set_halign(fa_left);
     
-    script_execute(currentmenu);
 }
 </string>
           </argument>
