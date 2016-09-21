@@ -39,6 +39,9 @@ attack = 1;
 dp = 1000;
 maxdp = 1000;
 
+//Global boolean to control if display is shown.
+global.display_dungeon = false;
+
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
 
@@ -274,7 +277,7 @@ var yy = display_get_gui_height()/2;
 //draw_text(xx,yy-128, "Dungeon Display");
 
 //Fix when player death and presistent draw.
-if(room != rm_start_menu){
+if(global.display_dungeon == true){
     draw_set_colour(c_white);
     draw_text(0,0, "Dungeon Menu[A]");
     draw_text(0,64, "Camera[TAB]:"+  string(toggle_camera));

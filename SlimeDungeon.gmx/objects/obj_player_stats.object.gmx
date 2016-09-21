@@ -38,6 +38,9 @@ attack = 1;
 
 reset_player = false;
 
+//Global boolean to control if display is shown.
+global.display_player = 1;
+
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
 
@@ -118,12 +121,15 @@ if(reset_player){
 if(hp &lt;= 0){
     hp = 0;
     
+    global.display_player = 1;
+    
     if(room != rm_start_menu){
         if(instance_exists(obj_player)){
             obj_player.persistent = false;
         }
         //previous_room = room;
         room_persistent = false;
+        
         room_goto(rm_start_menu);
     }else{
         //room_goto(previous_room);
@@ -216,7 +222,7 @@ room_start_action = NEW_ROOM;
 
 //Fixed the menu when player dies and the stats remain after death
 //Added for extra room added. You need to put || after the last statement in the if.
-if(room != rm_start_menu ){
+if(global.display_player == 0 ){
 draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
 draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
 draw_text(32,48, "LEVEL: " + string(level) );

@@ -68,6 +68,7 @@
       <sprite>sprites\sprite11</sprite>
     </sprites>
     <sprite>sprites\spr_spawner</sprite>
+    <sprite>sprites\sprite41</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass_basic</background>

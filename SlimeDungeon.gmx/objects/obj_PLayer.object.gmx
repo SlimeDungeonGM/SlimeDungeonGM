@@ -170,8 +170,14 @@ with(other) {
             <kind>1</kind>
             <string>/// collect health
 with(other) {
+
+    if(hp = maxhp){
+    //nothing
+    }
+    else{
     instance_destroy();
-    audio_play_sound(snd_expr,6,false);    
+    audio_play_sound(snd_expr,6,false);   
+    } 
 }
 //level up
 with (obj_player_stats){
