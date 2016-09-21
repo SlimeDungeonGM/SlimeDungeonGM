@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///initialize the menu
+g_ishud = false;
 
 title = "Help Menu!";
 

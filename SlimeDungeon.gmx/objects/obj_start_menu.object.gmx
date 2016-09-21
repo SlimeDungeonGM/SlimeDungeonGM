@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Buttons
+            <string>globalvar g_ismenu;
+g_ismenu = true;
+globalvar g_ishud;
+g_ishud = false;
 
 title = "Slime Dungeon";
 //This is the layout of the screen
@@ -116,6 +119,7 @@ if(alarm[0] &lt;= 0){
                 //Start
                 //show_debug_message("click???");
                 room_restart();
+                g_ishud = true;
                 obj_player_stats.hp = 5;
                 obj_player_stats.reset_player = true;
                 obj_dungeon_stats.reset_wave = true;
@@ -125,6 +129,7 @@ if(alarm[0] &lt;= 0){
                 room_goto(rm_dungeon);
                 break;
             case 1:
+                g_ishud = true;
                 obj_player_stats.hp = 5;
                 obj_player_stats.reset_player = true;                
                 obj_dungeon_stats.reset_wave = true;
@@ -133,14 +138,17 @@ if(alarm[0] &lt;= 0){
                 room_goto(rm_dungeon_waves);
                 break;
             case 2:
+                //g_ishud = true;
                 //Continue
                 //room_goto(rm_world_layer);
                 break;
             case 3:
+                //g_ishud = false;
                 room_goto(rm_help);
                 break;
             case 4:
                 //Settings
+                //g_ishud = false;                
                 break;
             case 5:
                 game_end();

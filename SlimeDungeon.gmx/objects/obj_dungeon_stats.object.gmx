@@ -275,12 +275,14 @@ var yy = display_get_gui_height()/2;
 
 //Fix when player death and presistent draw.
 if(room != rm_start_menu){
-    draw_set_colour(c_white);
-    draw_text(0,0, "Dungeon Menu[A]");
-    draw_text(0,64, "Camera[TAB]:"+  string(toggle_camera));
-    draw_text(0,64+16,"[&lt;][V][&gt;][^]:Move Camera");    
-    script_execute(dungeon_ui);
-    draw_set_colour(c_white);
+    if(g_ishud){
+        draw_set_colour(c_white);
+        draw_text(0+4,0+4, "Dungeon Menu[A]");
+        draw_text(0+4,0+16+4, "Camera[TAB]:"+  string(toggle_camera));
+        draw_text(0+4,0+32+4,"Move Camera:[Arrow Key]");    
+        script_execute(dungeon_ui);
+        draw_set_colour(c_white);
+    }
 }
 </string>
           </argument>

@@ -1,2 +1,2 @@
 draw_set_colour(c_white);
-draw_text(150,8, "DP: " +string(dp));
+draw_text(4,48+4, "DP: " +string(dp));

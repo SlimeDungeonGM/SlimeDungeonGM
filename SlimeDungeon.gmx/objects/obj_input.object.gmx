@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize the input object
+globalvar g_ishud;
+g_ishud = true;
 if(instance_number(obj_input) &gt; 1) instance_destroy();
 scr_get_input();
 </string>

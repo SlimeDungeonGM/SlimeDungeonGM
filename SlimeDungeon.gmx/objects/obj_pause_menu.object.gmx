@@ -32,7 +32,8 @@ title = "Game Paused!";
 option[0] = "Return";
 option[1] = "Save";
 option[2] = "Load";
-option[3] = "Quit";
+option[3] = "Return Menu";
+option[4] = "Quit";
 
 //menu index
 menu_index = 0;
@@ -118,6 +119,10 @@ if(alarm[0] &lt;= 0){
                 room_goto(obj_player_stats.previous_room)
                 break;
             case 3:
+                g_ishud = false;
+                room_goto(rm_start_menu);
+                break;
+            case 4:
                 game_end();
                 break;
             default:
