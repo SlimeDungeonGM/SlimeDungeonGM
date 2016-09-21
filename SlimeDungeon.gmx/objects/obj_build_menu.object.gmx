@@ -32,6 +32,18 @@ buildmenu[0] = "Tools";
 buildmenu[1] = "Traps";
 buildmenu[2] = "Creatures";
 buildmenu[3] = "Blocks";
+
+isboundbox = false;
+issnap = false;
+sizegrid = 32;
+selectobject = obj_rock;
+
+//tmp list
+blocklist[0] = "Dirt";
+blocklist[1] = "Rock";
+blocklist[2] = "Ruin";
+blocklist[3] = "Sand";
+blocklist[4] = "Water";
 </string>
           </argument>
         </arguments>
@@ -54,7 +66,8 @@ buildmenu[3] = "Blocks";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(isbuild){
+            <string>///build menu
+if(isbuild){
     var xx = display_get_gui_width()/2;
     var yy = display_get_gui_height()/2;
     draw_text(xx,16,"BUILD MODE");
@@ -64,6 +77,42 @@ buildmenu[3] = "Blocks";
         draw_text(xx+(i*80)-128, 64, string(buildmenu[i]));
     }
     
+    // draw icons
+    for (i = 0; i &lt; array_length_1d(blocklist); i++){
+        
+        draw_sprite(spr_rock,0,4,yy+((32+4)*i)-64);
+        
+    }
+    var screenx = device_mouse_x_to_gui(0);
+    var screeny = device_mouse_y_to_gui(0); 
+    //screeny += yy;
+    //check if icon are bound here min and max
+    //if(screeny &gt; (4 + yy -64) and screeny &lt; (5*(32+4) + yy -64)){//size and offsets and items
+    //if(screenx &gt; 4 and screenx &lt; (32+4) and screeny &gt; 4 and screeny &lt; (5*(32+4))){//size and offsets
+    if(screenx &gt; 4 and screenx &lt; (32+4) and screeny &gt; (4 + yy -64) and screeny &lt; (5*(32+4) + yy -64)){
+        //show_debug_message("in bound?");
+        isboundbox = true;
+    }else{
+        //show_debug_message("out bound?");
+        isboundbox = false;
+    }
+    
+    //show_debug_message(string(mouse_x));
+    //show_debug_message(string(display_mouse_get_x()));//nope
+    //show_debug_message(string(device_mouse_x_to_gui(0)));//gui screen 0 = view port
+    
+    //add bool check if need to snap to grid or not
+    
+    //place preview
+    if(instance_exists(obj_placer)){
+        obj_placer.x = mouse_x;
+        obj_placer.y = mouse_y;
+    }
+    
+    //place object
+    if(mouse_check_button_pressed(mb_left) == true and isboundbox = false ){
+        instance_create(mouse_x,mouse_y,selectobject);
+    }
 }
 </string>
           </argument>
