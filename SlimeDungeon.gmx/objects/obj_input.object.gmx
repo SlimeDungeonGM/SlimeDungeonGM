@@ -58,9 +58,6 @@ scr_get_input();
             <kind>1</kind>
             <string>/// get the input
 scr_get_input();
-
-//show_debug_message(string(g_ismenu));
-//show_debug_message(string(global._display_dungeon))
 </string>
           </argument>
         </arguments>
@@ -87,7 +84,7 @@ scr_get_input();
 if(instance_exists(obj_player)){
     obj_player.persistent = true;
 }
-show_debug_message(string(instance_number(obj_input)));
+//show_debug_message(string(instance_number(obj_input)));
 </string>
           </argument>
         </arguments>

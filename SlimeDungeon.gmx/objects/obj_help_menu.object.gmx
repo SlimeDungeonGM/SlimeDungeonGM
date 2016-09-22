@@ -34,8 +34,6 @@ option[1] = "Throw [V]";
 option[2] = "Dash [C]";
 option[3] = "Return";
 
-
-
 //menu index
 menu_index = 0;
 
@@ -108,13 +106,10 @@ if(alarm[0] &lt;= 0){
     if(obj_input.dash_key){
         switch(menu_index){
             case 0:
-                
                 break;
             case 1:
-               
                 break;
             case 2:
-                
                 break;
             case 3:
                 room_goto(rm_start_menu);

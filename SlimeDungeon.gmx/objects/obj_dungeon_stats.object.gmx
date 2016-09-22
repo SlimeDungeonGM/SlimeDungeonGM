@@ -142,8 +142,8 @@ reset_wave = false;
 //    stamina++;
 //}
 
-if(reset_wave){
-    //player reset
+//dungeon reset
+if(reset_wave){    
     hp = 5;
     maxhp = hp;
     stamina = 10;
@@ -168,8 +168,6 @@ if(reset_wave){
 
 //pause the game
 if(obj_input.dungeonmenu_key){
-    //if(room != rm_pause){
-    //obj_input.dungeon_key = false;
     if(instance_exists(obj_dungeon_menu)){
         if(obj_dungeon_menu.bdisplay){
             obj_dungeon_menu.bdisplay = false;
@@ -178,39 +176,8 @@ if(obj_input.dungeonmenu_key){
         }
     }
 }
-
+//make sure game dungeon game mode is set to it.
 script_execute(dungeon_mode);
-
-if(obj_input.camtoggle_key){
-    if(toggle_camera){
-        toggle_camera = false;
-        if(instance_exists(obj_view)){
-            with(obj_view){
-                bcameracontrol = false;
-                bfollowplayer = true;
-            }
-        }
-    }else{
-        toggle_camera = true;
-        if(instance_exists(obj_view)){
-            with(obj_view){
-                bcameracontrol = true;
-                bfollowplayer = false;
-            }
-        }
-    }
-}
-
-if(obj_input.buildmenu_key){
-    if(instance_exists(obj_build_menu)){
-        if(obj_build_menu.isbuild){
-            obj_build_menu.isbuild = false;
-        }else{
-            obj_build_menu.isbuild = true;
-        }
-    }
-}
-
 </string>
           </argument>
         </arguments>
@@ -283,12 +250,10 @@ var yy = display_get_gui_height()/2;
 if(global._display_dungeon){
     if(global._ishud){
         draw_set_colour(c_white);
-
-        draw_text(4,4, "Camera[Tab]:" + string(toggle_camera)  +" Camera Pan:[Right Mouse], Camera zoom:[Wheel]");
+        draw_set_halign(fa_left);
+        draw_text(4,4, "Camera[Tab]:" + string(toggle_camera) + " Camera Pan:[Right Mouse], Camera zoom:[Wheel]");
         draw_text(4,16+4, "Dungeon Menu[A]");
-        
         draw_text(xx,0, "Build Mode[B]");
-          
         script_execute(dungeon_ui);
         draw_set_colour(c_white);
     }

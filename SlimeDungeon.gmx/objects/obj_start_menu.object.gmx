@@ -119,13 +119,11 @@ if(alarm[0] &lt;= 0){
         switch(menu_index){
             case 0:
                 //Start
-                //show_debug_message("click???");
+                room_restart();
                 global._display_dungeon = true;
                 global._display_player = true;
                 global._ismenu = false;
-                global._ishud = true;
-                room_restart();
-                             
+                global._ishud = true;                          
                 obj_player_stats.hp = 5;
                 obj_player_stats.reset_player = true;
                 obj_dungeon_stats.reset_wave = true;
@@ -135,6 +133,7 @@ if(alarm[0] &lt;= 0){
                 room_goto(rm_dungeon);
                 break;
             case 1:
+                //dungeon wave
                 room_restart();
                 global._display_dungeon = false;
                 global._display_player = true;
@@ -154,14 +153,15 @@ if(alarm[0] &lt;= 0){
                 //room_goto(rm_world_layer);
                 break;
             case 3:
+                //help menu
                 global._ismenu = true;
                 global._ishud = false;
                 room_goto(rm_help);
                 break;
             case 4:
+                //Settings
                 global._ismenu = true;
                 global._ishud = false;
-                //Settings
                 room_goto(rm_settings);                    
                 break;
             case 5:
@@ -203,11 +203,9 @@ var yy = display_get_gui_height()/2;
 draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_set_font(fnt_HUD);
-
+// draw title text
 draw_text(xx,yy-128,title);
-
 // draws the menu screen, labels
-
 for (var i = 0; i &lt; array_length_1d(menu); i++)
 {
     draw_set_colour(c_gray)

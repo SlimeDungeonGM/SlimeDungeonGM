@@ -100,8 +100,8 @@ room_start_action = NEW_ROOM;
             <kind>1</kind>
             <string>/// control the stats
 
+//player reset
 if(reset_player){
-    //player reset
     hp = 5;
     maxhp = hp;
     stamina = 10;
@@ -116,16 +116,16 @@ if(reset_player){
 //check for death
 if(hp &lt;= 0){
     hp = 0;
-    
-    global.display_player = 1;
-    
+    global._display_dungeon = false;
+    global._display_player = false;
+    global._ismenu = true;
+    global._ishud = false;
     if(room != rm_start_menu){
         if(instance_exists(obj_player)){
             obj_player.persistent = false;
         }
         //previous_room = room;
         room_persistent = false;
-        
         room_goto(rm_start_menu);
     }else{
         //room_goto(previous_room);
@@ -220,6 +220,7 @@ room_start_action = NEW_ROOM;
 //Added for extra room added. You need to put || after the last statement in the if.
 if(global._display_player){
     if(global._ishud){
+        draw_set_halign(fa_left);
         draw_text(4,16*4+4, "HP: " + string(hp) + "/" + string(maxhp));
         draw_text(4,16*5+4, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
         draw_text(4,16*6+4, "LEVEL: " + string(level) );
