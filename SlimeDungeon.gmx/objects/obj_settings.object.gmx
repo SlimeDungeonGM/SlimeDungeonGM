@@ -25,28 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//create start global variables
-global._ismenu = true;
-global._ishud = false;
-global._display_dungeon = false;
-global._display_player = false;
+            <string>///initialize the menu
 
-/// Buttons
-title = "Slime Dungeon";
-//This is the layout of the screen
-menu[0] = "Create Dungeon";
-menu[1] = "Dungeon Waves";
-menu[2] = "Continue";
-menu[3] = "Help";
-menu[4] = "Settings";
-menu[5] = "Quit";
+title = "Help Menu!";
+
+option[0] = "Language";
+option[1] = "Master volume";
+option[2] = "Music volume";
+option[3] = "FX volume";
+
+option[4] = "Screen";
+option[5] = "Window";
+option[6] = "Return";
 
 //menu index
 menu_index = 0;
-
-//Distance between each of the menu labels
-space = 48;
-mpos = 0;
 
 </string>
           </argument>
@@ -70,7 +63,7 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// menu delay
+            <string>/// menu alarm
 </string>
           </argument>
         </arguments>
@@ -93,12 +86,11 @@ mpos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-/// control the menu
+            <string>/// control the menu
 if(alarm[0] &lt;= 0){
     
     if(obj_input.down_key or obj_input.yaxis &gt; 0.5){
-        if(menu_index &lt; array_length_1d(menu)-1){
+        if(menu_index &lt; array_length_1d(option)-1){
             menu_index++;
         }else{
             menu_index = 0;
@@ -110,7 +102,7 @@ if(alarm[0] &lt;= 0){
         if(menu_index &gt; 0){
             menu_index--;
         }else{
-            menu_index = array_length_1d(menu)-1;
+            menu_index = array_length_1d(option)-1;
         }
         alarm[0] = room_speed/6;
     }
@@ -118,61 +110,27 @@ if(alarm[0] &lt;= 0){
     if(obj_input.dash_key){
         switch(menu_index){
             case 0:
-                //Start
-                //show_debug_message("click???");
-                global._display_dungeon = true;
-                global._display_player = true;
-                global._ismenu = false;
-                global._ishud = true;
-                room_restart();
-                             
-                obj_player_stats.hp = 5;
-                obj_player_stats.reset_player = true;
-                obj_dungeon_stats.reset_wave = true;
-                obj_dungeon_stats.dungeon_ui = scr_dungeon_survival_hud;
-                obj_dungeon_stats.dungeon_mode = scr_dungeon_survival_state;              
-                //obj_player_stats.room_start_action = RETURN;
-                room_goto(rm_dungeon);
                 break;
             case 1:
-                room_restart();
-                global._display_dungeon = false;
-                global._display_player = true;
-                global._ismenu = false;
-                global._ishud = true;
-                obj_player_stats.hp = 5;
-                obj_player_stats.reset_player = true;                
-                obj_dungeon_stats.reset_wave = true;
-                obj_dungeon_stats.dungeon_ui = scr_dungeon_wave_hud;
-                obj_dungeon_stats.dungeon_mode = scr_dungeon_wave_state;
-                room_goto(rm_dungeon_waves);
                 break;
             case 2:
-                //Continue
-                global._ismenu = false;
-                global._ishud = true;
-                //room_goto(rm_world_layer);
                 break;
             case 3:
-                global._ismenu = true;
-                global._ishud = false;
-                room_goto(rm_help);
                 break;
             case 4:
-                global._ismenu = true;
-                global._ishud = false;
-                //Settings
-                room_goto(rm_settings);                    
                 break;
             case 5:
-                game_end();
-                break;                
+                break;
+            case 6:
+                room_goto(rm_start_menu);
+                break;
             default:
                 break;
         }
         obj_input.dash_key = false;
     }
 }
+
 </string>
           </argument>
         </arguments>
@@ -196,29 +154,19 @@ if(alarm[0] &lt;= 0){
           <argument>
             <kind>1</kind>
             <string>/// draw the menu
+
 var xx = display_get_gui_width()/2;
 var yy = display_get_gui_height()/2;
-
-/// Creation of screen
-draw_set_color(c_white);
 draw_set_halign(fa_center);
-draw_set_font(fnt_HUD);
+draw_text(xx,yy-64,title);
 
-draw_text(xx,yy-128,title);
-
-// draws the menu screen, labels
-
-for (var i = 0; i &lt; array_length_1d(menu); i++)
-{
+for(var i=0; i&lt;= array_length_1d(option)-1;i++){
     draw_set_colour(c_gray)
     if(i == menu_index){
         draw_set_colour(c_white);
     }
-    draw_text(xx, yy + (i*space), string(menu[i]));
+    draw_text(xx,yy+(i*32),option[i]);
 }
-//draws the pointer.
-draw_sprite(spr_pointer_m, 0, xx, yy + (menu_index * space));
-
 draw_set_colour(c_white);
 draw_set_halign(fa_left);
 </string>
