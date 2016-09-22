@@ -1,0 +1,47 @@
+﻿Merge remote-tracking branch 'origin/master'
+
+# Conflicts:
+#	SlimeDungeon.gmx/SlimeDungeon.project.gmx
+#	SlimeDungeon.gmx/objects/obj_dungeon_stats.object.gmx
+#	SlimeDungeon.gmx/objects/obj_player_stats.object.gmx
+#	SlimeDungeon.gmx/objects/obj_start_menu.object.gmx
+#	SlimeDungeon.gmx/rooms/rm_start_menu.room.gmx
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 1 and 4 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   SlimeDungeon.gmx/SlimeDungeon.project.gmx
+#	new file:   SlimeDungeon.gmx/objects/obj_build_menu.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_dungeon_menu.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_dungeon_stats.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_help_menu.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_input.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_pause_menu.object.gmx
+#	new file:   SlimeDungeon.gmx/objects/obj_placer.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_player_stats.object.gmx
+#	new file:   SlimeDungeon.gmx/objects/obj_rock.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_start_menu.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_view.object.gmx
+#	modified:   SlimeDungeon.gmx/objects/obj_writer.object.gmx
+#	modified:   SlimeDungeon.gmx/rooms/rm_dungeon.room.gmx
+#	modified:   SlimeDungeon.gmx/rooms/rm_help.room.gmx
+#	modified:   SlimeDungeon.gmx/rooms/rm_start_menu.room.gmx
+#	modified:   SlimeDungeon.gmx/scripts/scr_dungeon_survival_hud.gml
+#	modified:   SlimeDungeon.gmx/scripts/scr_get_input.gml
+#	new file:   SlimeDungeon.gmx/sprites/images/spr_rock_0.png
+#	new file:   SlimeDungeon.gmx/sprites/spr_rock.sprite.gmx
+#
+

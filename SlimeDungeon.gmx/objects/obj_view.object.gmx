@@ -25,7 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// move to player
+            <string>/// camera move around
+zoom = 1;
+bfollowplayer = true;
+bcameracontrol = false;
+
+// move to player
 if(instance_exists(obj_player)){
     x = obj_player.x;
     y = obj_player.y;    
@@ -55,9 +60,39 @@ if(instance_exists(obj_player)){
             <string>///move 10% toward the player
 // current += (target - current) * 0.1;
 
-if(instance_exists(obj_player)){
-    x += (obj_player.x - x) * 0.1;
-    y += (obj_player.y - y) * 0.1;
+if(bfollowplayer){
+    if(instance_exists(obj_player)){
+        x += (obj_player.x - x) * 0.1;
+        y += (obj_player.y - y) * 0.1;
+    }
+}
+
+if(bcameracontrol){
+    ///zoom
+    if(mouse_wheel_up()){
+        zoom -=0.10;    
+    }
+    if (mouse_wheel_down()){
+        zoom +=0.10;   
+    }
+    
+    //default view port init and sacle to 1
+    view_wview[0] = 320 * zoom;
+    view_hview[0] = 240 * zoom;
+    
+    // This sets it up so that the camera is exactly in the middle of the screen at all times, regardless of zoom.
+    view_xview[0] = x - view_wview / 2;
+    view_yview[0] = y - view_hview / 2;
+    //panning view port
+    if (mouse_check_button(mb_right)){
+        // Points towards the mouse
+        direction = point_direction(x, y, mouse_x, mouse_y)
+        // Finds the distance from the camera object to the mouse, then divides it by (10 * zoom) so that the camera pan speed stays reasonable
+        speed = distance_to_point(mouse_x, mouse_y) / (10 * zoom)
+    }
+    else{ speed = 0};
+    x += lengthdir_x(speed,direction);
+    y += lengthdir_y(speed,direction);
 }
 </string>
           </argument>
