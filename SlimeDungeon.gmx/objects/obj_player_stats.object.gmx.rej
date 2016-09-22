@@ -1,0 +1,18 @@
+diff a/SlimeDungeon.gmx/objects/obj_player_stats.object.gmx b/SlimeDungeon.gmx/objects/obj_player_stats.object.gmx	(rejected hunks)
+@@ -216,10 +216,12 @@
+ 
+ //Fixed the menu when player dies and the stats remain after death
+ //Added for extra room added. You need to put || after the last statement in the if.
+-if(room != rm_start_menu ){
+-draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
+-draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
+-draw_text(32,48, "LEVEL: " + string(level) );
++if(room != rm_start_menu){
++    if(g_ishud){
++        draw_text(4,80+4, "HP: " + string(hp) + "/" + string(maxhp));
++        draw_text(4,96+4, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
++        draw_text(4,112+4, "LEVEL: " + string(level) );
++    }
+ }
+ </string>
+           </argument>

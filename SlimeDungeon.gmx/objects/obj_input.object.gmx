@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialize the input object
-globalvar g_ishud;
-g_ishud = true;
-if(instance_number(obj_input) &gt; 1) instance_destroy();
+            <string>if(instance_number(obj_input) &gt; 1) instance_destroy();
+/// initialize the input object
+
+//global._ismenu = true;
+//global._ishud = false;
+//global._display_dungeon = false;
+//global._display_player = false;
+
 scr_get_input();
 </string>
           </argument>
@@ -54,6 +58,9 @@ scr_get_input();
             <kind>1</kind>
             <string>/// get the input
 scr_get_input();
+
+//show_debug_message(string(g_ismenu));
+//show_debug_message(string(global._display_dungeon))
 </string>
           </argument>
         </arguments>
@@ -80,6 +87,7 @@ scr_get_input();
 if(instance_exists(obj_player)){
     obj_player.persistent = true;
 }
+show_debug_message(string(instance_number(obj_input)));
 </string>
           </argument>
         </arguments>

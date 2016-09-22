@@ -38,11 +38,7 @@ attack = 1;
 
 reset_player = false;
 
-//Global boolean to control if display is shown.
-global.display_player = 1;
-
 draw_set_font(fnt_text);
-draw_set_colour(c_white);
 
 // get the player's xstart and ystart
 if(instance_exists( obj_player)){
@@ -222,10 +218,12 @@ room_start_action = NEW_ROOM;
 
 //Fixed the menu when player dies and the stats remain after death
 //Added for extra room added. You need to put || after the last statement in the if.
-if(global.display_player == 0 ){
-draw_text(32,16, "HP: " + string(hp) + "/" + string(maxhp));
-draw_text(32,32, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
-draw_text(32,48, "LEVEL: " + string(level) );
+if(global._display_player){
+    if(global._ishud){
+        draw_text(4,16*4+4, "HP: " + string(hp) + "/" + string(maxhp));
+        draw_text(4,16*5+4, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
+        draw_text(4,16*6+4, "LEVEL: " + string(level) );
+    }
 }
 </string>
           </argument>

@@ -59,6 +59,7 @@
       <sprite>sprites\select_tile</sprite>
       <sprite>sprites\spr_tile_unclaimed</sprite>
       <sprite>sprites\spr_locked</sprite>
+      <sprite>sprites\spr_rock</sprite>
     </sprites>
     <sprites name="Other">
       <sprite>sprites\spr_w_basic_s</sprite>
@@ -68,7 +69,6 @@
       <sprite>sprites\sprite11</sprite>
     </sprites>
     <sprite>sprites\spr_spawner</sprite>
-    <sprite>sprites\sprite41</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\grass_basic</background>
@@ -150,9 +150,6 @@
       <object>objects\s_Menu</object>
       <object>objects\obj_text</object>
     </objects>
-    <objects name="UI">
-      <object>objects\obj_start_menu</object>
-    </objects>
     <objects name="creatures">
       <object>objects\obj_player</object>
       <object>objects\obj_lifeform_parent</object>
@@ -168,6 +165,7 @@
       <object>objects\t_basic</object>
       <object>objects\t_unclaimed</object>
       <object>objects\t_locked</object>
+      <object>objects\obj_rock</object>
     </objects>
     <objects name="projectiles">
       <object>objects\obj_projectile</object>
@@ -178,6 +176,8 @@
       <object>objects\obj_help_menu</object>
       <object>objects\obj_view</object>
       <object>objects\obj_dungeon_menu</object>
+      <object>objects\obj_build_menu</object>
+      <object>objects\obj_start_menu</object>
     </objects>
     <objects name="animation">
       <object>objects\obj_weapon_animation</object>
@@ -200,21 +200,22 @@
       <object>objects\obj_health</object>
       <object>objects\obj_key</object>
     </objects>
+    <object>objects\obj_placer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start_menu</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_world_layer</room>
     <room>rooms\rm_dungeon_waves</room>
-    <room>rooms\rm_help</room>
     <room>rooms\rm_writer</room>
+    <room>rooms\rm_help</room>
     <room>rooms\rm_pause</room>
+    <room>rooms\rm_settings</room>
     <rooms name="floors">
       <room>rooms\f1</room>
       <room>rooms\f2</room>
       <room>rooms\f3</room>
     </rooms>
-    <room>rooms\rm_settings</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
