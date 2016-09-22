@@ -189,23 +189,20 @@ script_execute(dungeon_mode);
 if(obj_input.camtoggle_key){
     if(toggle_camera){
         toggle_camera = false;
+        if(instance_exists(obj_view)){
+            with(obj_view){
+                bfollowplayer = true;
+                bcameracontrol = false;
+            }
+        }
     }else{
         toggle_camera = true;
-    }
-}
-
-if(toggle_camera){
-    if(obj_input.right_key){
-        obj_view.x+=10;
-    }
-    if(obj_input.left_key){
-        obj_view.x-=10;
-    }
-    if(obj_input.up_key){
-        obj_view.y -= 10;
-    }
-    if(obj_input.down_key){
-        obj_view.y += 10;
+        if(instance_exists(obj_view)){
+            with(obj_view){
+                bfollowplayer = false;
+                bcameracontrol = true;
+            }
+        }
     }
 }
 
@@ -296,7 +293,7 @@ if(room != rm_start_menu){
         draw_set_colour(c_white);
         draw_text(0+4,0+4, "Dungeon Menu: [A]");
         draw_text(0+4,0+16+4, "Camera: [TAB]:"+  string(toggle_camera));
-        draw_text(0+4,0+32+4,"Move Camera: [Arrow Key]");
+        draw_text(0+4,0+32+4,"Move Camera: [Right Mouse], Mouse Scroll: [Wheel]");
         draw_text(xx,0,"Build Mode: [B]");
         script_execute(dungeon_ui);
         draw_set_colour(c_white);

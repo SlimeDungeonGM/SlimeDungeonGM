@@ -78,40 +78,44 @@ if(isbuild){
     }
     
     // draw icons
-    for (i = 0; i &lt; array_length_1d(blocklist); i++){
-        
+    for (i = 0; i &lt; array_length_1d(blocklist); i++){   
         draw_sprite(spr_rock,0,4,yy+((32+4)*i)-64);
-        
     }
     var screenx = device_mouse_x_to_gui(0);
     var screeny = device_mouse_y_to_gui(0); 
-    //screeny += yy;
     //check if icon are bound here min and max
     //if(screeny &gt; (4 + yy -64) and screeny &lt; (5*(32+4) + yy -64)){//size and offsets and items
     //if(screenx &gt; 4 and screenx &lt; (32+4) and screeny &gt; 4 and screeny &lt; (5*(32+4))){//size and offsets
     if(screenx &gt; 4 and screenx &lt; (32+4) and screeny &gt; (4 + yy -64) and screeny &lt; (5*(32+4) + yy -64)){
         //show_debug_message("in bound?");
         isboundbox = true;
+        
+        //need to add icon select here to build the dungeon
+        
     }else{
         //show_debug_message("out bound?");
         isboundbox = false;
     }
     
-    //show_debug_message(string(mouse_x));
-    //show_debug_message(string(display_mouse_get_x()));//nope
-    //show_debug_message(string(device_mouse_x_to_gui(0)));//gui screen 0 = view port
-    
     //add bool check if need to snap to grid or not
     
     //place preview
     if(instance_exists(obj_placer)){
-        obj_placer.x = mouse_x;
-        obj_placer.y = mouse_y;
+        obj_placer.visible = true;
+        //divide and floor and time
+        obj_placer.x = (mouse_x div sizegrid)*32;
+        obj_placer.y = (mouse_y div sizegrid)*32;
     }
     
     //place object
     if(mouse_check_button_pressed(mb_left) == true and isboundbox = false ){
-        instance_create(mouse_x,mouse_y,selectobject);
+        instance_create((mouse_x div sizegrid)*32,(mouse_y div sizegrid)*32,selectobject);
+    }
+}else{
+    if(instance_exists(obj_placer)){
+        with(obj_placer){
+            visible = false;
+        }
     }
 }
 </string>
