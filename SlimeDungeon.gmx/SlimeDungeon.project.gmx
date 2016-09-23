@@ -11,7 +11,7 @@
     <sound>sound\snd_enemy_die</sound>
   </sounds>
   <sprites name="sprites">
-    <sprites name="System">
+    <sprites name="system">
       <sprite>sprites\spr_control</sprite>
       <sprite>sprites\spr_highlight_h</sprite>
       <sprite>sprites\spr_highlight_l</sprite>
@@ -20,8 +20,11 @@
       <sprite>sprites\spr_button_small</sprite>
       <sprite>sprites\spr_pointer_m</sprite>
       <sprite>sprites\s_keyboard_curser</sprite>
+      <sprite>sprites\spr_up</sprite>
+      <sprite>sprites\spr_down</sprite>
+      <sprite>sprites\spr_slot</sprite>
     </sprites>
-    <sprites name="Creatures">
+    <sprites name="creatures">
       <sprites name="chinlin">
         <sprite>sprites\spr_chinlin_run_down</sprite>
         <sprite>sprites\spr_chinlin_run_right</sprite>
@@ -43,32 +46,41 @@
       </sprites>
       <sprite>sprites\basic_slime</sprite>
     </sprites>
-    <sprites name="Pickups">
+    <sprites name="pickups">
       <sprite>sprites\spr_health</sprite>
       <sprite>sprites\spr_expr</sprite>
       <sprite>sprites\spr_key</sprite>
     </sprites>
-    <sprite>sprites\spr_damage</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprites name="Weapons">
+    <sprites name="weapons">
       <sprite>sprites\spr_axe</sprite>
       <sprite>sprites\spr_sword</sprite>
     </sprites>
-    <sprites name="Tiles">
+    <sprites name="tiles">
       <sprite>sprites\basic_floor_tile</sprite>
       <sprite>sprites\select_tile</sprite>
       <sprite>sprites\spr_tile_unclaimed</sprite>
       <sprite>sprites\spr_locked</sprite>
       <sprite>sprites\spr_rock</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_sand</sprite>
+      <sprite>sprites\spr_grass</sprite>
+      <sprite>sprites\spr_lava</sprite>
+      <sprite>sprites\spr_dirt</sprite>
     </sprites>
-    <sprites name="Other">
+    <sprites name="other">
       <sprite>sprites\spr_w_basic_s</sprite>
       <sprite>sprites\spr_mask_wall_td</sprite>
       <sprite>sprites\spr_mask_wall_lr</sprite>
       <sprite>sprites\spr_w_basic_u</sprite>
       <sprite>sprites\sprite11</sprite>
     </sprites>
-    <sprite>sprites\spr_spawner</sprite>
+    <sprites name="damages">
+      <sprite>sprites\spr_damage</sprite>
+    </sprites>
+    <sprites name="dungeons">
+      <sprite>sprites\spr_spawner</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\grass_basic</background>
@@ -108,28 +120,30 @@
       <script>scripts\scr_load_game.gml</script>
       <script>scripts\scr_save_game.gml</script>
     </scripts>
-    <scripts name="dungeonmenus">
-      <script>scripts\scr_statusmenu.gml</script>
-      <script>scripts\scr_skillsmenu.gml</script>
-      <script>scripts\scr_dungeonmenuselect.gml</script>
-      <script>scripts\scr_creatures.gml</script>
-      <script>scripts\scr_abilitiesmenu.gml</script>
-      <script>scripts\scr_researchmenu.gml</script>
-      <script>scripts\scr_itemsmenu.gml</script>
-      <script>scripts\scr_dungeon_survival_hud.gml</script>
+    <scripts name="dungeon_menu_scripts">
+      <script>scripts\scr_status_menu.gml</script>
+      <script>scripts\scr_status_menu_state.gml</script>
+      <script>scripts\scr_skills_menu.gml</script>
+      <script>scripts\scr_skills_menu_state.gml</script>
+      <script>scripts\scr_creatures_menu.gml</script>
+      <script>scripts\scr_creatures_menu_state.gml</script>
+      <script>scripts\scr_abilities_menu.gml</script>
+      <script>scripts\scr_abilities_menu_state.gml</script>
+      <script>scripts\scr_research_menu.gml</script>
+      <script>scripts\scr_research_menu_state.gml</script>
+      <script>scripts\scr_items_menu.gml</script>
+      <script>scripts\scr_items_menu_state.gml</script>
+      <script>scripts\scr_dungeon_menu_state.gml</script>
+      <script>scripts\scr_dungeon_menu_select.gml</script>
     </scripts>
-    <scripts name="dungeon_state">
-      <script>scripts\scr_statusmenu_state.gml</script>
-      <script>scripts\scr_itemsmenu_state.gml</script>
-      <script>scripts\scr_researchmenu_state.gml</script>
-      <script>scripts\scr_creaturesmenu_state.gml</script>
-      <script>scripts\scr_abilitiesmenu_state.gml</script>
-      <script>scripts\scr_dungeonmenu_state.gml</script>
-      <script>scripts\scr_dungeon_survival_state.gml</script>
-    </scripts>
-    <scripts name="dungonwave">
+    <scripts name="dungon_mode_scripts">
       <script>scripts\scr_dungeon_wave_hud.gml</script>
       <script>scripts\scr_dungeon_wave_state.gml</script>
+      <script>scripts\scr_dungeon_survival_hud.gml</script>
+      <script>scripts\scr_dungeon_survival_state.gml</script>
+    </scripts>
+    <scripts name="dungeon_build_scripts">
+      <script>scripts\scr_dungeon_build_menu.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -161,14 +175,25 @@
       <object>objects\obj_wall</object>
       <object>objects\obj_spawner</object>
     </objects>
-    <objects name="Tiles">
+    <objects name="tiles">
       <object>objects\t_basic</object>
       <object>objects\t_unclaimed</object>
       <object>objects\t_locked</object>
       <object>objects\obj_rock</object>
+      <object>objects\obj_rock_ph</object>
+      <object>objects\obj_water</object>
+      <object>objects\obj_water_ph</object>
+      <object>objects\obj_dirt</object>
+      <object>objects\obj_dirt_ph</object>
+      <object>objects\obj_sand</object>
+      <object>objects\obj_sand_ph</object>
+      <object>objects\obj_lava</object>
+      <object>objects\obj_lava_ph</object>
+      <object>objects\obj_detect_ph</object>
     </objects>
     <objects name="projectiles">
       <object>objects\obj_projectile</object>
+      <object>objects\obj_throw_axe</object>
     </objects>
     <objects name="inputs">
       <object>objects\obj_input</object>

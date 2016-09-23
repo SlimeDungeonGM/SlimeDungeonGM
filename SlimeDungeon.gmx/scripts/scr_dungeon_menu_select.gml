@@ -2,19 +2,19 @@
 var menu_index = argument0;
 switch(menu_index){
     case 0:
-        currentmenu = scr_statusmenu;
+        currentmenu = scr_status_menu;
         break;
     case 1:
-        currentmenu = scr_creatures;    
+        currentmenu = scr_creatures_menu;    
         break;
     case 2:
-        currentmenu = scr_abilitiesmenu;    
+        currentmenu = scr_abilities_menu;    
         break;
     case 3:
-        currentmenu = scr_researchmenu;    
+        currentmenu = scr_research_menu;    
         break;
     case 4:
-        currentmenu = scr_itemsmenu;    
+        currentmenu = scr_items_menu;    
         break;
     default:
         break;

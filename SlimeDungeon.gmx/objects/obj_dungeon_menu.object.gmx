@@ -44,8 +44,8 @@ status_index = 0;
 menu_index = 0;
 bdisplay = false;
 
-currentmenu = scr_statusmenu;
-current_state = scr_dungeonmenu_state;
+currentmenu = scr_status_menu;
+current_state = scr_dungeon_menu_state;
 </string>
           </argument>
         </arguments>
