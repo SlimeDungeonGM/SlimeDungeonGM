@@ -64,6 +64,14 @@ wave_maxcount = 2;
 
 bfinish_wave = false;
 reset_wave = false;
+
+//Placement of size of dungeon floor.
+globalvar dung_floor_size;
+dung_floor_size[0,0] = 100;
+dung_floor_size[0,1] = 100;
+
+//Stores the map of the current floor.
+
 </string>
           </argument>
         </arguments>

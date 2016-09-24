@@ -25,9 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize the lifeform
-phy_fixed_rotation = true;
-hp = 3;
+            <string>///Properties
+
+//Creating a global var for the tile properties.
+globalvar tile_prop;
+
+//Stores the location of that tile on [0,0] and [0,1].
+tile_prop[0,0] = y;
+tile_prop[0,1] = x;
+
+//Stores the name of the tile on [1,x]
+tile_prop[1,0] = "WIP";
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -51,59 +64,22 @@ hp = 3;
           <argument>
             <kind>1</kind>
             <string>/// control depth
-depth = -y;
 
-if(hp &lt;= 0){
-    instance_destroy();
+//Bottom floor tile or test level.
+bottom_floor = 1; 
+
+//Change the depth depending on the type of tile.
+switch (object_get_name(self))
+{
+case obj_dirt: depth = 2; break;
+case obj_rock: depth = 3; break;
+case obj_water: depth = 2; break;
+case obj_sand: depth = 2; break;
+case obj_lava: depth = 2; break;
+default: depth = bottom_floor;
 }
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_wall">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// collide
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_lifeform_parent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// collide
 </string>
           </argument>
         </arguments>

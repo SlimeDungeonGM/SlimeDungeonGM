@@ -145,6 +145,7 @@
     <scripts name="dungeon_build_scripts">
       <script>scripts\scr_dungeon_build_menu.gml</script>
     </scripts>
+    <script>scripts\scr_scan.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -227,6 +228,10 @@
       <object>objects\obj_key</object>
     </objects>
     <object>objects\obj_placer</object>
+    <objects name="world_System">
+      <object>objects\obj_tile_prop</object>
+      <object>objects\obj_floor_setter</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start_menu</room>
