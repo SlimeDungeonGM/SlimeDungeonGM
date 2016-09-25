@@ -119,6 +119,7 @@
     <scripts name="game">
       <script>scripts\scr_load_game.gml</script>
       <script>scripts\scr_save_game.gml</script>
+      <script>scripts\scr_sound.gml</script>
     </scripts>
     <scripts name="dungeon_menu_scripts">
       <script>scripts\scr_status_menu.gml</script>
