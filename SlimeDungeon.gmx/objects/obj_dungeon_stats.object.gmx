@@ -36,8 +36,17 @@ maxexpr = 3;
 level = 1;
 attack = 1;
 
+//dungeon stats
 dp = 1000;
 maxdp = 1000;
+//creates the ds_map for each of the inventories of the dungeon
+global.dm_creatures = ds_map_create();
+global.dm_inventory = ds_map_create();
+global.dm_abilities = ds_map_create();
+global.dm_skills = ds_map_create();
+global.dm_knownledge = ds_map_create(); 
+global.dm_map = ds_map_create();
+
 
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
@@ -67,8 +76,8 @@ reset_wave = false;
 
 //Placement of size of dungeon floor.
 globalvar dung_floor_size;
-dung_floor_size[0,0] = 100;
-dung_floor_size[0,1] = 100;
+dung_floor_size[0] = 100;
+dung_floor_size[1] = 100;
 
 //Stores the map of the current floor.
 
