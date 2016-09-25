@@ -144,8 +144,7 @@ with(other) {
 }
 
 // Add to inventory
-
-  
+ds_map_add(global.inventory,"key",1);
 </string>
           </argument>
         </arguments>
@@ -173,6 +172,7 @@ with(other) {
 
     if(hp = maxhp){
     //nothing
+    ds_map_add(global.inventory,"first aid",1);
     }
     else{
     instance_destroy();

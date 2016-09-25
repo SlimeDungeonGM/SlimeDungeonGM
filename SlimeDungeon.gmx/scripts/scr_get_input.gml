@@ -16,6 +16,10 @@ pause_key = keyboard_check_pressed(vk_escape);
 dungeonmenu_key = keyboard_check_pressed(ord('A'));
 camtoggle_key = keyboard_check_pressed(vk_tab);
 buildmenu_key = keyboard_check_pressed(ord('B'));
+//mouse keys
+roll_up = mouse_wheel_up();
+roll_down = mouse_wheel_down()
+
 
 //check if gamepad input
 xaxis = (right_key - left_key);

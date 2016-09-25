@@ -29,8 +29,11 @@
 
 title = "Help Menu!";
 
+//Volume set at medium (Testing)
+volume = 0.5;
+
 option[0] = "Language";
-option[1] = "Master volume";
+option[1] = "Master volume" + "       " + string(volume*100);
 option[2] = "Music volume";
 option[3] = "FX volume";
 
@@ -41,8 +44,7 @@ option[6] = "Return";
 //menu index
 menu_index = 0;
 
-//Volume set at medium (Testing)
-volume = 0.5;
+
 </string>
           </argument>
         </arguments>
@@ -115,8 +117,8 @@ if(alarm[0] &lt;= 0){
                 break;
             case 1:
                  //Increase master volume when mouse wheel up and mouse wheel down decreases.
-                 if(mouse_wheel_up &amp;&amp; volume &lt; 1) volume += 0.05; audio_master_gain(volume);
-                 if(mouse_wheel_down &amp;&amp; volume &gt; 1) volume -= 0.05; audio_master_gain(volume);
+                 //if(obj_input.roll_up = true &amp;&amp; volume &lt; 1) volume += 0.05; audio_master_gain(volume);
+                 //if(obj_input.roll_down = true &amp;&amp; volume &gt; 0) volume -= 0.05; audio_master_gain(volume);
                 break;
             case 2:
                 break;

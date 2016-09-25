@@ -38,6 +38,8 @@ attack = 1;
 
 reset_player = false;
 
+global.inventory = ds_map_create();
+
 draw_set_font(fnt_text);
 
 // get the player's xstart and ystart
@@ -222,6 +224,7 @@ if(global._display_player){
     if(global._ishud){
         draw_set_halign(fa_left);
         draw_text(4,16*4+4, "HP: " + string(hp) + "/" + string(maxhp));
+        //draw_healthbar(5,18*4+4,3,15*4+4,maxhp,c_white,c_red,c_lime,0,true,true);
         draw_text(4,16*5+4, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
         draw_text(4,16*6+4, "LEVEL: " + string(level) );
     }
