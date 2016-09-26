@@ -38,7 +38,31 @@ attack = 1;
 
 reset_player = false;
 
-global.inventory = ds_map_create();
+/*
+    Items that can be in the inventory
+    0=spr_health
+    1=spr_key
+    2=spr_axe
+    3=spr_sword
+    
+    -1 = Empty
+
+*/
+
+globalvar showInv; // display the inventory?
+showInv = false;
+globalvar maxItems; // total item slots.
+maxItems = 5;
+
+// loads the inventory with empty spots.
+for(i=0; i &lt; maxItems; i++)
+{
+    global.inventory[i] = -1;
+}
+
+
+
+global._test = false; //Turns off display of inventory
 
 draw_set_font(fnt_text);
 
@@ -220,13 +244,46 @@ room_start_action = NEW_ROOM;
 
 //Fixed the menu when player dies and the stats remain after death
 //Added for extra room added. You need to put || after the last statement in the if.
-if(global._display_player){
-    if(global._ishud){
+if(global._display_player)
+{
+    if(global._ishud)
+    {
         draw_set_halign(fa_left);
         draw_text(4,16*4+4, "HP: " + string(hp) + "/" + string(maxhp));
         //draw_healthbar(5,18*4+4,3,15*4+4,maxhp,c_white,c_red,c_lime,0,true,true);
         draw_text(4,16*5+4, "STAMINA: " + string(stamina) + "/" + string(maxstamina));
         draw_text(4,16*6+4, "LEVEL: " + string(level) );
+        
+        
+        // Draw Inventory
+        if(showInv)
+        {
+            var x1,x2,y1,y2;
+            x1 = view_xview[0];
+            x2 = x1 + view_wview[0];
+            y1 = view_yview[0];
+            y2 = y1 + 64;
+            // makes the retangle
+            draw_set_colour(c_black);
+            draw_set_alpha(0.8);
+            draw_rectangle(x1,y1,x2,y2,0);
+            draw_set_alpha(1); 
+            // checks to see if any of the inventory slots are represented by a number assigment.
+            for(i=0; i &lt; maxItems; i++)
+            {
+                draw_sprite(s_keyboard_curser,0,x1+24+(i*40),y2-24);
+                switch(global.inventory[i])
+                {
+                      case -1: draw_sprite(spr_slot,0,x1+24+(i*40),y2-24); break;
+                      case 0: draw_sprite(spr_health,0,x1+24+(i*40),y2-24); break;
+                      case 1: draw_sprite(spr_key,0,x1+24+(i*40),y2-24); break;
+                      case 2: draw_sprite(spr_axe,0,x1+24+(i*40),y2-24); break;
+                      case 3: draw_sprite(spr_sword,0,x1+24+(i*40),y2-24); break;
+               }
+           }    
+       }
+        
+      
     }
 }
 </string>

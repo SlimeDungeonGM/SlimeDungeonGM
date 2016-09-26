@@ -139,12 +139,12 @@ if(obj_player_stats.hp &lt;= 0){
             <string>///Key Pickup
 
 with(other) {
+    scr_itempickup(1);
     instance_destroy();
     audio_play_sound(snd_expr,6,false); 
 }
 
-// Add to inventory
-ds_map_add(global.inventory,"key",1);
+
 </string>
           </argument>
         </arguments>
@@ -170,9 +170,10 @@ ds_map_add(global.inventory,"key",1);
             <string>/// collect health
 with(other) {
 
-    if(hp = maxhp){
-    //nothing
-    ds_map_add(global.inventory,"first aid",1);
+    if(obj_player_stats.hp &gt;= obj_player_stats.maxhp){
+    //adds to the inventory if hp greater than or equal to maxhp.
+    scr_itempickup(0);
+    instance_destroy();
     }
     else{
     instance_destroy();

@@ -99,6 +99,7 @@
       <script>scripts\scr_string_copy_words.gml</script>
       <script>scripts\scr_swap_weapon.gml</script>
       <script>scripts\animation_hit_frame.gml</script>
+      <script>scripts\scr_inv_create.gml</script>
     </scripts>
     <scripts name="bot state">
       <script>scripts\scr_bot_idle_state.gml</script>
@@ -120,6 +121,10 @@
       <script>scripts\scr_load_game.gml</script>
       <script>scripts\scr_save_game.gml</script>
       <script>scripts\scr_sound.gml</script>
+      <script>scripts\scr_itempickup.gml</script>
+      <script>scripts\scr_itemdrop.gml</script>
+      <script>scripts\scr_itemcheck.gml</script>
+      <script>scripts\scr_scan.gml</script>
     </scripts>
     <scripts name="dungeon_menu_scripts">
       <script>scripts\scr_status_menu.gml</script>
@@ -146,7 +151,6 @@
     <scripts name="dungeon_build_scripts">
       <script>scripts\scr_dungeon_build_menu.gml</script>
     </scripts>
-    <script>scripts\scr_scan.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
