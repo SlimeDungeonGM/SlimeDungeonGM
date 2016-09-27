@@ -80,6 +80,7 @@
     </sprites>
     <sprites name="dungeons">
       <sprite>sprites\spr_spawner</sprite>
+      <sprite>sprites\spr_dungeon_core</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -150,6 +151,7 @@
     </scripts>
     <scripts name="dungeon_build_scripts">
       <script>scripts\scr_dungeon_build_menu.gml</script>
+      <script>scripts\scr_level_generate_dungeon.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -176,6 +178,7 @@
       <object>objects\obj_player_stats</object>
       <object>objects\obj_dungeon_stats</object>
       <object>objects\obj_enemy_chinlin</object>
+      <object>objects\obj_dungeon_core</object>
     </objects>
     <objects name="buildings">
       <object>objects\obj_wall</object>
@@ -236,10 +239,13 @@
     <objects name="world_System">
       <object>objects\obj_tile_prop</object>
       <object>objects\obj_floor_setter</object>
+      <object>objects\obj_level_generate_dungeon</object>
+      <object>objects\obj_gvar</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start_menu</room>
+    <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_world_layer</room>
     <room>rooms\rm_dungeon_waves</room>
@@ -253,6 +259,13 @@
       <room>rooms\f3</room>
     </rooms>
   </rooms>
+  <constants number="5">
+    <constant name="CELL_WIDTH">32</constant>
+    <constant name="CELL_HEIGHT">32</constant>
+    <constant name="FLOOR">-5</constant>
+    <constant name="WALL">-6</constant>
+    <constant name="VOID">-7</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
