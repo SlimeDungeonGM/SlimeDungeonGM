@@ -198,6 +198,7 @@
       <object>objects\obj_sand_ph</object>
       <object>objects\obj_lava</object>
       <object>objects\obj_lava_ph</object>
+      <object>objects\obj_wall_ph</object>
       <object>objects\obj_detect_ph</object>
     </objects>
     <objects name="projectiles">
@@ -244,8 +245,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_start_menu</room>
     <room>rooms\rm_generate_dungeon</room>
+    <room>rooms\rm_start_menu</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_world_layer</room>
     <room>rooms\rm_dungeon_waves</room>
