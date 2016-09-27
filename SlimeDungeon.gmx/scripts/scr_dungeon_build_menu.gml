@@ -108,9 +108,18 @@ if(isbuild){
     
     //place object
     if(mouse_check_button_pressed(mb_left) == true and isboundbox = false ){
-        instance_create((mouse_x div sizegrid)*32, (mouse_y div sizegrid)*32, placeobject);
+        if(instance_exists(obj_level_generate_dungeon)){
+            //check if object exist on the grid
+            if(obj_level_generate_dungeon.grid_objects[# mouse_x div sizegrid,mouse_y div sizegrid] != noone){
+                var _obj = obj_level_generate_dungeon.grid_objects[# mouse_x div sizegrid,mouse_y div sizegrid];
+                with(_obj){
+                    instance_destroy();
+                }
+                //assign grid object
+                obj_level_generate_dungeon.grid_objects[# mouse_x div sizegrid, mouse_y div sizegrid] = instance_create((mouse_x div sizegrid)*32, (mouse_y div sizegrid)*32, placeobject);            
+            }
+        }
     }
-    
 }else{
     if(instance_exists(selectobject)){
         selectobject.visible = false;

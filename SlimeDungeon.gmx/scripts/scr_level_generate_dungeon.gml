@@ -10,6 +10,9 @@ var height = room_height div CELL_HEIGHT;
 //create the grid
 grid = ds_grid_create(width, height);
 
+//create object grid
+grid_objects = ds_grid_create(width, height);
+
 //fill the grid with the void
 ds_grid_set_region(grid, 0, 0, width - 1, height - 1, WALL);
 
@@ -38,10 +41,12 @@ grid[# cx-1, cy+1] = FLOOR;//bottom left
 for(var yy = 1;yy < height - 1;yy++){
     for(var xx = 1;xx < width - 1;xx++){
         if(grid[# xx,yy] == FLOOR){
-            instance_create(xx*CELL_WIDTH,yy*CELL_WIDTH,obj_dirt);
+            var _floor = instance_create(xx*CELL_WIDTH,yy*CELL_WIDTH,obj_dirt);
+            grid_objects[# xx, yy] = _floor;
         }
         if(grid[# xx,yy] == WALL){
-            instance_create(xx*CELL_WIDTH,yy*CELL_WIDTH,obj_wall);
+            var _wall = instance_create(xx*CELL_WIDTH,yy*CELL_WIDTH,obj_wall);
+            grid_objects[# xx, yy] = _wall;            
         }
     }
 }
