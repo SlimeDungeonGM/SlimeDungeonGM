@@ -44,16 +44,17 @@
         <sprite>sprites\spr_player_shadow</sprite>
         <sprite>sprites\spr_player_up</sprite>
       </sprites>
+      <sprites name="wisp">
+        <sprite>sprites\spr_wisp2</sprite>
+        <sprite>sprites\spr_wisp1</sprite>
+        <sprite>sprites\spr_wisp_particles</sprite>
+      </sprites>
       <sprite>sprites\basic_slime</sprite>
     </sprites>
     <sprites name="pickups">
       <sprite>sprites\spr_health</sprite>
       <sprite>sprites\spr_expr</sprite>
       <sprite>sprites\spr_key</sprite>
-    </sprites>
-    <sprites name="weapons">
-      <sprite>sprites\spr_axe</sprite>
-      <sprite>sprites\spr_sword</sprite>
     </sprites>
     <sprites name="tiles">
       <sprite>sprites\basic_floor_tile</sprite>
@@ -80,7 +81,18 @@
     </sprites>
     <sprites name="dungeons">
       <sprite>sprites\spr_spawner</sprite>
+      <sprite>sprites\spr_crystals</sprite>
+      <sprite>sprites\spr_glowing_crystals</sprite>
       <sprite>sprites\spr_dungeon_core</sprite>
+      <sprite>sprites\spr_disappearing_core</sprite>
+    </sprites>
+    <sprites name="equipment">
+      <sprites name="weapons">
+        <sprite>sprites\spr_axe</sprite>
+        <sprite>sprites\spr_sword</sprite>
+      </sprites>
+      <sprite>sprites\spr_float_items</sprite>
+      <sprite>sprites\spr_food</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
