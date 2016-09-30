@@ -3,7 +3,7 @@
   <spriteName>spr_box</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-11</depth>
+  <depth>-1</depth>
   <persistent>0</persistent>
   <parentName>obj_wall</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -57,7 +57,7 @@ objtype = PLACE;
             <string>//show_debug_message("selected");
 if(instance_exists(obj_build_menu)){
     if(obj_build_menu.isbuild){
-        obj_build_menu.pickid = object_index;
+        obj_build_menu.pickid = id;
     }
 }
 </string>

@@ -27,7 +27,10 @@
             <kind>1</kind>
             <string>//set variable
 event_inherited();
+name = "Dirt";
 objtype = FLOOR;
+isfixed = false;//center tile
+issnap = true;//tile
 </string>
           </argument>
         </arguments>

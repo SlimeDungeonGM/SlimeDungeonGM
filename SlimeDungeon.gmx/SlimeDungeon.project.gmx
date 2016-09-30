@@ -25,6 +25,7 @@
       <sprite>sprites\spr_slot</sprite>
       <sprite>sprites\spr_grid_on</sprite>
       <sprite>sprites\spr_grid_off</sprite>
+      <sprite>sprites\spr_clear_obj</sprite>
     </sprites>
     <sprites name="creatures">
       <sprites name="chinlin">
