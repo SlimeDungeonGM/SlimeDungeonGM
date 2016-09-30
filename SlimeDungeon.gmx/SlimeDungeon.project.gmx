@@ -23,6 +23,8 @@
       <sprite>sprites\spr_up</sprite>
       <sprite>sprites\spr_down</sprite>
       <sprite>sprites\spr_slot</sprite>
+      <sprite>sprites\spr_grid_on</sprite>
+      <sprite>sprites\spr_grid_off</sprite>
     </sprites>
     <sprites name="creatures">
       <sprites name="chinlin">
@@ -59,6 +61,7 @@
     <sprites name="tiles">
       <sprite>sprites\basic_floor_tile</sprite>
       <sprite>sprites\select_tile</sprite>
+      <sprite>sprites\spr_floor</sprite>
       <sprite>sprites\spr_tile_unclaimed</sprite>
       <sprite>sprites\spr_locked</sprite>
       <sprite>sprites\spr_rock</sprite>
@@ -198,13 +201,17 @@
       <object>objects\obj_dungeon_core</object>
     </objects>
     <objects name="buildings">
-      <object>objects\obj_wall</object>
       <object>objects\obj_spawner</object>
     </objects>
     <objects name="tiles">
       <object>objects\t_basic</object>
       <object>objects\t_unclaimed</object>
       <object>objects\t_locked</object>
+      <object>objects\obj_detect_ph</object>
+      <object>objects\obj_wall</object>
+      <object>objects\obj_wall_ph</object>
+      <object>objects\obj_floor</object>
+      <object>objects\obj_floor_ph</object>
       <object>objects\obj_rock</object>
       <object>objects\obj_rock_ph</object>
       <object>objects\obj_water</object>
@@ -215,8 +222,6 @@
       <object>objects\obj_sand_ph</object>
       <object>objects\obj_lava</object>
       <object>objects\obj_lava_ph</object>
-      <object>objects\obj_wall_ph</object>
-      <object>objects\obj_detect_ph</object>
     </objects>
     <objects name="projectiles">
       <object>objects\obj_projectile</object>
@@ -262,6 +267,7 @@
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>
+      <object>objects\obj_box_ph</object>
       <object>objects\obj_spike</object>
       <object>objects\obj_spike_ph</object>
     </objects>
@@ -282,12 +288,14 @@
       <room>rooms\f3</room>
     </rooms>
   </rooms>
-  <constants number="5">
+  <constants number="7">
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-5</constant>
     <constant name="WALL">-6</constant>
-    <constant name="VOID">-7</constant>
+    <constant name="TRAP">-7</constant>
+    <constant name="PLACE">-8</constant>
+    <constant name="VOID">-9</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

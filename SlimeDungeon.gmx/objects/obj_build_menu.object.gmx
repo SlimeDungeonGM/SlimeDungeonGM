@@ -28,13 +28,14 @@
             <string>/// initialize build
 isbuild = false;
 
-buildmenu[0] = "Tools";
+buildmenu[0] = "Blocks";
 buildmenu[1] = "Traps";
-buildmenu[2] = "Creatures";
-buildmenu[3] = "Blocks";
+buildmenu[2] = "Tools";
+buildmenu[3] = "Items";
+buildmenu[4] = "Creaures";
 
 isboundbox = false;
-issnap = false;
+issnap = true;
 sizegrid = 32;
 
 selectobject = noone;
@@ -44,37 +45,64 @@ placeobject = noone;
 list_count = 0;
 list_index = 0;
 list_max = 5;
+iscollide = false;
+
+istile = true;
+isobject = false;
+
+pickobject = noone;//pick object in the room
+pickid = -1;
+
+slotlist = noone;// ds_grid_create(0,4);
 
 //display name
-slotlist[0] = "Wall";
-slotlist[1] = "Dirt";
-slotlist[2] = "Rock";
-slotlist[3] = "Sand";
-slotlist[4] = "Water";
-slotlist[5] = "Lava";
+tileblock[0, 0] = "Wall";
+tileblock[0, 1] = spr_wall;
+tileblock[0, 2] = obj_wall_ph;
+tileblock[0, 3] = obj_wall;
 
-//display image
-imagesprite[0] = spr_wall;
-imagesprite[1] = spr_dirt;
-imagesprite[2] = spr_rock;
-imagesprite[3] = spr_sand;
-imagesprite[4] = spr_water;
-imagesprite[5] = spr_lava;
+tileblock[1, 0] = "Floor";
+tileblock[1, 1] = spr_floor;
+tileblock[1, 2] = obj_floor_ph;
+tileblock[1, 3] = obj_floor;
 
-// this deal with detect collisions
-placeholder[0] = obj_wall_ph;
-placeholder[1] = obj_dirt_ph;
-placeholder[2] = obj_rock_ph;
-placeholder[3] = obj_sand_ph;
-placeholder[4] = obj_water_ph;
-placeholder[5] = obj_lava_ph;
-// this place the world
-placeblock[0] = obj_wall;
-placeblock[1] = obj_dirt;
-placeblock[2] = obj_rock;
-placeblock[3] = obj_sand;
-placeblock[4] = obj_water;
-placeblock[5] = obj_lava;
+tileblock[2, 0] = "Dirt";
+tileblock[2, 1] = spr_dirt;
+tileblock[2, 2] = obj_dirt_ph;
+tileblock[2, 3] = obj_dirt;
+
+tileblock[3, 0] = "Rock";
+tileblock[3, 1] = spr_rock;
+tileblock[3, 2] = obj_rock_ph;
+tileblock[3, 3] = obj_rock;
+
+tileblock[4, 0] = "Sand";
+tileblock[4, 1] = spr_sand;
+tileblock[4, 2] = obj_sand_ph;
+tileblock[4, 3] = obj_sand;
+
+tileblock[5, 0] = "Water";
+tileblock[5, 1] = spr_water;
+tileblock[5, 2] = obj_water_ph;
+tileblock[5, 3] = obj_water;
+
+tileblock[6, 0] = "Lava";
+tileblock[6, 1] = spr_lava;
+tileblock[6, 2] = obj_lava_ph;
+tileblock[6, 3] = obj_lava;
+
+traps[0,0] = "Box";
+traps[0,1] = spr_box_icon;
+traps[0,2] = obj_box_ph;
+traps[0,3] = obj_box;
+
+traps[1,0] = "Spike";
+traps[1,1] = spr_spike;
+traps[1,2] = obj_spike_ph;
+traps[1,3] = obj_spike;
+
+slotlist = tileblock;
+
 </string>
           </argument>
         </arguments>
