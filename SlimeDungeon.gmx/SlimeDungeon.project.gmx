@@ -147,6 +147,8 @@
       <script>scripts\scr_itemdrop.gml</script>
       <script>scripts\scr_itemcheck.gml</script>
       <script>scripts\scr_scan.gml</script>
+      <script>scripts\scr_save_map.gml</script>
+      <script>scripts\scr_load_map.gml</script>
     </scripts>
     <scripts name="dungeon_menu_scripts">
       <script>scripts\scr_status_menu.gml</script>
@@ -173,6 +175,7 @@
     <scripts name="dungeon_build_scripts">
       <script>scripts\scr_dungeon_build_menu.gml</script>
       <script>scripts\scr_level_generate_dungeon.gml</script>
+      <script>scripts\scr_dungeon_object_clear.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -265,6 +268,7 @@
       <object>objects\obj_level_generate_dungeon</object>
       <object>objects\obj_gvar</object>
       <object>objects\obj_place</object>
+      <object>objects\obj_save_load</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>
