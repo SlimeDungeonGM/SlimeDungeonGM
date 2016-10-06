@@ -26,6 +26,7 @@
       <sprite>sprites\spr_grid_on</sprite>
       <sprite>sprites\spr_grid_off</sprite>
       <sprite>sprites\spr_clear_obj</sprite>
+      <sprite>sprites\spr_target</sprite>
     </sprites>
     <sprites name="creatures">
       <sprites name="chinlin">
@@ -128,6 +129,7 @@
       <script>scripts\scr_bot_stall_state.gml</script>
       <script>scripts\scr_bot_wander_state.gml</script>
       <script>scripts\scr_bot_chase_state.gml</script>
+      <script>scripts\scr_bot_follow_state.gml</script>
       <scripts name="enemy helper scripts">
         <script>scripts\scr_move_axis.gml</script>
         <script>scripts\scr_check_for_player.gml</script>
@@ -176,6 +178,7 @@
       <script>scripts\scr_dungeon_build_menu.gml</script>
       <script>scripts\scr_level_generate_dungeon.gml</script>
       <script>scripts\scr_dungeon_object_clear.gml</script>
+      <script>scripts\scr_get_path_to_follow.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -202,6 +205,7 @@
       <object>objects\obj_player_stats</object>
       <object>objects\obj_dungeon_stats</object>
       <object>objects\obj_enemy_chinlin</object>
+      <object>objects\obj_enemy_path</object>
       <object>objects\obj_dungeon_core</object>
     </objects>
     <objects name="buildings">
@@ -240,6 +244,8 @@
       <object>objects\obj_dungeon_menu</object>
       <object>objects\obj_build_menu</object>
       <object>objects\obj_start_menu</object>
+      <object>objects\obj_command_units</object>
+      <object>objects\obj_target</object>
     </objects>
     <objects name="animation">
       <object>objects\obj_weapon_animation</object>

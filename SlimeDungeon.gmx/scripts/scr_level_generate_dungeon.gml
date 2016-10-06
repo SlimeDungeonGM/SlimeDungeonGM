@@ -15,6 +15,9 @@ if(global.level_generate){
     //create the grid FLOOR,WALL,VOID
     grid = ds_grid_create(width, height);
     
+    //create pathfinding grid
+    grid_path = mp_grid_create(0,0,width,height,CELL_WIDTH,CELL_HEIGHT);
+    
     //create object grid instance object
     grid_tileobjects = ds_grid_create(width, height);
     

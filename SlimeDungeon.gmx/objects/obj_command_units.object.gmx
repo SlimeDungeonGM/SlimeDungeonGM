@@ -25,26 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///initialize the lifeform
-phy_fixed_rotation = true;
-hp = 3;
+            <string>// initialize var
+creatures = ds_list_create();
 
-target_x = 0;
-target_y = 0;
-follow_distance = 4;
-
-//params
-name = "";
-bselect = false;
-teamid = -1;
-owner = "";
-creator = "";
+selectunits = ds_list_create();
+action = "IDLE";
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="6" enumb="57">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -61,20 +52,30 @@ creator = "";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// control depth
-depth = -y;
-
-if(hp &lt;= 0){
-    instance_destroy();
+            <string>/// move command?
+if(instance_exists(obj_level_generate_dungeon)){
+    //show_debug_message(string( ds_list_size(selectunits) ));
+    //show_debug_message("x:"+ string(mouse_x) +"y:" +string(mouse_y));
+    for(var i = 0; i &lt; ds_list_size(selectunits);i++){
+        var val = ds_list_find_value(selectunits,i);
+        with(val){
+            //show_debug_message("unit?" +  string(object_get_name(object_index)));
+            target.tx = mouse_x;
+            target.ty = mouse_y;
+            target.bfollow = true;
+            state = scr_bot_follow_state;
+            target.alarm[0] = 1;
+            //target.alarm[0] = room_speed;
+            //alarm[2] = room_speed;
+        }
+    }
 }
-
-
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_wall">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -91,30 +92,11 @@ if(hp &lt;= 0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// collide
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_lifeform_parent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// collide
+            <string>/// draw units
+
+draw_text(view_wport[0]-128,16,"COMMANDS: ");
+draw_text(view_wport[0]-128,32,"Select Unit: " +  string(ds_list_size(selectunits)));
+draw_text(view_wport[0]-128,48,"Action: " +  action);
 </string>
           </argument>
         </arguments>
