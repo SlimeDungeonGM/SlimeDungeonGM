@@ -1,5 +1,7 @@
 ///scr_level_generate_dungeon()
 
+bdraw_pathmap = false; 
+
 /// initialize dungeon create
 global.level_generate = true;
 //check level generate dungeon
@@ -48,7 +50,7 @@ if(global.level_generate){
     
     //create the player
     //instance_create((cx*CELL_WIDTH)+(CELL_WIDTH/2),(cy*CELL_HEIGHT)+(CELL_HEIGHT/2), obj_dungeon_core);
-    instance_create((cx*CELL_WIDTH),(cy*CELL_HEIGHT), obj_dungeon_core);
+    //instance_create((cx*CELL_WIDTH),(cy*CELL_HEIGHT), obj_dungeon_core);
     
     //floor
     grid[# cx, cy] = FLOOR; //center 
@@ -67,6 +69,9 @@ if(global.level_generate){
             if(grid[# xx,yy] == FLOOR){
                 var _floor = instance_create(xx*CELL_WIDTH,yy*CELL_WIDTH, obj_floor);
                 grid_tileobjects[# xx, yy] = _floor;
+            }else{
+                //wall or no go path
+                mp_grid_add_cell(grid_path, xx, yy);
             }
             if(grid[# xx,yy] == WALL){
                 var _wall = instance_create(xx*CELL_WIDTH,yy*CELL_WIDTH, obj_wall);
@@ -74,5 +79,6 @@ if(global.level_generate){
             }
         }
     }
+    //show_debug_message(string(grid));
 }
 

@@ -41,6 +41,9 @@ target = instance_create(x,y,obj_target);
 movement = IDLE;
 face = RIGHT;
 
+point = 0;
+done = 0;
+
 //create the sprite array
 sprite[UP, MOVE] = spr_chinlin_run_up;
 sprite[DOWN, MOVE] = spr_chinlin_run_down;

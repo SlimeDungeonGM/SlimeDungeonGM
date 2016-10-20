@@ -52,7 +52,7 @@ bfollow = false;
           <argument>
             <kind>1</kind>
             <string>scr_get_path_to_follow();
-alarm[0] = room_speed;
+//alarm[0] = room_speed;
 </string>
           </argument>
         </arguments>
