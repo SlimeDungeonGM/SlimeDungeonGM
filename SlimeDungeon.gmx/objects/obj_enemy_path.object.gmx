@@ -36,13 +36,13 @@ sight = 64;
 xaxis = 0;
 yaxis = 0;
 
-target = instance_create(x,y,obj_target);
+//target = instance_create(x,y,obj_target);
 
 movement = IDLE;
 face = RIGHT;
 
-point = 0;
-done = 0;
+//point = 0;
+//done = 0;
 
 //create the sprite array
 sprite[UP, MOVE] = spr_chinlin_run_up;
