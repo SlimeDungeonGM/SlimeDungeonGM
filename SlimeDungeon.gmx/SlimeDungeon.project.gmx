@@ -287,9 +287,9 @@
   <rooms name="rooms">
     <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_start_menu</room>
+    <room>rooms\rm_dungeon_waves</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_world_layer</room>
-    <room>rooms\rm_dungeon_waves</room>
     <room>rooms\rm_writer</room>
     <room>rooms\rm_help</room>
     <room>rooms\rm_pause</room>

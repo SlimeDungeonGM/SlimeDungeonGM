@@ -69,6 +69,11 @@ right_click2_y = 0;
             <string>/// key?
 
 if(global._display_player != CONTROL_DUNGEON){exit;}
+if(instance_exists(obj_view)){
+    if(!obj_view.bcameracontrol){
+        exit;
+    }
+}
 
 if(mouse_check_button_pressed(mb_left)){
     if(ispress_left == false){
@@ -159,6 +164,11 @@ if(mouse_check_button_released(mb_left)){
             <string>///  move command or attack?
 //make sure it dungeon control
 if(global._display_player != CONTROL_DUNGEON){exit;}
+if(instance_exists(obj_view)){
+    if(!obj_view.bcameracontrol){
+        exit;
+    }
+}
 //show_debug_message("move?");
 // move command?
 if(instance_exists(obj_level_generate_dungeon)){
@@ -226,6 +236,12 @@ draw_text(view_wport[0]-128,48,"Action: " +  action);
           <argument>
             <kind>1</kind>
             <string>//draw select box
+if(global._display_player != CONTROL_DUNGEON){exit;}
+if(instance_exists(obj_view)){
+    if(!obj_view.bcameracontrol){
+        exit;
+    }
+}
 if(ispress_left){
     selectbox2_x = mouse_x;
     selectbox2_y = mouse_y;
