@@ -28,6 +28,11 @@
             <string>/// initialize
 event_inherited();
 bsingle_select = true;
+
+hb_offset_x = 0;
+hb_offset_y = 0;
+hb_width = 32;
+hb_height = 4;
 </string>
           </argument>
         </arguments>
