@@ -31,6 +31,7 @@ name = "Water";
 objtype = FLOOR;
 isfixed = false;//center tile
 issnap = true;//tile
+element = WATER_ELEMENT;
 </string>
           </argument>
         </arguments>

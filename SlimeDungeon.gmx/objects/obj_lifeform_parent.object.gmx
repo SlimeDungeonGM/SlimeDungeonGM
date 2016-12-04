@@ -48,12 +48,22 @@ path = path_add();
 point = 0;
 path_done = 0;
 
-//params
+//paramse
 name = "";
 bsingle_select = false;
 teamid = -1;
 owner = "";
 creator = "";
+var inst;
+inst = instance_place(x, y, obj_place);
+if inst != noone {
+    with inst {
+        other.element = element;
+        other.image_blend = ds_map_find_value(global.element_colour, element);
+    }
+} else {
+    element = NO_ELEMENT;
+}
 </string>
           </argument>
         </arguments>
