@@ -217,7 +217,15 @@
     <scripts name="quests">
       <script>scripts\scr_changeQuest.gml</script>
     </scripts>
-    <script>scripts\scr_setup_elements.gml</script>
+    <scripts name="Enums">
+      <script>scripts\scr_elements_enum.gml</script>
+      <script>scripts\scr_factions_enum.gml</script>
+      <script>scripts\scr_damage_types_enum.gml</script>
+    </scripts>
+    <scripts name="damage">
+      <script>scripts\scr_setup_elements.gml</script>
+      <script>scripts\scr_calculate_damage.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -342,7 +350,7 @@
       <room>rooms\f3</room>
     </rooms>
   </rooms>
-  <constants number="12">
+  <constants number="7">
     <constant name="CELL_WIDTH">32</constant>
     <constant name="CELL_HEIGHT">32</constant>
     <constant name="FLOOR">-5</constant>
@@ -350,11 +358,6 @@
     <constant name="TRAP">-7</constant>
     <constant name="PLACE">-8</constant>
     <constant name="VOID">-9</constant>
-    <constant name="NO_ELEMENT">"no element"</constant>
-    <constant name="FIRE_ELEMENT">"fire"</constant>
-    <constant name="WATER_ELEMENT">"water"</constant>
-    <constant name="AIR_ELEMENT">"air"</constant>
-    <constant name="EARTH_ELEMENT">"earth"</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

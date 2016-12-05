@@ -55,14 +55,13 @@ teamid = -1;
 owner = "";
 creator = "";
 var inst;
+faction = factions.neutral;
 inst = instance_place(x, y, obj_place);
 if inst != noone {
-    with inst {
-        other.element = element;
-        other.image_blend = ds_map_find_value(global.element_colour, element);
-    }
+    element = inst.element;
+    image_blend = ds_map_find_value(global.element_colour, element);
 } else {
-    element = NO_ELEMENT;
+    element = elements.none;
 }
 </string>
           </argument>

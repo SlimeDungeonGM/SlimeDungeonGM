@@ -31,7 +31,7 @@ name = "Sand";
 objtype = FLOOR;
 isfixed = false;//center tile
 issnap = true;//tile
-element = EARTH_ELEMENT;
+element = elements.earth;
 </string>
           </argument>
         </arguments>

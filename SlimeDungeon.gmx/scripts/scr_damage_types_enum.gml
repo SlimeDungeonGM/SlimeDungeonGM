@@ -1,0 +1,4 @@
+enum damageTypes {
+    physical,
+    magical
+}

@@ -20,40 +20,41 @@ i5 = argument[4];
 
 switch(argument[5])
 {
-    case(1) //one item crafting
-           if(i1 != null) // checker
-           {
-                
-           }
-           else result = 'null';
-           break;
-    case(2) //two item crafting
-           if(i1 != null && i2 != null) // checker
-           {
-                
-           }  
-           else result = 'null';
-           break;
-    case(3) //three item crafting
-            if(i1 != null && i2 != null && i3 != null) // checker
-           {
-                
-           }  
-           else result = 'null';
-           break;
-    case(4) //one item crafting
-           if(i1 != null && i2 != null && i3 != null && i4 != null) // checker
-           {
-                
-           }
-           else result = 'null';
-           break;
-    case(5) //two item crafting
-           if(i1 != null && i2 != null && i3 != null && i4 != null && i5 != null) // checker
-           {
-                
-           }  
-           else result = 'null';
-           break;
-    default; break;
+    case(1): //one item crafting
+        if(i1 != null) // checker
+        {
+             
+        }
+        else result = 'null';
+        break;
+    case(2): //two item crafting
+        if(i1 != null && i2 != null) // checker
+        {
+             
+        }  
+        else result = 'null';
+        break;
+    case(3): //three item crafting
+         if(i1 != null && i2 != null && i3 != null) // checker
+        {
+             
+        }  
+        else result = 'null';
+        break;
+    case(4): //one item crafting
+        if(i1 != null && i2 != null && i3 != null && i4 != null) // checker
+        {
+             
+        }
+        else result = 'null';
+        break;
+    case(5): //two item crafting
+        if(i1 != null && i2 != null && i3 != null && i4 != null && i5 != null) // checker
+        {
+             
+        }  
+        else result = 'null';
+        break;
+    default:
+        break;
 }

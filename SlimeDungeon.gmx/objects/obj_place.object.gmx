@@ -31,7 +31,7 @@ objtype = VOID;//FLOOR, WALL, TRAP, VOID
 isfixed = false;//object off set placement center the cell
 issnap = true;//tile
 iscollision = false;//check place collision so it not place there.
-element = NO_ELEMENT;
+element = elements.none;
 dp_cost = 0;
 dp_sell = 0;
 </string>
