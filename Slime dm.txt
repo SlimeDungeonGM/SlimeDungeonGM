@@ -1,0 +1,218 @@
+Sime Dunguen
+
+Floors: 10-15
+
+Management System
+
+The player doesnt have direct control of managing each of his floors, but can direct his minions to build certain things or clear tiles.
+
+
+
+Minions
+
+Each of these minions has its pro and cons, growth rates, traits/titles and personality. Most Monsters have a gender(Male, Female) which could influence the traits and titles of that monster.
+
+Male
+
+Father - (If children alive) Gain X Leadership per child.  
+Strong - +5 strength
+
+Female
+
+Mother -  (If children alive) Gain X% movement per child.
+Strong Will  -  5 Willpower.
+
+
+Slimes
+
+	Pro
+
+	Cheap Cost
+	Medium Hp
+	High Growth
+	Immune to mental debuff
+
+	Cons
+	
+	low willpower
+	low intellegence
+	No armor
+	
+	
+	Growth Rates
+	
+	Slimes grow when the Slime core increases Rank or by sythesis. Slime dont have a level, only forms. Genderless.
+
+	Traits/Titles
+	
+	Fearless  - Cannot be inflicted by the debuff of "Fear". 
+	Dumb -  -5 intellgenice, "Lower intellegnce than a rock"
+	Eater - reduce all damage by 10% and stores that type of damage. (5 spots)
+
+	Personality
+	
+	Slime moves towards other enitites besides themselves. They fight till death unless told to retreat.
+
+Goblins
+
+
+	Pro
+	
+	medium armor
+	health regen
+
+	Cons
+	
+	Weak against mental and pain debuff
+	low intellegence
+	Stubborn
+	Xenophile
+	
+	Growth Rates
+
+	The growth rates of goblins are fast but the rank system is based on a pack system. Needs "Food" resource and balanced amoutn of equal 	genders.
+
+	Traits/Titles
+	
+	Adaptive - Similar attack, lower the amount of damage per that attack type/nature.
+	Leadership - +5 willpower, give "inspire" buff that increases, strength by 10% of the units strength.	
+	Wild - +3 dodge, takes 50% lower to "listen" to an DM commands.
+
+	Personality
+	
+	
+	
+
+Undead
+
+
+	Pro
+	
+	Immune to mental and pain debuffs
+	
+	
+	Cons
+
+	No intellegence
+
+	Growth Rates
+	The growth rate is based on the time spent "alive", longer the amount the stronger they can become. Can create more by inflecting 		"Wounded" prey.
+
+	Traits/Titles
+	
+	Decay  - Reduce total hp by 20%, increase defense by 10%.
+	Horror - Can cause "fear" debuff on similar species.
+	Reaminamation  - If not destroied, then can respawn at the lowest tier of that version of undead.  
+
+	Personality
+
+Beast
+
+	Pro
+	
+	High Mobility
+	Medium Strength
+
+	Cons
+	
+	Stubborn
+	Xenophile
+	
+	Growth Rates
+	
+	The growth rate is determined by the strength of the leader.
+
+	Traits/Titles
+	
+	Tracker  - Units hit, my recieve "Marked", increase damage by 10%.
+	Wild - +3 dodge, takes 50% lower to "listen" to an DM commands.
+	Alpha - when 3 or more of the same unit, then increase strength by 10% and mobilty by 20%
+
+	Personality
+	They fight with other species, form in pack formations. Rarely by themselves in that case they are either strong or injured.
+	
+Sprit
+
+	Pro
+
+	High Movement
+	
+	Cons
+
+	Low attack
+	
+	Growth Rates
+	
+	The growth rate is based on the time spent "alive", longer the amount the stronger they can become.  Can get stronger by "Pocession" of other units. Genderless
+	Traits/Titles
+	
+	Spectral - Immune to physical damage
+	Shimmer - Teleports to a near location.
+	See through - Cannot equip items or carry items.
+
+	Personality
+	They are passive monsters that only attack when provoked. They wander around "dead" units.
+
+
+Human
+
+	Pro
+
+	Cons
+	
+	Growth Rates
+
+	Traits/Titles
+
+	Personality
+
+Repitles (Dragon/Serpents)
+
+	Pro
+
+	Cons
+	
+	Growth Rates
+
+	Traits/Titles
+
+	Personality
+
+Golem
+
+	Pro
+
+	Cons
+	
+	Growth Rates
+
+	Traits/Titles
+
+	Personality
+
+Altered(Demons/Angels)
+	Pro
+
+	Cons
+	
+	Growth Rates
+
+	Traits/Titles
+
+	Personality
+
+Hybrid(Chimares)
+
+	Pro
+
+	Mult Attack patterns
+	Cons
+	
+	Sickness
+	Growth Rates
+	
+	No growth rate as they are creation
+
+	Traits/Titles
+
+	Personality
