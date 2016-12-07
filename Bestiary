@@ -4,7 +4,9 @@ Floors: 10-15
 
 Management System
 
-The player doesnt have direct control of managing each of his floors, but can direct his minions to build certain things or clear tiles.
+The player doesnt have direct control of managing each of his floors, but can direct his minions to build certain things or clear tiles. The player or Dungeon Master order the units the to tasks not completely controlling them, they can refuse or ignore your orders and do soemthing else instead.
+
+Units have a list of current tasks at hand: Idle, chatting, building, Caring or Fighting. Some the units have able to ignore your orders.
 
 
 
@@ -106,6 +108,7 @@ Undead
 
 	Personality
 
+	No drive besides the need to eat the living. *NOTE* they can attack friendly units if there are no hostile units nearby. 
 Beast
 
 	Pro
@@ -158,24 +161,46 @@ Human
 
 	Pro
 
+	Medium to High intellegence
+	Adaptive
+	Learning
+	
 	Cons
+
+	Low growth rate
+	Low regen
+	Weak against mental attacks
 	
 	Growth Rates
+	
+	The growth rates are slow because they only mate withother with a certain level of compassion. Humans use classes to evolve instead of actually changing. Gender: Male and Female. 
 
 	Traits/Titles
+	
+	Adventure I [  ]   - Can adopt the trait/title of an unit slain.
+	Monster Hunter  - Deal 25% more damage to monsters.
+	Whorship I [ ] -  After praying to that idol, Emprowered with 10% all stats.
+	
 
 	Personality
+	Humans think for themselves, thus orders are harder to issue. Unless you break there will or become their Idol/God.
 
 Repitles (Dragon/Serpents)
 
 	Pro
+	Elemental based
+	High Defense
+	High intellegence
 
 	Cons
 	
+	Low movement speed	
 	Growth Rates
 
 	Traits/Titles
-
+	
+	Uncrowned King - Willpower cannot drop below 25% of total Willpower.
+	
 	Personality
 
 Golem
