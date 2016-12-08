@@ -29,6 +29,7 @@
 if(instance_number(obj_player_stats) &gt; 1) instance_destroy();
 
 bdisplay_healthbar = true;
+bdisplay_hungerbar = true;
 hb_offset_x = -16;
 hb_offset_y = -16;
 hb_width = 32;

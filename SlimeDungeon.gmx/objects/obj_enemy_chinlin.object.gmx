@@ -33,6 +33,7 @@ hb_offset_x = -16;
 hb_offset_y = -16;
 hb_width = 32;
 hb_height = 4;
+monsterTier = 2;
 
 image_speed = 0.2;
 spd = 1.5;
@@ -41,6 +42,7 @@ alarm[0] =  room_speed * irandom_range(2,5);
 sight = 64;
 xaxis = 0;
 yaxis = 0;
+death_sprite = spr_chinlin_stand_up;
 
 
 
@@ -176,7 +178,8 @@ if (scr_chance(0.5)){
             <kind>1</kind>
             <string>/// run current state
 event_inherited();
-script_execute(state);
+//script_execute(state);
+scr_base_state_control();
 //sprite move or attack animation sprite
 sprite_index = sprite[face, movement];
 
@@ -204,7 +207,7 @@ sprite_index = sprite[face, movement];
           <argument>
             <kind>1</kind>
             <string>/// damage the player
-if(state != scr_bot_stall_state){
+/*if(state != scr_bot_stall_state){
     var dir = point_direction(other.x, other.y, x, y);
     var xdir = lengthdir_x(1, dir);
     var ydir = lengthdir_y(1, dir);
@@ -214,7 +217,7 @@ if(state != scr_bot_stall_state){
     damage.knockback = 1;
     state = scr_bot_stall_state;
     alarm[1] = room_speed;
-}
+}*/
 </string>
           </argument>
         </arguments>

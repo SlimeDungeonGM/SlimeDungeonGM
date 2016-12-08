@@ -159,6 +159,24 @@
         <script>scripts\scr_check_for_player.gml</script>
         <script>scripts\scr_bot_chose_next_state.gml</script>
       </scripts>
+      <scripts name="state search">
+        <script>scripts\scr_base_search.gml</script>
+      </scripts>
+      <scripts name="state hungry">
+        <script>scripts\scr_base_hunger.gml</script>
+      </scripts>
+      <scripts name="state starving">
+        <script>scripts\scr_base_starving.gml</script>
+      </scripts>
+      <scripts name="state wander">
+        <script>scripts\scr_base_wander.gml</script>
+      </scripts>
+      <scripts name="state control">
+        <script>scripts\scr_base_state_control.gml</script>
+      </scripts>
+      <scripts name="state chase">
+        <script>scripts\scr_base_chase.gml</script>
+      </scripts>
     </scripts>
     <scripts name="player state">
       <script>scripts\scr_move_state.gml</script>
@@ -257,6 +275,7 @@
       <object>objects\parNPC</object>
       <object>objects\objNPCBob</object>
       <object>objects\objGenerator</object>
+      <object>objects\obj_corpse_parent</object>
     </objects>
     <objects name="buildings">
       <object>objects\obj_spawner</object>

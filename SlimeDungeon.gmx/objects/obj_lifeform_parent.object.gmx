@@ -29,9 +29,11 @@
 phy_fixed_rotation = true;
 hp = 3;
 maxhp = 3;
+monsterTier = 1;
 
 //health bar
 bdisplay_healthbar = true;
+bdisplay_hungerbar = true;
 hb_offset_x = 0;
 hb_offset_y = 0;
 hb_width = 32;
@@ -39,8 +41,8 @@ hb_height = 4;
 
 //target
 target = noone;
-target_x = 0;
-target_y = 0;
+target_x = -1;
+target_y = -1;
 follow_distance = 4;
 
 //path
@@ -54,8 +56,14 @@ bsingle_select = false;
 teamid = -1;
 owner = "";
 creator = "";
+maxHunger = 100;
+hunger = maxHunger*0.3;
+hungerDrop = maxHunger / 180 / room_speed;
+warningHunger = 0.6;
+criticalHunger = 0.3;
 var inst;
 faction = factions.neutral;
+baseFaction = factions.neutral;
 inst = instance_place(x, y, obj_place);
 if inst != noone {
     element = inst.element;
@@ -94,6 +102,29 @@ if(path_exists(path)){
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// eating alarm, dont overload
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -114,11 +145,48 @@ if(path_exists(path)){
             <string>/// control depth
 depth = -y;
 
+hunger = max(0, hunger - hungerDrop);
+if ( hunger &lt;= 0) {
+    hp = max(0, hp - (maxhp/10.0/room_speed));
+}
+
 if(hp &lt;= 0){
+    var corpse = instance_create(x,y,obj_corpse_parent);
+    corpse.food = maxHunger/2;
+    corpse.sprite_index = death_sprite;
     instance_destroy();
 }
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_corpse_parent">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (alarm[11] &lt;= 0)
+{
+    var eatAmount = max(0,min(maxHunger-hunger,other.food,maxHunger/10));
+    other.food -= eatAmount;
+    hunger += eatAmount;
+    alarm[11] = 1*room_speed;
+}
 </string>
           </argument>
         </arguments>
@@ -165,6 +233,19 @@ if(hp &lt;= 0){
           <argument>
             <kind>1</kind>
             <string>/// collide
+if(faction != other.faction 
+    || (faction == factions.hunger &amp;&amp; other.faction == factions.hunger)
+    || (monsterTier &gt; other.monsterTier &amp;&amp; hunger &lt;= maxHunger*warningHunger)){
+    var dir = point_direction(other.x, other.y, x, y);
+    var xdir = lengthdir_x(1, dir);
+    var ydir = lengthdir_y(1, dir);
+    
+    var damage = instance_create(other.x+xdir, other.y+ydir, obj_damage);
+    damage.creator = id;
+    damage.knockback = 1;
+    state = scr_bot_stall_state;
+    alarm[1] = room_speed;
+}
 </string>
           </argument>
         </arguments>
@@ -200,6 +281,19 @@ if(bdisplay_healthbar){
     //show_debug_message(max(bar_percent,1));    
     //show_debug_message(percent_width);
     draw_rectangle(x+hb_offset_x,y+hb_offset_y,x + percent_width + hb_offset_x,y +  hb_height + hb_offset_y,false);
+}
+if(bdisplay_hungerbar){
+    draw_set_colour(c_gray);
+    draw_rectangle(x+hb_offset_x,y+hb_offset_y+hb_height,x+hb_width+hb_offset_x,y+hb_height+(0.25*hb_height)+hb_offset_y,false);
+    draw_set_colour(c_orange);
+    
+    var bar_percent = hunger / maxHunger ;
+    
+    //show_debug_message(bar_percent);
+    var percent_width = hb_width * clamp(bar_percent,0,1);
+    //show_debug_message(max(bar_percent,1));    
+    //show_debug_message(percent_width);
+    draw_rectangle(x+hb_offset_x,y+hb_offset_y+hb_height,x+percent_width+hb_offset_x,y+hb_height+(0.25*hb_height)+hb_offset_y,false);
 }
 
 draw_self();

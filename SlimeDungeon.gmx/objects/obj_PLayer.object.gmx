@@ -51,6 +51,7 @@ state = scr_move_state;
 face = RIGHT;
 movement = MOVE;
 weapon_sprite = spr_sword;
+death_sprite = spr_player_up
 
 //create the sprite array
 sprite[UP, MOVE] = spr_player_up;
