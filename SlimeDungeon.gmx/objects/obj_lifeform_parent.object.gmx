@@ -30,6 +30,7 @@ phy_fixed_rotation = true;
 hp = 3;
 maxhp = 3;
 monsterTier = 1;
+name = "testName";
 
 //health bar
 bdisplay_healthbar = true;
@@ -41,6 +42,8 @@ hb_height = 4;
 
 //target
 target = noone;
+commandTarget = noone;
+command = commands.none;
 target_x = -1;
 target_y = -1;
 follow_distance = 4;
@@ -51,20 +54,23 @@ point = 0;
 path_done = 0;
 
 //paramse
-name = "";
+name = "testname";
 bsingle_select = false;
 teamid = -1;
 owner = "";
 creator = "";
 maxHunger = 100;
-hunger = maxHunger*0.3;
+hunger = maxHunger;
 hungerDrop = maxHunger / 180 / room_speed;
+mildHunger = 0.9;
 warningHunger = 0.6;
 criticalHunger = 0.3;
 var inst;
 faction = factions.neutral;
 baseFaction = factions.neutral;
-inst = instance_place(x, y, obj_place);
+mineStrength = 10;
+
+inst = instance_position(x, y, obj_place);
 if inst != noone {
     element = inst.element;
     image_blend = ds_map_find_value(global.element_colour, element);
@@ -125,6 +131,29 @@ if(path_exists(path)){
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// attack cooldown dont override
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -156,37 +185,16 @@ if(hp &lt;= 0){
     corpse.sprite_index = death_sprite;
     instance_destroy();
 }
-
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_corpse_parent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (alarm[11] &lt;= 0)
+var corpse = collision_point(x,y,obj_corpse_parent,false,true);
+if (corpse &amp;&amp; alarm[11] &lt;= 0)
 {
-    var eatAmount = max(0,min(maxHunger-hunger,other.food,maxHunger/10));
-    other.food -= eatAmount;
+    var eatAmount = max(0,min(maxHunger-hunger,corpse.food,maxHunger/10));
+    corpse.food -= eatAmount;
     hunger += eatAmount;
     alarm[11] = 1*room_speed;
 }
+
+
 </string>
           </argument>
         </arguments>
@@ -210,41 +218,10 @@ if(hp &lt;= 0){
           <argument>
             <kind>1</kind>
             <string>/// collide
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_lifeform_parent">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// collide
-if(faction != other.faction 
-    || (faction == factions.hunger &amp;&amp; other.faction == factions.hunger)
-    || (monsterTier &gt; other.monsterTier &amp;&amp; hunger &lt;= maxHunger*warningHunger)){
-    var dir = point_direction(other.x, other.y, x, y);
-    var xdir = lengthdir_x(1, dir);
-    var ydir = lengthdir_y(1, dir);
-    
-    var damage = instance_create(other.x+xdir, other.y+ydir, obj_damage);
-    damage.creator = id;
-    damage.knockback = 1;
-    state = scr_bot_stall_state;
-    alarm[1] = room_speed;
+if (command == commands.mine &amp;&amp; commandTarget == other &amp;&amp; alarm[11] &lt;= 0)
+{
+    other.removalWork -= mineStrength;
+    alarm[11] = room_speed;
 }
 </string>
           </argument>

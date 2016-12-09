@@ -7,6 +7,14 @@ if (target != noone)
         faction = baseFaction;
     }
 }
+if (target == noone)
+{
+    scr_base_command();
+}
+if (target == noone && hunger <= maxHunger*mildHunger)
+{
+    scr_base_food_search();
+}
 if (target == noone && hunger <= maxHunger*warningHunger)
 {
     scr_base_hunger();

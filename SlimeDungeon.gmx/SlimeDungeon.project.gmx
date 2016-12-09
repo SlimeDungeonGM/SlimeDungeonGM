@@ -147,6 +147,7 @@
       <script>scripts\scr_swap_weapon.gml</script>
       <script>scripts\animation_hit_frame.gml</script>
       <script>scripts\scr_inv_create.gml</script>
+      <script>scripts\collision_point_list.gml</script>
     </scripts>
     <scripts name="bot state">
       <script>scripts\scr_bot_idle_state.gml</script>
@@ -176,6 +177,12 @@
       </scripts>
       <scripts name="state chase">
         <script>scripts\scr_base_chase.gml</script>
+      </scripts>
+      <scripts name="state food search">
+        <script>scripts\scr_base_food_search.gml</script>
+      </scripts>
+      <scripts name="state command">
+        <script>scripts\scr_base_command.gml</script>
       </scripts>
     </scripts>
     <scripts name="player state">
@@ -239,6 +246,7 @@
       <script>scripts\scr_elements_enum.gml</script>
       <script>scripts\scr_factions_enum.gml</script>
       <script>scripts\scr_damage_types_enum.gml</script>
+      <script>scripts\scr_commands_enum.gml</script>
     </scripts>
     <scripts name="damage">
       <script>scripts\scr_setup_elements.gml</script>
@@ -265,17 +273,24 @@
       <object>objects\obj_text</object>
     </objects>
     <objects name="creatures">
-      <object>objects\obj_player</object>
       <object>objects\obj_lifeform_parent</object>
-      <object>objects\obj_player_stats</object>
       <object>objects\obj_dungeon_stats</object>
-      <object>objects\obj_enemy_chinlin</object>
-      <object>objects\obj_enemy_path</object>
       <object>objects\obj_dungeon_core</object>
-      <object>objects\parNPC</object>
-      <object>objects\objNPCBob</object>
+      <object>objects\obj_monster_parent</object>
       <object>objects\objGenerator</object>
       <object>objects\obj_corpse_parent</object>
+      <objects name="player">
+        <object>objects\obj_player</object>
+        <object>objects\obj_player_stats</object>
+      </objects>
+      <objects name="monster">
+        <object>objects\obj_enemy_chinlin</object>
+        <object>objects\obj_enemy_path</object>
+      </objects>
+      <objects name="npc">
+        <object>objects\objNPCBob</object>
+        <object>objects\parNPC</object>
+      </objects>
     </objects>
     <objects name="buildings">
       <object>objects\obj_spawner</object>
@@ -345,6 +360,7 @@
       <object>objects\obj_place</object>
       <object>objects\obj_save_load</object>
       <object>objects\objControl</object>
+      <object>objects\obj_selected_monster</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>

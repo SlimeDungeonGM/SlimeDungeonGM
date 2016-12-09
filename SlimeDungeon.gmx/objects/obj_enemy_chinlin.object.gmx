@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_lifeform_parent</parentName>
+  <parentName>obj_monster_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -34,6 +34,7 @@ hb_offset_y = -16;
 hb_width = 32;
 hb_height = 4;
 monsterTier = 2;
+name = "chinlin";
 
 image_speed = 0.2;
 spd = 1.5;
@@ -43,7 +44,9 @@ sight = 64;
 xaxis = 0;
 yaxis = 0;
 death_sprite = spr_chinlin_stand_up;
-
+faction = factions.dungeon;
+baseFaction = factions.dungeon;
+show_debug_message("chilin: "+name);
 
 
 movement = IDLE;
@@ -184,40 +187,6 @@ scr_base_state_control();
 sprite_index = sprite[face, movement];
 
 
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="4" ename="obj_player">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>/// damage the player
-/*if(state != scr_bot_stall_state){
-    var dir = point_direction(other.x, other.y, x, y);
-    var xdir = lengthdir_x(1, dir);
-    var ydir = lengthdir_y(1, dir);
-    
-    var damage = instance_create(other.x+xdir, other.y+ydir, obj_damage);
-    damage.creator = id;
-    damage.knockback = 1;
-    state = scr_bot_stall_state;
-    alarm[1] = room_speed;
-}*/
 </string>
           </argument>
         </arguments>

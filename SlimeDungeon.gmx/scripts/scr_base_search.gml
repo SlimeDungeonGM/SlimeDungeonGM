@@ -4,7 +4,7 @@ with (obj_lifeform_parent)
 {
     if (other.id != self.id)
     {
-        if (faction != other.faction || (faction == factions.hunger && other.faction == factions.hunger))
+        if ((faction == factions.hunger && other.object_index != obj_player) && (faction != other.faction || (faction == factions.hunger && other.faction == factions.hunger)))
         {
             var dist = point_distance(x, y, other.x, other.y);
             if (dist < other.sight)
