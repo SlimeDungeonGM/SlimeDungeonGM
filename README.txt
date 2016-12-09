@@ -1,6 +1,6 @@
 #SlimeDungeonGM
 
- Created by: Dochebi and Lightnet
+ Created by: Dochebi,Lightnet and Stefencanning
  
  License: ...
  
