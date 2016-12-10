@@ -32,6 +32,55 @@ objtype = WALL;
 isfixed = false;//center tile
 issnap = true;//tile
 removalWork = 100;
+depth = -y;
+left = false;
+right = false;
+up = false;
+down = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>obj_wall</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_calc_walls();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>obj_wall</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_calc_walls();
 </string>
           </argument>
         </arguments>
@@ -57,6 +106,8 @@ removalWork = 100;
             <string>if (removalWork &lt;= 0)
 {
     instance_create(x,y,obj_dirt);
+    x = -1;
+    y = -1;
     instance_destroy();
 }
 </string>
@@ -81,7 +132,107 @@ removalWork = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>if (up)
+{
+    if (left)
+    {
+        draw_sprite(wall_testing,5,x,y-16);
+    }
+    else
+    {
+        draw_sprite(wall_testing,2,x,y-16);
+    }
+    if (right)
+    {
+        draw_sprite(wall_testing,5,x+16,y-16);
+    }
+    else
+    {
+        draw_sprite(wall_testing,3,x+16,y-16);
+    }
+}
+else
+{
+    if (left)
+    {
+        draw_sprite(wall_testing,4,x,y-16);
+    }
+    else
+    {
+        draw_sprite(wall_testing,0,x,y-16);
+    }
+    if (right)
+    {
+        draw_sprite(wall_testing,4,x+16,y-16);
+    }
+    else
+    {
+        draw_sprite(wall_testing,1,x+16,y-16);
+    }
+}
+if (down)
+{
+    if (left)
+    {
+        draw_sprite(wall_testing,5,x,y);
+    }
+    else
+    {
+        draw_sprite(wall_testing,2,x,y);
+    }
+    if (right)
+    {
+        draw_sprite(wall_testing,5,x+16,y);
+    }
+    else
+    {
+        draw_sprite(wall_testing,3,x+16,y);
+    }
+}
+else
+{
+    if (left)
+    {
+        draw_sprite(wall_testing,8,x,y);
+    }
+    else
+    {
+        draw_sprite(wall_testing,6,x,y);
+    }
+    if (right)
+    {
+        draw_sprite(wall_testing,8,x+16,y);
+    }
+    else
+    {
+        draw_sprite(wall_testing,7,x+16,y);
+    }
+}
+if (left)
+{
+    draw_sprite(wall_testing,12,x,y+16);
+}
+else
+{
+    draw_sprite(wall_testing,11,x,y+16);
+}
+if (right)
+{
+    draw_sprite(wall_testing,12,x+16,y+16);
+}
+else
+{
+    draw_sprite(wall_testing,13,x+16,y+16);
+}
+/*
+draw_sprite(spr_wall_test,0,x,y-16);
+draw_sprite(spr_wall_test,1,x+16,y-16);
+draw_sprite(spr_wall_test,2,x,y);
+draw_sprite(spr_wall_test,3,x+16,y);
+draw_sprite(spr_wall_test,4,x,y+16);
+draw_sprite(spr_wall_test,5,x+16,y+16);
+*/
+//draw_self();
 if(removalWork &lt; 100)
 {
     draw_set_colour(c_gray);

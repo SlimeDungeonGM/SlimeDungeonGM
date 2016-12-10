@@ -46,7 +46,6 @@ yaxis = 0;
 death_sprite = spr_chinlin_stand_up;
 faction = factions.dungeon;
 baseFaction = factions.dungeon;
-show_debug_message("chilin: "+name);
 
 
 movement = IDLE;

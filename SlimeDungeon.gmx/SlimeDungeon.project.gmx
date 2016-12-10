@@ -97,6 +97,7 @@
       <sprite>sprites\spr_grass</sprite>
       <sprite>sprites\spr_lava</sprite>
       <sprite>sprites\spr_dirt</sprite>
+      <sprite>sprites\wall_testing</sprite>
     </sprites>
     <sprites name="other">
       <sprite>sprites\spr_w_basic_s</sprite>
@@ -252,6 +253,7 @@
       <script>scripts\scr_setup_elements.gml</script>
       <script>scripts\scr_calculate_damage.gml</script>
     </scripts>
+    <script>scripts\scr_calc_walls.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
