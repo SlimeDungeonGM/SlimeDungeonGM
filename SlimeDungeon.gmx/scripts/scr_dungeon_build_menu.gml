@@ -242,6 +242,10 @@ if(isbuild){
                             //assign grid object and create object         
                             obj_level_generate_dungeon.grid_tileobjects[# gx,gy] = instance_create((gx)*32, (gy)*32, placeobject);
                         }
+                        else
+                        { 
+                            obj_level_generate_dungeon.grid_tileobjects[# gx,gy] = instance_create((gx)*32, (gy)*32, placeobject);
+                        }
                         //show_debug_message("place tile?");
                     }
                     //check trap grid

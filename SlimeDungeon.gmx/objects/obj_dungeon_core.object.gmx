@@ -28,6 +28,7 @@
             <string>/// initialize
 event_inherited();
 bsingle_select = true;
+hungerDrop = 0;
 
 hb_offset_x = 0;
 hb_offset_y = 0;

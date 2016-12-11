@@ -259,7 +259,7 @@ if(bdisplay_healthbar){
     //show_debug_message(percent_width);
     draw_rectangle(x+hb_offset_x,y+hb_offset_y,x + percent_width + hb_offset_x,y +  hb_height + hb_offset_y,false);
 }
-if(bdisplay_hungerbar){
+if(bdisplay_hungerbar &amp;&amp; hungerDrop != 0){
     draw_set_colour(c_gray);
     draw_rectangle(x+hb_offset_x,y+hb_offset_y+hb_height,x+hb_width+hb_offset_x,y+hb_height+(0.25*hb_height)+hb_offset_y,false);
     draw_set_colour(c_orange);
