@@ -254,6 +254,9 @@
       <script>scripts\scr_calculate_damage.gml</script>
     </scripts>
     <script>scripts\scr_calc_walls.gml</script>
+    <scripts name="loyalty">
+      <script>scripts\death_loyalty.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>

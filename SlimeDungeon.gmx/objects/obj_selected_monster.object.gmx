@@ -53,7 +53,7 @@
     if (instance_exists(selectedCreature))
     {
         var wall = instance_position(mouse_x, mouse_y, obj_wall);
-        if (wall != noone)
+        if (wall != noone &amp;&amp; selectedCreature.loyaltyMap[? commands.mine] &lt;= selectedCreature.loyalty)
         {
             selectedCreature.command = commands.mine;
             selectedCreature.commandTarget = wall;
@@ -61,7 +61,7 @@
         else
         {
             var place = instance_position(mouse_x, mouse_y, obj_place);
-            if (place != noone)
+            if (place != noone &amp;&amp; selectedCreature.loyaltyMap[? commands.move] &lt;= selectedCreature.loyalty)
             {
                 selectedCreature.command = commands.move;
                 selectedCreature.commandTarget = place;

@@ -119,6 +119,8 @@ if (other.id != creator){
             <string>/// damage all lifeforms
 if (other.id != creator){
     other.hp -= damage;
+    other.loyalty -= damage/2;
+    creator.loyalty += damage/3;
     
     //apply the knockback
     if( instance_exists(creator)){

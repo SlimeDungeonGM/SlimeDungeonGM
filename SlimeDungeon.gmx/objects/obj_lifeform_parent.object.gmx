@@ -59,17 +59,33 @@ bsingle_select = false;
 teamid = -1;
 owner = "";
 creator = "";
+
+//loyalty
+loyalty = 50;
+if !ds_exists(loyaltyMap, ds_type_map)
+{
+    loyaltyMap = ds_map_create();
+}
+loyaltyMap[? commands.move] = 25;
+loyaltyMap[? commands.attack] = 50;
+loyaltyMap[? commands.mine] = 75;
+
+
+//hunger
 maxHunger = 100;
 hunger = maxHunger;
 hungerDrop = maxHunger / 180 / room_speed;
 mildHunger = 0.9;
 warningHunger = 0.6;
 criticalHunger = 0.3;
+
+//faction
 var inst;
 faction = factions.neutral;
 baseFaction = factions.neutral;
 mineStrength = 10;
 
+//element
 inst = instance_position(x, y, obj_place);
 if inst != noone {
     element = inst.element;
@@ -100,6 +116,7 @@ if inst != noone {
           <argument>
             <kind>1</kind>
             <string>/// delete stuff like path
+death_loyalty();
 if(path_exists(path)){
     path_delete(path);
 }
@@ -177,6 +194,7 @@ depth = -y;
 hunger = max(0, hunger - hungerDrop);
 if ( hunger &lt;= 0) {
     hp = max(0, hp - (maxhp/10.0/room_speed));
+    loyalty -= 2/room_speed;
 }
 
 if(hp &lt;= 0){
@@ -192,6 +210,7 @@ if (corpse &amp;&amp; alarm[11] &lt;= 0)
     corpse.food -= eatAmount;
     hunger += eatAmount;
     alarm[11] = 1*room_speed;
+    loyalty += 5;
 }
 
 
