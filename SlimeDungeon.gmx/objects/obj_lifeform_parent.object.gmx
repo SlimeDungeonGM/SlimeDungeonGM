@@ -31,6 +31,7 @@ hp = 3;
 maxhp = 3;
 monsterTier = 1;
 name = "testName";
+spd = 1;
 
 //health bar
 bdisplay_healthbar = true;
@@ -49,7 +50,8 @@ target_y = -1;
 follow_distance = 4;
 
 //path
-path = path_add();
+followTarget = instance_create(x,y,obj_follow_target);
+followTarget.owner = self;
 point = 0;
 path_done = 0;
 
@@ -62,13 +64,10 @@ creator = "";
 
 //loyalty
 loyalty = 50;
-if !ds_exists(loyaltyMap, ds_type_map)
-{
-    loyaltyMap = ds_map_create();
-}
+loyaltyMap = ds_map_create();
 loyaltyMap[? commands.move] = 25;
 loyaltyMap[? commands.attack] = 50;
-loyaltyMap[? commands.mine] = 75;
+loyaltyMap[? commands.mine] = 5;
 
 
 //hunger
@@ -115,10 +114,11 @@ if inst != noone {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// delete stuff like path
+            <string>/// delete stuff
 death_loyalty();
-if(path_exists(path)){
-    path_delete(path);
+with(followTarget)
+{
+    instance_destroy(); 
 }
 </string>
           </argument>
@@ -171,6 +171,34 @@ if(path_exists(path)){
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// pathing alarm dont override
+with(followTarget)
+{
+    followingPath =  false;
+    path_end();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -189,8 +217,20 @@ if(path_exists(path)){
           <argument>
             <kind>1</kind>
             <string>/// control depth
+if(followTarget.followingPath)
+{
+    var dir = point_direction(x,y,followTarget.x,followTarget.y);
+    var hspd = lengthdir_x(spd,dir);
+    var vspd = lengthdir_y(spd,dir);
+    if(hspd != 0){
+        image_xscale = sign(hspd);
+    }
+    scr_get_face(dir);
+    
+    phy_position_x += hspd
+    phy_position_y += vspd;
+}
 depth = -y;
-
 hunger = max(0, hunger - hungerDrop);
 if ( hunger &lt;= 0) {
     hp = max(0, hp - (maxhp/10.0/room_speed));
@@ -291,7 +331,14 @@ if(bdisplay_hungerbar &amp;&amp; hungerDrop != 0){
     //show_debug_message(percent_width);
     draw_rectangle(x+hb_offset_x,y+hb_offset_y+hb_height,x+percent_width+hb_offset_x,y+hb_height+(0.25*hb_height)+hb_offset_y,false);
 }
-
+if (commandTarget != noone &amp;&amp; instance_exists(commandTarget))
+{
+    var xOffset = sprite_get_xoffset(target.sprite_index);
+    var yOffset = sprite_get_yoffset(target.sprite_index);
+    var centerX = sprite_get_width(target.sprite_index) / 2.0;
+    var centerY = sprite_get_height(target.sprite_index) / 2.0;
+    draw_circle(target.x - xOffset + centerX,target.y - yOffset + centerY,5,true);
+}
 draw_self();
 </string>
           </argument>

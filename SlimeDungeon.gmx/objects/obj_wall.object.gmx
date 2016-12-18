@@ -37,6 +37,7 @@ left = false;
 right = false;
 up = false;
 down = false;
+mp_grid_add_cell(global.pathing, x div CELL_WIDTH, y div CELL_HEIGHT);
 </string>
           </argument>
         </arguments>
@@ -51,7 +52,7 @@ down = false;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_wall</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -81,6 +82,7 @@ down = false;
           <argument>
             <kind>1</kind>
             <string>///move to help with wall recalculation
+mp_grid_clear_cell(global.pathing, x div CELL_WIDTH, y div CELL_HEIGHT);
 x = -1;
 y = -1;
 </string>
@@ -97,7 +99,7 @@ y = -1;
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_wall</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -154,7 +156,7 @@ scr_calc_walls();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (up)
+            <string>/*if (up)
 {
     if (left)
     {
@@ -246,6 +248,7 @@ else
 {
     draw_sprite(wall_testing,13,x+16,y+16);
 }
+*/
 /*
 draw_sprite(spr_wall_test,0,x,y-16);
 draw_sprite(spr_wall_test,1,x+16,y-16);
@@ -254,6 +257,10 @@ draw_sprite(spr_wall_test,3,x+16,y);
 draw_sprite(spr_wall_test,4,x,y+16);
 draw_sprite(spr_wall_test,5,x+16,y+16);
 */
+var i = x div CELL_WIDTH;
+var j = y div CELL_HEIGHT;
+var val = global.wallConnections[i,j];
+scr_draw_wall(i*CELL_WIDTH, j*CELL_HEIGHT, val)
 //draw_self();
 if(removalWork &lt; 100)
 {

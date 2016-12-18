@@ -32,4 +32,4 @@ else
 {
     scr_base_wander();
 }
-scr_move_axis();
+//scr_move_axis();

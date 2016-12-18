@@ -34,6 +34,8 @@ hb_offset_x = 0;
 hb_offset_y = 0;
 hb_width = 32;
 hb_height = 4;
+faction = factions.dungeon;
+baseFaction = factions.dungeon;
 </string>
           </argument>
         </arguments>

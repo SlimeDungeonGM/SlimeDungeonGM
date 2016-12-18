@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100000</depth>
+  <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,48 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global._ismenu = true;
-global._ishud = true;
-global._display_dungeon = true;
-global._display_player = false;
-global.pathingWidth = room_width div CELL_WIDTH;
-global.pathingHeight = room_height div CELL_HEIGHT;
-global.pathing = mp_grid_create(0, 0, global.pathingWidth, global.pathingHeight, CELL_WIDTH, CELL_HEIGHT);
-global.wallConnections[global.pathingWidth, global.pathingHeight] = 0;
-scr_setup_elements();
-var i;
-var j;
-for (j = 0; j &lt; global.pathingHeight; j++)
-{
-    for (i = 0; i &lt; global.pathingWidth; i++)
-    {
-        mp_grid_add_cell(global.pathing, i, j);
-    }
-}
-var cx = global.pathingWidth div 2;
-var cy = global.pathingHeight div 2;
-
-//create the player
-instance_create((cx*CELL_WIDTH),(cy*CELL_HEIGHT), obj_dungeon_core);
-
-//floor
-mp_grid_clear_cell(global.pathing, cx, cy); //center 
-mp_grid_clear_cell(global.pathing, cx-1, cy); //left
-mp_grid_clear_cell(global.pathing, cx-1, cy-1);//left top
-mp_grid_clear_cell(global.pathing, cx, cy-1); //top
-mp_grid_clear_cell(global.pathing, cx+1, cy-1);//top right
-mp_grid_clear_cell(global.pathing, cx+1, cy);//right
-mp_grid_clear_cell(global.pathing, cx+1, cy+1);//bottom right
-mp_grid_clear_cell(global.pathing, cx, cy+1);//bottom
-mp_grid_clear_cell(global.pathing, cx-1, cy+1);//bottom left
-
-scr_calc_walls();
+            <string>depth = 0;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="2">
+    <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -83,7 +48,27 @@ scr_calc_walls();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_setup_elements();
+            <string>var i;
+var j;
+for (j = 0; j &lt; global.pathingHeight; j++)
+{
+    if ((j*CELL_HEIGHT) + (2*CELL_HEIGHT) &gt;= view_yview[view_current] 
+    &amp;&amp; (j*CELL_HEIGHT) - CELL_HEIGHT &lt;= view_yview[view_current] + view_hview[view_current])
+    {
+        for (i = 0; i &lt; global.pathingWidth; i++)
+        {
+            if ((i*CELL_WIDTH) + (2*CELL_WIDTH) &gt;= view_xview[view_current] 
+            &amp;&amp; (i*CELL_WIDTH) - CELL_WIDTH &lt;= view_xview[view_current] + view_wview[view_current])
+            {
+                if (mp_grid_get_cell(global.pathing, i, j) == -1)
+                {
+                    var val = global.wallConnections[i,j];
+                    scr_draw_wall(i*CELL_WIDTH, j*CELL_HEIGHT, val);// (val &amp; 1 != 0), (val &amp; 2 != 0), (val &amp; 4 != 0), (val &amp; 8 != 0))
+                }
+            }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

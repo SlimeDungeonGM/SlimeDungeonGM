@@ -257,6 +257,7 @@
     <scripts name="loyalty">
       <script>scripts\death_loyalty.gml</script>
     </scripts>
+    <script>scripts\scr_draw_wall.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -296,6 +297,7 @@
         <object>objects\objNPCBob</object>
         <object>objects\parNPC</object>
       </objects>
+      <object>objects\obj_follow_target</object>
     </objects>
     <objects name="buildings">
       <object>objects\obj_spawner</object>
@@ -366,6 +368,7 @@
       <object>objects\obj_save_load</object>
       <object>objects\objControl</object>
       <object>objects\obj_selected_monster</object>
+      <object>objects\obj_wall_control</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>

@@ -1,5 +1,7 @@
 ///scr_move_axis
-var dir = point_direction(0,0,xaxis,yaxis);
+//mp_potential_step_object(x,y,spd,obj_wall);
+// in progress change to use potential step instead of axis
+var dir = point_direction(xprevious,yprevious,x,y);
 var hspd = lengthdir_x(spd,dir);
 var vspd = lengthdir_y(spd,dir);
 if(hspd != 0){
