@@ -38,6 +38,20 @@ right = false;
 up = false;
 down = false;
 mp_grid_add_cell(global.pathing, x div CELL_WIDTH, y div CELL_HEIGHT);
+var centerX = sprite_get_width(sprite_index) / 2.0;
+var centerY = sprite_get_height(sprite_index) / 2.0;
+var i;
+var j;
+for (j = 0; j &lt;= 0; j++)
+{
+    for (i = 0; i &lt;= 0; i++)
+    {
+        if (instance_position((CELL_WIDTH*i) + x + centerX, (CELL_HEIGHT*j) + y + centerY, obj_flooring) == noone)
+        {
+            instance_create((CELL_WIDTH*i) + x,(CELL_HEIGHT*j) + y,obj_dirt);
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

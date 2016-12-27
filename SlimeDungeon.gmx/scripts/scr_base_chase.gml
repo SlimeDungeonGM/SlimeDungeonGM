@@ -10,8 +10,6 @@ if(!followTarget.followingPath)
     var readd = false;
     var readdX = target.x div CELL_WIDTH;
     var readdY = target.y div CELL_HEIGHT;
-        show_debug_message("target: ");
-        show_debug_message("commandTarget: ");
     if(command == commands.mine && target == commandTarget)
     {
         if (mp_grid_get_cell(global.pathing, readdX, readdY) == -1)
@@ -33,6 +31,11 @@ if(!followTarget.followingPath)
             followingPath = true;
             alarm[11] = room_speed * (1+random(2));
         }
+    }
+    else
+    {
+        target = noone;
+        commandTarget = noone;
     }
     if(readd)
     {

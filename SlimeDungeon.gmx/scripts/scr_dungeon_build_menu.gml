@@ -217,7 +217,41 @@ if(isbuild){
     if(mouse_check_button_pressed(mb_left) == true and isboundbox = false ){
         if(placeobject !=noone and selectobject != noone){
             //if(!selectobject.iscollision){
-                if(instance_exists(obj_level_generate_dungeon)){
+            if (selectobject.objtype == WALL)
+            {
+                var gx = mouse_x div sizegrid;
+                var gy = mouse_y div sizegrid;
+                
+                var wall = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_wall);
+                var flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                
+                if (wall == noone && flooring != noone)
+                {
+                    instance_create(gx*CELL_WIDTH, gy*CELL_HEIGHT, placeobject);
+                }
+            }
+            else if (selectobject.objtype == FLOOR)
+            {
+                var gx = mouse_x div sizegrid;
+                var gy = mouse_y div sizegrid;
+                
+                var flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                
+                if (flooring != noone)
+                {
+                    while (flooring != noone)
+                    {
+                        with (flooring)
+                        {
+                            instance_destroy();
+                        }
+                        flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                    }
+                    instance_create(gx*CELL_WIDTH, gy*CELL_HEIGHT, placeobject);
+                }
+            }
+                if(instance_exists(obj_level_generate_dungeon))
+                {
                     var gx = mouse_x div sizegrid;
                     var gy = mouse_y div sizegrid;
                     if(selectobject.objtype == WALL || selectobject.objtype == FLOOR){

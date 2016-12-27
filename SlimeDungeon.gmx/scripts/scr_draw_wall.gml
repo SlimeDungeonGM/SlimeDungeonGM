@@ -11,13 +11,17 @@ var downleft = (val & 64 != 0);
 var downright = (val & 128 != 0);
 
 
-if (!left && upleft && up)
+if (((!left && upleft) || (!right && upright))  && up)
 {
-    draw_sprite(wall_testing,12,xPos,yPos-16);
-}
-if (!right && upright && up)
-{
-    draw_sprite(wall_testing,12,xPos+16,yPos-16);
+    draw_sprite_stretched(spr_dirt,0,x,y-16,32,16);
+    if (!left && upleft)
+    {
+        draw_sprite(wall_testing,12,xPos,yPos-16);
+    }
+    if (!right && upright)
+    {
+        draw_sprite(wall_testing,12,xPos+16,yPos-16);
+    }
 }
 if (up)
 {
