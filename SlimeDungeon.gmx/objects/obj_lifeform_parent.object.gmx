@@ -32,6 +32,9 @@ maxhp = 3;
 monsterTier = 1;
 name = "testName";
 spd = 1;
+issnap = false;
+isfixed = false;
+objtype = VOID;
 
 //health bar
 bdisplay_healthbar = true;
@@ -333,11 +336,11 @@ if(bdisplay_hungerbar &amp;&amp; hungerDrop != 0){
 }
 if (commandTarget != noone &amp;&amp; instance_exists(commandTarget))
 {
-    var xOffset = sprite_get_xoffset(target.sprite_index);
-    var yOffset = sprite_get_yoffset(target.sprite_index);
-    var centerX = sprite_get_width(target.sprite_index) / 2.0;
-    var centerY = sprite_get_height(target.sprite_index) / 2.0;
-    draw_circle(target.x - xOffset + centerX,target.y - yOffset + centerY,5,true);
+    var xOffset = sprite_get_xoffset(commandTarget.sprite_index);
+    var yOffset = sprite_get_yoffset(commandTarget.sprite_index);
+    var centerX = sprite_get_width(commandTarget.sprite_index) / 2.0;
+    var centerY = sprite_get_height(commandTarget.sprite_index) / 2.0;
+    draw_circle(commandTarget.x - xOffset + centerX,commandTarget.y - yOffset + centerY,5,true);
 }
 draw_self();
 </string>

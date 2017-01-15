@@ -208,9 +208,9 @@ sprite_index = sprite[face, movement];
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
-    <point>4,14</point>
-    <point>20,14</point>
-    <point>20,24</point>
-    <point>4,24</point>
+    <point>0,4</point>
+    <point>24,4</point>
+    <point>24,28</point>
+    <point>0,28</point>
   </PhysicsShapePoints>
 </object>

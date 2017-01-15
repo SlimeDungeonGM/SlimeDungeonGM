@@ -292,6 +292,7 @@
       <objects name="monster">
         <object>objects\obj_enemy_chinlin</object>
         <object>objects\obj_enemy_path</object>
+        <object>objects\obj_monster_slime</object>
       </objects>
       <objects name="npc">
         <object>objects\objNPCBob</object>
