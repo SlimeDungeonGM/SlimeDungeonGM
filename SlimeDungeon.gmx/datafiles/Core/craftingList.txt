@@ -1,0 +1,11 @@
+[Crafting]
+
+item[0,0]  = name
+item[0,1] = detail
+
+recipe[0,0] = 
+
+
+[recipe]
+
+

@@ -58,3 +58,5 @@ switch(argument[5])
     default:
         break;
 }
+
+return result;
