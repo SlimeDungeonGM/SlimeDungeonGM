@@ -9,6 +9,9 @@
 ToDoList:
  * Floor Layout
   * Dungeon Blocks
+  * walls only placed were required
+  * walls change texture based on surrounding walls
+  * flooring can be changed
  * Sprites(basic)
   * Simple Player (Animation Tested)
   * Slime simple (Simple Animation Tested)
@@ -21,6 +24,23 @@ ToDoList:
   * Traps
   * Placements
   * Creatures
+ * creatures
+  * belong to factions
+   * are hostile to creatures of other factions
+  * get hungry
+   * eat enemies
+   * eat corpses
+   * eat lesser allies
+   * eat anything
+  * follow comands
+   * destroy walls
+   * walk to tiles (currently monsters dont wander around, feature to be reimplemented soonish)
+   * attack target enemy
+  * have element types
+   * 4 element types currently
+    * types can level to increase damage vs weaker elements ( to be implemented soonish)
+   * eating corpses of other typed enemies has a chance to gain/level that type ( to be implemented soonish)
+  * have pathing
 
  * Events(Story)
  * Resource Management
