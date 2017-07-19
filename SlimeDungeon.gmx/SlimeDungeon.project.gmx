@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="1" name="datafiles">
-    <datafiles number="1" name="Dialog">
+  <datafiles number="3" name="datafiles">
+    <datafiles number="3" name="Dialog">
       <datafile>
         <name>0.txt</name>
         <exists>-1</exists>
@@ -21,6 +21,42 @@
           </Config>
         </ConfigOptions>
         <filename>0.txt</filename>
+      </datafile>
+    </datafiles>
+    <datafiles number="3" name="Core">
+      <datafile>
+        <name>Core.txt</name>
+        <exists>-1</exists>
+        <size>184</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>Core.txt</filename>
+      </datafile>
+      <datafile>
+        <name>craftingList.txt</name>
+        <exists>-1</exists>
+        <size>33</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>craftingList.txt</filename>
       </datafile>
     </datafiles>
   </datafiles>
@@ -202,6 +238,7 @@
       <script>scripts\scr_save_map.gml</script>
       <script>scripts\scr_load_map.gml</script>
       <script>scripts\scr_crafting.gml</script>
+      <script>scripts\scr_get_item.gml</script>
     </scripts>
     <scripts name="dungeon_menu_scripts">
       <script>scripts\scr_status_menu.gml</script>
@@ -248,6 +285,9 @@
       <script>scripts\scr_factions_enum.gml</script>
       <script>scripts\scr_damage_types_enum.gml</script>
       <script>scripts\scr_commands_enum.gml</script>
+      <script>scripts\scr_gender_enum.gml</script>
+      <script>scripts\scr_species_enum.gml</script>
+      <script>scripts\scr_items_enum.gml</script>
     </scripts>
     <scripts name="damage">
       <script>scripts\scr_setup_elements.gml</script>
@@ -299,6 +339,7 @@
         <object>objects\parNPC</object>
       </objects>
       <object>objects\obj_follow_target</object>
+      <object>objects\obj_enemy_slime</object>
     </objects>
     <objects name="buildings">
       <object>objects\obj_spawner</object>

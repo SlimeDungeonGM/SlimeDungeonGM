@@ -1,0 +1,59 @@
+[Human]
+
+
+[Goblin]
+
+
+[Core]
+
+Core [0,0] = 
+
+[Slime]
+
+Slime[0,0] = Slime
+Slime[0,1] = Semi transparent substance surrounded by dark core, which is emanating pure mana from it
+
+[Undead]
+
+Undead[0,0] =
+Undead[0,1] =
+
+[Beast]
+
+Beast[0,0] =
+Beast[0,1] =
+
+[Sprit]
+
+Sprit[0,0] =
+Sprit[0,1] =
+
+[Reptile]
+
+Reptile[0,0] =
+Reptile[0,1] =
+
+[Golem]
+
+Golem[0,0] =
+Golem[0,1] =
+
+[Altered]
+
+Altered[0,0] =
+Altered[0,1] =
+
+[Hybrid]
+
+
+Hybrid[0,0] =
+Hybrid[0,1] =
+
+[Titles]
+
+Title[0,0] = The Player
+Title[0,1] = 
+
+
+
+
