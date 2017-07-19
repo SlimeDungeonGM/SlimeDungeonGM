@@ -37,6 +37,9 @@ if(isbuild){
                 if(buildmenu[i] == "Traps"){
                     slotlist = traps;
                 }
+                if(buildmenu[i] == "Creaures"){
+                    slotlist = creatures;
+                }
             }
         }
     }
@@ -62,12 +65,9 @@ if(isbuild){
     if(screenx > 4 and screenx < (32+4) and screeny > (yy - ((32+4)*4)) and screeny < (yy - (32*3))){    
         //show_debug_message("in bound?");
         if(mouse_check_button(mb_left) == true and alarm[0] <= 0){
-            if(instance_exists(selectobject)){
+            if(selectobject != -1){
                 //selectobject.visible = false;
-                with(selectobject){
-                    instance_destroy();
-                }
-                selectobject = noone;
+                selectobject = -1;
             }
             alarm[0] = room_speed/6;
         }
@@ -146,16 +146,21 @@ if(isbuild){
             if(mouse_check_button(mb_left) == true and alarm[0] <= 0){
                 //show_debug_message(string(slotlist[i,0]));
                 //check if select exist destory
-                if(selectobject == noone){
+                if(selectobject == -1){
                 }else{
-                    with(selectobject){
-                        //show_debug_message("gone?");
-                        instance_destroy();
-                    } 
+                    selectedobject = -1;
                 }
                 //create object
-                selectobject = instance_create((mouse_x div sizegrid)*32,(mouse_y div sizegrid)*32,slotlist[ i, 2]);
-                selectobject.visible = true;
+                selectobject = i;
+                var placeholder = instance_create(-100,-100, slotlist[ i, 3]);
+                objectissnap = placeholder.issnap;
+                objectobjtype = placeholder.objtype;
+                objectisfixed = placeholder.isfixed;
+                with (placeholder)
+                {
+                    instance_destroy();
+                }
+                //selectobject.visible = true;
                 placeobject = slotlist[ i, 3];
                 alarm[0] = room_speed/6;
             }
@@ -178,23 +183,28 @@ if(isbuild){
     //}
     
     //place preview
-    if(instance_exists(selectobject)){
+    if(selectobject != -1){
         //selectobject.visible = true;
         //divide and floor and time
-        if(selectobject.issnap){
-            selectobject.phy_position_x = (mouse_x div CELL_WIDTH)*32;
-            selectobject.phy_position_y = (mouse_y div CELL_HEIGHT)*32;
-        }else if(selectobject.isfixed){
+        if(objectissnap){
+            draw_sprite(slotlist[ selectobject, 1], 0, 30, 30);
+            draw_sprite(slotlist[ selectobject, 1], 0, (mouse_x div CELL_WIDTH)*32 - view_xview[0], (mouse_y div CELL_HEIGHT)*32 - view_yview[0]);
+            //selectobject.phy_position_x = (mouse_x div CELL_WIDTH)*32;
+            //selectobject.phy_position_y = (mouse_y div CELL_HEIGHT)*32;
+        }else if(objectisfixed){
             if(issnap){
-                selectobject.phy_position_x = (mouse_x div CELL_WIDTH)*32 + CELL_WIDTH/2;
-                selectobject.phy_position_y = (mouse_y div CELL_HEIGHT)*32 + CELL_HEIGHT/2;
+                draw_sprite(slotlist[ selectobject, 1], 0, (mouse_x div CELL_WIDTH)*32 + CELL_WIDTH/2 - view_xview[0], (mouse_y div CELL_HEIGHT)*32 + CELL_HEIGHT/2 - view_yview[0]);
+                ///selectobject.phy_position_x = (mouse_x div CELL_WIDTH)*32 + CELL_WIDTH/2;
+               // selectobject.phy_position_y = (mouse_y div CELL_HEIGHT)*32 + CELL_HEIGHT/2;
             }else{
-                selectobject.phy_position_x = mouse_x;
-                selectobject.phy_position_y = mouse_y;
+                draw_sprite(slotlist[ selectobject, 1], 0, mouse_x - view_xview[0], mouse_y - view_yview[0]);
+                ////selectobject.phy_position_x = mouse_x;
+               // selectobject.phy_position_y = mouse_y;
             }
         }else{
-            selectobject.phy_position_x = mouse_x;
-            selectobject.phy_position_y = mouse_y;
+            draw_sprite(slotlist[ selectobject, 1], 0, mouse_x - view_xview[0], mouse_y - view_yview[0]);
+           /// selectobject.phy_position_x = mouse_x;
+           // selectobject.phy_position_y = mouse_y;
         }
     }else{
         //show_debug_message("error object");
@@ -215,19 +225,65 @@ if(isbuild){
     //show_debug_message(string(mouse_x)+":"+string(mouse_x));
     //place object
     if(mouse_check_button_pressed(mb_left) == true and isboundbox = false ){
-        if(placeobject !=noone and selectobject != noone){
+        if(placeobject != noone and selectobject != -1){
             //if(!selectobject.iscollision){
-                if(instance_exists(obj_level_generate_dungeon)){
+            if (objectobjtype == WALL)
+            {
+                var gx = mouse_x div sizegrid;
+                var gy = mouse_y div sizegrid;
+                
+                var wall = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_wall);
+                var flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                
+                if (wall == noone && flooring != noone)
+                {
+                    instance_create(gx*CELL_WIDTH, gy*CELL_HEIGHT, placeobject);
+                }
+            }
+            else if (objectobjtype == FLOOR)
+            {
+                var gx = mouse_x div sizegrid;
+                var gy = mouse_y div sizegrid;
+                
+                var flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                
+                if (flooring != noone)
+                {
+                    while (flooring != noone)
+                    {
+                        with (flooring)
+                        {
+                            instance_destroy();
+                        }
+                        flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                    }
+                    instance_create(gx*CELL_WIDTH, gy*CELL_HEIGHT, placeobject);
+                }
+            }
+            else if (objectobjtype == VOID)
+            {
+                var gx = mouse_x div sizegrid;
+                var gy = mouse_y div sizegrid;
+                
+                var flooring = instance_position((gx*sizegrid)+(sizegrid/2),(gy*sizegrid)+(sizegrid/2), obj_flooring);
+                
+                if (flooring != noone)
+                {
+                    instance_create(mouse_x, mouse_y, placeobject);
+                }
+            }
+                if(instance_exists(obj_level_generate_dungeon))
+                {
                     var gx = mouse_x div sizegrid;
                     var gy = mouse_y div sizegrid;
-                    if(selectobject.objtype == WALL || selectobject.objtype == FLOOR){
+                    if(objectobjtype == WALL || objectobjtype == FLOOR){
                         //check and assign type of dungeon floor or wall                
-                        if(selectobject.objtype == WALL){
+                        if(objectobjtype == WALL){
                             //block path
                             mp_grid_add_cell(obj_level_generate_dungeon.grid_path,gx,gy);
                             obj_level_generate_dungeon.grid[# gx,gy] = WALL;
                         }
-                        if(selectobject.objtype == FLOOR){
+                        if(objectobjtype == FLOOR){
                             //clear path
                             mp_grid_clear_cell(obj_level_generate_dungeon.grid_path,gx,gy);
                             obj_level_generate_dungeon.grid[# gx,gy] = FLOOR;
@@ -240,6 +296,10 @@ if(isbuild){
                                 instance_destroy();
                             }
                             //assign grid object and create object         
+                            obj_level_generate_dungeon.grid_tileobjects[# gx,gy] = instance_create((gx)*32, (gy)*32, placeobject);
+                        }
+                        else
+                        { 
                             obj_level_generate_dungeon.grid_tileobjects[# gx,gy] = instance_create((gx)*32, (gy)*32, placeobject);
                         }
                         //show_debug_message("place tile?");
@@ -290,7 +350,8 @@ if(isbuild){
         }
     }
 }else{
-    if(instance_exists(selectobject)){
+    if(selectobject != -1){
+        selectedobject = -1;
         selectobject.visible = false;
     }
 }

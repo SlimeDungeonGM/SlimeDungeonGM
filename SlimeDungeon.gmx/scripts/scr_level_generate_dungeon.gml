@@ -64,6 +64,8 @@ if(global.level_generate){
     grid[# cx-1, cy+1] = FLOOR;//bottom left
     
     //create instance object.
+    var t = current_time;
+    show_debug_message(current_time);
     for(var yy = 1;yy < height - 1;yy++){
         for(var xx = 1;xx < width - 1;xx++){
             if(grid[# xx,yy] == FLOOR){
@@ -79,6 +81,8 @@ if(global.level_generate){
             }
         }
     }
+    show_debug_message(current_time);
+    show_debug_message(current_time-t);
     //show_debug_message(string(grid));
 }
 

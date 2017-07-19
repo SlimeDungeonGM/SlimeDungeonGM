@@ -29,7 +29,7 @@
 //phy_fixed_rotation = true;
 event_inherited();
 
-born_gender = gender.genderless;
+born_gender = gender.Genderless;
 name = Slime;
 
 

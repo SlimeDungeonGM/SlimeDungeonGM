@@ -109,7 +109,7 @@ if(ispress_right){
 if(bcameracontrol){
     ///zoom
     if(mouse_wheel_up()){
-        zoom -=0.10;    
+        zoom = max(0.1,zoom - 0.10);    
     }
     if (mouse_wheel_down()){
         zoom +=0.10;   
@@ -123,13 +123,34 @@ if(bcameracontrol){
     view_xview[0] = x - view_wview / 2;
     view_yview[0] = y - view_hview / 2;
     //panning view port
-    if (mouse_check_button(mb_right)){
-        // Points towards the mouse
-        direction = point_direction(x, y, mouse_x, mouse_y)
-        // Finds the distance from the camera object to the mouse, then divides it by (10 * zoom) so that the camera pan speed stays reasonable
-        speed = distance_to_point(mouse_x, mouse_y) / (10 * zoom)
+    speed = 0;
+    //if (mouse_check_button(mb_middle))
+    {
+        if (mouse_x &gt; x + (0.5*view_wview) - 10 || mouse_x &lt; x - (0.5*view_wview) + 10 || mouse_y &gt; y + (0.5*view_hview) - 10 || mouse_y &lt; y - (0.5*view_hview) + 10)
+        {
+            // Points towards the mouse
+            direction = point_direction(x, y, mouse_x, mouse_y)
+            // Finds the distance from the camera object to the mouse, then divides it by (10 * zoom) so that the camera pan speed stays reasonable
+            speed = distance_to_point(mouse_x, mouse_y) / (10 * zoom)
+        }
+        if(mouse_x &gt; x + (0.5*view_wview))
+        {
+            display_mouse_set(x + (0.5*view_wview), mouse_y);
+        }
+        if(mouse_x &lt; x - (0.5*view_wview))
+        {
+            display_mouse_set(x - (0.5*view_wview), mouse_y);
+        }
+        if(mouse_y &gt; y + (0.5*view_hview))
+        {
+            display_mouse_set(mouse_x, y + (0.5*view_hview));
+        }
+        if(mouse_y &lt; y - (0.5*view_hview))
+        {
+            display_mouse_set(mouse_x, y - (0.5*view_hview));
+        }
     }
-    else{ speed = 0};
+    //else{ speed = 0};
     x += lengthdir_x(speed,direction);
     y += lengthdir_y(speed,direction);
 }

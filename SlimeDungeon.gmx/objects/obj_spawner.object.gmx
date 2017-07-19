@@ -3,7 +3,7 @@
   <spriteName>spr_spawner</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-5</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -32,6 +32,9 @@ spawn_time = 5;
 bspawn = true;
 monster_summon = obj_enemy_chinlin;
 faction = factions.dungeon;
+issnap = true;
+isfixed = true;
+objtype = VOID;
 </string>
           </argument>
         </arguments>
@@ -86,7 +89,9 @@ if(alarm[0] &lt;= 0){
         //{
             //show_debug_message("checking???");
             var inst;
-            inst = instance_create(x, y, monster_summon);
+            var centerX = sprite_get_width(sprite_index) / 2.0;
+            var centerY = sprite_get_height(sprite_index) / 2.0;
+            inst = instance_create(x+centerX, y+centerY, monster_summon);
             with (inst)
             {
                 faction = other.faction;

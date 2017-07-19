@@ -133,6 +133,7 @@
       <sprite>sprites\spr_grass</sprite>
       <sprite>sprites\spr_lava</sprite>
       <sprite>sprites\spr_dirt</sprite>
+      <sprite>sprites\wall_testing</sprite>
     </sprites>
     <sprites name="other">
       <sprite>sprites\spr_w_basic_s</sprite>
@@ -183,6 +184,7 @@
       <script>scripts\scr_swap_weapon.gml</script>
       <script>scripts\animation_hit_frame.gml</script>
       <script>scripts\scr_inv_create.gml</script>
+      <script>scripts\collision_point_list.gml</script>
     </scripts>
     <scripts name="bot state">
       <script>scripts\scr_bot_idle_state.gml</script>
@@ -194,6 +196,30 @@
         <script>scripts\scr_move_axis.gml</script>
         <script>scripts\scr_check_for_player.gml</script>
         <script>scripts\scr_bot_chose_next_state.gml</script>
+      </scripts>
+      <scripts name="state search">
+        <script>scripts\scr_base_search.gml</script>
+      </scripts>
+      <scripts name="state hungry">
+        <script>scripts\scr_base_hunger.gml</script>
+      </scripts>
+      <scripts name="state starving">
+        <script>scripts\scr_base_starving.gml</script>
+      </scripts>
+      <scripts name="state wander">
+        <script>scripts\scr_base_wander.gml</script>
+      </scripts>
+      <scripts name="state control">
+        <script>scripts\scr_base_state_control.gml</script>
+      </scripts>
+      <scripts name="state chase">
+        <script>scripts\scr_base_chase.gml</script>
+      </scripts>
+      <scripts name="state food search">
+        <script>scripts\scr_base_food_search.gml</script>
+      </scripts>
+      <scripts name="state command">
+        <script>scripts\scr_base_command.gml</script>
       </scripts>
     </scripts>
     <scripts name="player state">
@@ -258,6 +284,7 @@
       <script>scripts\scr_elements_enum.gml</script>
       <script>scripts\scr_factions_enum.gml</script>
       <script>scripts\scr_damage_types_enum.gml</script>
+      <script>scripts\scr_commands_enum.gml</script>
       <script>scripts\scr_gender_enum.gml</script>
       <script>scripts\scr_species_enum.gml</script>
       <script>scripts\scr_items_enum.gml</script>
@@ -266,6 +293,11 @@
       <script>scripts\scr_setup_elements.gml</script>
       <script>scripts\scr_calculate_damage.gml</script>
     </scripts>
+    <script>scripts\scr_calc_walls.gml</script>
+    <scripts name="loyalty">
+      <script>scripts\death_loyalty.gml</script>
+    </scripts>
+    <script>scripts\scr_draw_wall.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -287,16 +319,26 @@
       <object>objects\obj_text</object>
     </objects>
     <objects name="creatures">
-      <object>objects\obj_player</object>
       <object>objects\obj_lifeform_parent</object>
-      <object>objects\obj_player_stats</object>
       <object>objects\obj_dungeon_stats</object>
-      <object>objects\obj_enemy_chinlin</object>
-      <object>objects\obj_enemy_path</object>
       <object>objects\obj_dungeon_core</object>
-      <object>objects\parNPC</object>
-      <object>objects\objNPCBob</object>
+      <object>objects\obj_monster_parent</object>
       <object>objects\objGenerator</object>
+      <object>objects\obj_corpse_parent</object>
+      <objects name="player">
+        <object>objects\obj_player</object>
+        <object>objects\obj_player_stats</object>
+      </objects>
+      <objects name="monster">
+        <object>objects\obj_enemy_chinlin</object>
+        <object>objects\obj_enemy_path</object>
+        <object>objects\obj_monster_slime</object>
+      </objects>
+      <objects name="npc">
+        <object>objects\objNPCBob</object>
+        <object>objects\parNPC</object>
+      </objects>
+      <object>objects\obj_follow_target</object>
       <object>objects\obj_enemy_slime</object>
     </objects>
     <objects name="buildings">
@@ -308,19 +350,22 @@
       <object>objects\t_locked</object>
       <object>objects\obj_detect_ph</object>
       <object>objects\obj_wall</object>
-      <object>objects\obj_wall_ph</object>
-      <object>objects\obj_floor</object>
-      <object>objects\obj_floor_ph</object>
       <object>objects\obj_rock</object>
       <object>objects\obj_rock_ph</object>
-      <object>objects\obj_water</object>
+      <object>objects\obj_wall_ph</object>
+      <object>objects\obj_floor_ph</object>
       <object>objects\obj_water_ph</object>
-      <object>objects\obj_dirt</object>
-      <object>objects\obj_dirt_ph</object>
-      <object>objects\obj_sand</object>
       <object>objects\obj_sand_ph</object>
-      <object>objects\obj_lava</object>
       <object>objects\obj_lava_ph</object>
+      <object>objects\obj_flooring</object>
+      <object>objects\obj_dirt_ph</object>
+      <objects name="flooring">
+        <object>objects\obj_floor</object>
+        <object>objects\obj_water</object>
+        <object>objects\obj_lava</object>
+        <object>objects\obj_sand</object>
+        <object>objects\obj_dirt</object>
+      </objects>
     </objects>
     <objects name="projectiles">
       <object>objects\obj_projectile</object>
@@ -367,6 +412,8 @@
       <object>objects\obj_place</object>
       <object>objects\obj_save_load</object>
       <object>objects\objControl</object>
+      <object>objects\obj_selected_monster</object>
+      <object>objects\obj_wall_control</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>
@@ -376,9 +423,9 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_dungeon_waves</room>
-    <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_start_menu</room>
     <room>rooms\rm_world_layer</room>
     <room>rooms\rm_writer</room>

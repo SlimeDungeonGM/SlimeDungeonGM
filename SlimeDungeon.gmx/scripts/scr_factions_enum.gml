@@ -1,5 +1,6 @@
 enum factions {
     dungeon,
     neutral,
-    invader
+    invader,
+    hunger
 }

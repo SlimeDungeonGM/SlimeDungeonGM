@@ -28,11 +28,21 @@
             <string>/// initialize
 event_inherited();
 bsingle_select = true;
+hungerDrop = 0;
 
 hb_offset_x = 0;
 hb_offset_y = 0;
 hb_width = 32;
 hb_height = 4;
+faction = factions.dungeon;
+baseFaction = factions.dungeon;
+
+var centerX = sprite_get_width(sprite_index) / 2.0;
+var centerY = sprite_get_height(sprite_index) / 2.0;
+if (instance_position(x + centerX, y + centerY, obj_flooring) == noone)
+{
+    instance_create(x, y, obj_dirt);
+}
 </string>
           </argument>
         </arguments>
