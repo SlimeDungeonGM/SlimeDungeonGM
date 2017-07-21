@@ -414,6 +414,7 @@
       <object>objects\objControl</object>
       <object>objects\obj_selected_monster</object>
       <object>objects\obj_wall_control</object>
+      <object>objects\obj_checkdefault</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>
@@ -423,6 +424,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_gen_dungeon_test</room>
     <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_dungeon_waves</room>
