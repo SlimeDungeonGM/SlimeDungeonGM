@@ -255,6 +255,7 @@
       <script>scripts\scr_items_menu_state.gml</script>
       <script>scripts\scr_dungeon_menu_state.gml</script>
       <script>scripts\scr_dungeon_menu_select.gml</script>
+      <script>scripts\scr_display_help_key.gml</script>
     </scripts>
     <scripts name="dungon_mode_scripts">
       <script>scripts\scr_dungeon_wave_hud.gml</script>
