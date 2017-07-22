@@ -3,7 +3,7 @@
 bdraw_pathmap = false; 
 
 /// initialize dungeon create
-global.level_generate = true;
+//global.level_generate = true;
 //check level generate dungeon
 if(global.level_generate){
     // resize room

@@ -62,7 +62,6 @@
     <instance objName="obj_command_units" x="160" y="96" name="inst_4CFBCBEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_control" x="64" y="64" name="inst_661E6E88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_selected_monster" x="64" y="96" name="inst_21947B6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_checkdefault" x="32" y="64" name="inst_4955C873" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

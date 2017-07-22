@@ -414,7 +414,6 @@
       <object>objects\objControl</object>
       <object>objects\obj_selected_monster</object>
       <object>objects\obj_wall_control</object>
-      <object>objects\obj_checkdefault</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>
@@ -440,15 +439,6 @@
       <room>rooms\f3</room>
     </rooms>
   </rooms>
-  <constants number="7">
-    <constant name="CELL_WIDTH">32</constant>
-    <constant name="CELL_HEIGHT">32</constant>
-    <constant name="FLOOR">-5</constant>
-    <constant name="WALL">-6</constant>
-    <constant name="TRAP">-7</constant>
-    <constant name="PLACE">-8</constant>
-    <constant name="VOID">-9</constant>
-  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
