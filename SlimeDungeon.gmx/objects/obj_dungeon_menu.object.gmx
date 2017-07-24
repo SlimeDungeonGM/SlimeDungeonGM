@@ -35,7 +35,6 @@ option[4] = "Items";
 
 status = noone;
 
-
 //status[0] = "Name:";
 //status[1] = "Gender:";
 //status[2] = "Race:";

@@ -24,6 +24,5 @@ for(var i=0; i < array_height_2d(global.dm_skills);i++){
         bowned = "own";    
     }
     
-    
     draw_text((xx)-256,yy-64+(i*32),global.dm_skills[i,0]+" ["+bowned+"]");
 }

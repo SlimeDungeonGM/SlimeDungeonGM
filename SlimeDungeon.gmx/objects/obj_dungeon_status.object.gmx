@@ -55,8 +55,6 @@ global.dm_skills = noone;
 global.dm_knowledges = ds_map_create(); 
 global.dm_map = ds_map_create();
 
-var test = 
-
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
 
@@ -218,9 +216,7 @@ if(obj_input.dungeonmenu_key){
 
 if(obj_input.f2_key){
     scr_getcreatures();
-
 }
-
 
 //make sure game dungeon game mode is set to it.
 script_execute(dungeon_mode);
