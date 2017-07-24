@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,15 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(instance_number(obj_input) &gt; 1) instance_destroy();
-/// initialize the input object
+            <string>width = 100;
+height = 32;
+name = "Button";
+bhover = false;
+brender = false;
 
-//global._ismenu = true;
-//global._ishud = false;
-//global._display_dungeon = false;
-//global._display_player = false;
+scriptfile = noone;
+arg = noone;
 
-scr_get_input();
 </string>
           </argument>
         </arguments>
@@ -56,14 +56,37 @@ scr_get_input();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// get the input
-scr_get_input();
+            <string>/// @description Check Mouse Clock and actions
+// You can write your code in this editor
+
+if(brender){
+    var screenx = device_mouse_x_to_gui(0);
+    var screeny = device_mouse_y_to_gui(0);
+    
+    if(screenx &gt; (x )and screenx &lt; ( x + width) and   screeny &gt; (y )and screeny &lt; ( y + height)){
+        //show_debug_message("boundbox found!");
+        bhover = true
+    }else{
+        //show_debug_message("boundbox!");
+        bhover = false
+    }
+    
+    if(mouse_check_button_pressed(mb_left) == true) and bhover == true{
+        show_debug_message("click?");
+        if(scriptfile != noone){
+            script_execute(scriptfile,arg);
+            //scriptfile;
+            show_debug_message("script?");
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="4">
+    <event eventtype="8" enumb="64">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -80,11 +103,18 @@ scr_get_input();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// set the player's persistence
-//if(instance_exists(obj_player)){
-//    obj_player.persistent = true;
-//}
-//show_debug_message(string(instance_number(obj_input)));
+            <string>/// @description Draw Button
+// You can write your code in this editor
+
+if(brender){
+    draw_set_colour(c_blue);
+    draw_button(x,y,x+width,y+height,bhover);
+    
+    draw_set_colour(c_white);
+    draw_set_halign(fa_left);
+    draw_text(x+4,y+6,name);
+}
+
 </string>
           </argument>
         </arguments>

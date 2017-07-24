@@ -256,6 +256,7 @@
       <script>scripts\scr_dungeon_menu_state.gml</script>
       <script>scripts\scr_dungeon_menu_select.gml</script>
       <script>scripts\scr_display_help_key.gml</script>
+      <script>scripts\scr_dungeontab_select.gml</script>
     </scripts>
     <scripts name="dungon_mode_scripts">
       <script>scripts\scr_dungeon_wave_hud.gml</script>
@@ -269,6 +270,7 @@
       <script>scripts\scr_dungeon_object_clear.gml</script>
       <script>scripts\scr_get_path_to_follow.gml</script>
       <script>scripts\scr_set_path_follow.gml</script>
+      <script>scripts\scr_buildtab_select.gml</script>
     </scripts>
     <scripts name="dialogue">
       <script>scripts\scr_npcDialogCommands.gml</script>
@@ -379,7 +381,7 @@
       <object>objects\obj_settings</object>
       <object>objects\obj_view</object>
       <object>objects\obj_dungeon_menu</object>
-      <object>objects\obj_build_menu</object>
+      <object>objects\obj_dungeonbuild_menu</object>
       <object>objects\obj_start_menu</object>
       <object>objects\obj_command_units</object>
       <object>objects\obj_target</object>
@@ -422,14 +424,17 @@
       <object>objects\obj_spike</object>
       <object>objects\obj_spike_ph</object>
     </objects>
+    <objects name="UI">
+      <object>objects\obj_button</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_gen_dungeon_test</room>
+    <room>rooms\rm_world_layer</room>
     <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_dungeon_waves</room>
     <room>rooms\rm_start_menu</room>
-    <room>rooms\rm_world_layer</room>
     <room>rooms\rm_writer</room>
     <room>rooms\rm_help</room>
     <room>rooms\rm_pause</room>

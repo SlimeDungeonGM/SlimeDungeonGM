@@ -104,6 +104,10 @@ traps[1,1] = spr_spike;
 traps[1,2] = obj_spike;
 traps[1,3] = obj_spike;
 
+tools = noone;
+items = noone;
+
+
 creatures[0,0] = "Slime"
 creatures[0,1] = basic_slime
 creatures[0,2] = obj_monster_slime
@@ -115,6 +119,44 @@ creatures[1,2] = obj_spawner
 creatures[1,3] = obj_monster_slime
 
 slotlist = tileblock;
+
+
+//buildmenu[0] = "Blocks";
+//buildmenu[1] = "Traps";
+//buildmenu[2] = "Tools";
+//buildmenu[3] = "Items";
+//buildmenu[4] = "Creaures";
+
+buttontabs[0] = instance_create(0,0,obj_button);
+buttontabs[0].name = "Blocks";
+buttontabs[0].scriptfile = scr_buildtab_select;
+buttontabs[0].arg = 0;
+buttontabs[0].width = 144;
+
+buttontabs[1] = instance_create(0,0,obj_button);
+buttontabs[1].name = "Traps";
+buttontabs[1].scriptfile = scr_buildtab_select;
+buttontabs[1].arg = 1;
+buttontabs[1].width = 144;
+
+buttontabs[2] = instance_create(0,0,obj_button);
+buttontabs[2].name = "Tools";
+buttontabs[2].scriptfile = scr_buildtab_select;
+buttontabs[2].arg = 2;
+buttontabs[2].width = 144;
+
+buttontabs[3] = instance_create(0,0,obj_button);
+buttontabs[3].name = "Items";
+buttontabs[3].scriptfile = scr_buildtab_select;
+buttontabs[3].arg = 3;
+buttontabs[3].width = 144;
+
+buttontabs[4] = instance_create(0,0,obj_button);
+buttontabs[4].name = "Creaures";
+buttontabs[4].scriptfile = scr_buildtab_select;
+buttontabs[4].arg = 4;
+buttontabs[4].width = 144;
+
 
 </string>
           </argument>
@@ -187,8 +229,16 @@ if (global._ishud)
                 pickid = -1;
                 //show_debug_message("delete object");
             }
-        }    
+        }
+        
+        for (var i = 0; i &lt; array_length_1d(buttontabs); i++){
+            buttontabs[i].x = xx+(i*150)-256-128;
+            buttontabs[i].y = 64;
+            buttontabs[i].brender = true;
+        }
+
         //draw text h menu
+        /*
         for (var i = 0; i &lt; array_length_1d(buildmenu); i++)
         {
             if( (xx+(64*i)+(-16)-112 &lt; screenx ) and screenx &lt; (xx+(64*i)+(+28)-112) and ((32)*2) &lt; screeny and screeny &lt; ((32)*3) ){
@@ -207,6 +257,7 @@ if (global._ishud)
                 }
             }
         }
+        */
     
         //check if icon are bound here min and max
         //if(screeny &gt; (4 + yy -64) and screeny &lt; (5*(32+4) + yy -64)){//size and offsets and items
@@ -506,6 +557,10 @@ if (global._ishud)
         if(selectobject != -1){
             selectedobject = -1;
         }
+        
+        for (var i = 0; i &lt; array_length_1d(buttontabs); i++){
+            buttontabs[i].brender = false;
+        }
     }
 }
 </string>
@@ -544,10 +599,12 @@ if (global._ishud)
               
         draw_text(xx,32,"Select: "+id_name);
         draw_set_halign(fa_left);
+        /*
         for (var i = 0; i &lt; array_length_1d(buildmenu); i++)
         {
             draw_text(xx+(i*64)-92-32, 64, string( buildmenu[i] ));
         }
+        */
         //draw text h menu
     
         //check if icon are bound here min and max

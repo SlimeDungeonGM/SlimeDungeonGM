@@ -46,6 +46,31 @@ bdisplay = false;
 
 currentmenu = scr_status_menu;
 current_state = scr_dungeon_menu_state;
+
+buttontabs[0] = instance_create(0,0,obj_button);
+buttontabs[0].name = "Status";
+buttontabs[0].width = 150;
+//buttontabs[0].scriptfile = 144;
+
+buttontabs[1] = instance_create(0,0,obj_button);
+buttontabs[1].name = "Creatures";
+buttontabs[1].width = 150;
+//buttontabs[1].scriptfile = 144;
+
+buttontabs[2] = instance_create(0,0,obj_button);
+buttontabs[2].name = "Abilities";
+buttontabs[2].width = 150;
+//buttontabs[2].scriptfile = 144;
+
+buttontabs[3] = instance_create(0,0,obj_button);
+buttontabs[3].name = "Research";
+buttontabs[3].width = 150;
+//buttontabs[3].scriptfile = 144;
+
+buttontabs[4] = instance_create(0,0,obj_button);
+buttontabs[4].name = "Items";
+buttontabs[4].width = 150;
+//buttontabs[4].scriptfile = 144;
 </string>
           </argument>
         </arguments>
@@ -92,7 +117,19 @@ current_state = scr_dungeon_menu_state;
           <argument>
             <kind>1</kind>
             <string>/// control the menu
-
+if(bdisplay){
+    var xx = display_get_gui_width()/2;
+    var yy = display_get_gui_height()/2;
+    for(var i=0; i &lt; array_length_1d(buttontabs);i++){
+        buttontabs[i].x = xx + (i*155) - (155*5/2);
+        buttontabs[i].y = yy - 128;
+        buttontabs[i].brender = true;
+    }
+}else{
+    for(var i=0; i&lt; array_length_1d(buttontabs);i++){
+        buttontabs[i].brender = false;        
+    }
+}
 script_execute(current_state);
 
 //if(alarm[0] &lt;= 0){  
@@ -126,19 +163,19 @@ if(bdisplay){
     var xx = display_get_gui_width()/2;
     var yy = display_get_gui_height()/2;
     draw_set_halign(fa_center);
-    draw_text(xx,yy-128-32,title);
+    draw_text(xx,yy-128-64,title);
     
-    for(var i=0; i&lt;= array_length_1d(option)-1;i++){
-        draw_set_colour(c_gray)
-        var displaytext = option[i];
-        if(i == menu_index){
-            draw_set_colour(c_white);
-            displaytext += "[C]";
-        }
-        draw_text((xx + (i*128))-256,yy-128,displaytext);
-    }
-    draw_set_colour(c_white);
-    draw_set_halign(fa_left);
+    //for(var i=0; i&lt;= array_length_1d(option)-1;i++){
+        //draw_set_colour(c_gray)
+        //var displaytext = option[i];
+        //if(i == menu_index){
+            //draw_set_colour(c_white);
+            //displaytext += "[C]";
+        //}
+        //draw_text((xx + (i*128))-256,yy-128,displaytext);
+    //}
+    //draw_set_colour(c_white);
+    //draw_set_halign(fa_left);
     
     script_execute(currentmenu);
 }

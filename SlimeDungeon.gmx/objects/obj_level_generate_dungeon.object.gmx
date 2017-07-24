@@ -50,7 +50,7 @@ script_execute(scr_level_generate_dungeon);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(64,64,"instance objects:" + string(instance_count));
+            <string>//draw_text(64,64,"instance objects:" + string(instance_count));
 </string>
           </argument>
         </arguments>

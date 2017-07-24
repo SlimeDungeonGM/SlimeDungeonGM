@@ -197,6 +197,7 @@ if(reset_wave){
 
 //pause the game
 if(obj_input.dungeonmenu_key){
+    
     if(instance_exists(obj_dungeon_menu)){
         if(obj_dungeon_menu.bdisplay){
             obj_dungeon_menu.bdisplay = false;
@@ -204,6 +205,7 @@ if(obj_input.dungeonmenu_key){
             obj_dungeon_menu.bdisplay = true;
         }
     }
+    
 }
 //make sure game dungeon game mode is set to it.
 script_execute(dungeon_mode);

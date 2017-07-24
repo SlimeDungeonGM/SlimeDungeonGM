@@ -21,11 +21,11 @@ if(obj_input.camtoggle_key){
 }
 
 if(obj_input.buildmenu_key){
-    if(instance_exists(obj_build_menu)){
-        if(obj_build_menu.isbuild){
-            obj_build_menu.isbuild = false;
+    if(instance_exists(obj_dungeonbuild_menu)){
+        if(obj_dungeonbuild_menu.isbuild){
+            obj_dungeonbuild_menu.isbuild = false;
         }else{
-            obj_build_menu.isbuild = true;
+            obj_dungeonbuild_menu.isbuild = true;
         }
     }
 }

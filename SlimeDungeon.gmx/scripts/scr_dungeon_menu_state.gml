@@ -1,5 +1,6 @@
 ///input state
 if(alarm[0] <= 0){
+    /*
     if(obj_input.right_key){
         if(menu_index < array_length_1d(option)-1){
             menu_index++;
@@ -43,5 +44,5 @@ if(alarm[0] <= 0){
         }
         obj_input.dash_key = false;
     }
-    
+    */
 }

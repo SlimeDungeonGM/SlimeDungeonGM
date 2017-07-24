@@ -655,7 +655,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="18">
+    <constants number="20">
       <constant name="RETURN">0</constant>
       <constant name="NEW_ROOM">1</constant>
       <constant name="LOAD">2</constant>
@@ -671,9 +671,11 @@
       <constant name="CONTROL_CUTSCENE">2</constant>
       <constant name="CELL_WIDTH">32</constant>
       <constant name="CELL_HEIGHT">32</constant>
-      <constant name="VOID">2</constant>
       <constant name="WALL">0</constant>
       <constant name="FLOOR">1</constant>
+      <constant name="VOID">2</constant>
+      <constant name="PLACE">3</constant>
+      <constant name="TRAP">4</constant>
     </constants>
   </ConfigConstants>
 </Config>
