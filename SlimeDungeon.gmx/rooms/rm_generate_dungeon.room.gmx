@@ -52,12 +52,12 @@
   </views>
   <instances>
     <instance objName="obj_input" x="32" y="96" name="inst_C8D027EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dungeon_stats" x="32" y="128" name="inst_FEBBFAAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dungeon_status" x="32" y="128" name="inst_FEBBFAAD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_stats" x="64" y="128" name="inst_C9AA464D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_view" x="672" y="672" name="inst_36E703EE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dungeon_menu" x="32" y="160" name="inst_BCC064D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_dungeonbuild_menu" x="32" y="192" name="inst_993691B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gvar" x="32" y="32" name="inst_1765EFBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_gvar" x="32" y="32" name="inst_1765EFBD" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_save_load" x="160" y="64" name="inst_911A174D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_command_units" x="160" y="96" name="inst_4CFBCBEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_control" x="64" y="64" name="inst_661E6E88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

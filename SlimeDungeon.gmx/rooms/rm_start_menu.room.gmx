@@ -53,7 +53,7 @@
   <instances>
     <instance objName="obj_input" x="0" y="32" name="inst_7281444A" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_player_stats" x="32" y="0" name="inst_D711052A" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dungeon_stats" x="32" y="32" name="inst_C519F5AD" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dungeon_status" x="32" y="32" name="inst_C519F5AD" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_start_menu" x="0" y="0" name="inst_371FB8CA" locked="-1" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>

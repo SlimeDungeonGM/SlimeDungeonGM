@@ -1,5 +1,6 @@
 ///input state
 if(alarm[0] <= 0){
+    /*
     if(obj_input.swap_key){
         show_debug_message("back?scr_statusmenu_state");
         current_state = scr_dungeon_menu_state;
@@ -20,4 +21,5 @@ if(alarm[0] <= 0){
         }      
         alarm[0] = room_speed/6;
     }
+    */
 }

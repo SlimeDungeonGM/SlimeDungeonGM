@@ -173,9 +173,7 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\Change_Tile.gml</script>
     <script>scripts\scr_menu.gml</script>
-    <script>scripts\scr_text.gml</script>
     <scripts name="helper script">
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_get_face.gml</script>
@@ -185,6 +183,11 @@
       <script>scripts\animation_hit_frame.gml</script>
       <script>scripts\scr_inv_create.gml</script>
       <script>scripts\collision_point_list.gml</script>
+      <script>scripts\Change_Tile.gml</script>
+      <script>scripts\scr_draw_wall.gml</script>
+      <script>scripts\scr_calc_walls.gml</script>
+      <script>scripts\scr_text.gml</script>
+      <script>scripts\scr_getcreatures.gml</script>
     </scripts>
     <scripts name="bot state">
       <script>scripts\scr_bot_idle_state.gml</script>
@@ -296,11 +299,15 @@
       <script>scripts\scr_setup_elements.gml</script>
       <script>scripts\scr_calculate_damage.gml</script>
     </scripts>
-    <script>scripts\scr_calc_walls.gml</script>
     <scripts name="loyalty">
       <script>scripts\death_loyalty.gml</script>
     </scripts>
-    <script>scripts\scr_draw_wall.gml</script>
+    <scripts name="createitems">
+      <script>scripts\scr_init_skills.gml</script>
+      <script>scripts\scr_init_items.gml</script>
+      <script>scripts\scr_init_research.gml</script>
+      <script>scripts\scr_init_creatures.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -323,7 +330,7 @@
     </objects>
     <objects name="creatures">
       <object>objects\obj_lifeform_parent</object>
-      <object>objects\obj_dungeon_stats</object>
+      <object>objects\obj_dungeon_status</object>
       <object>objects\obj_dungeon_core</object>
       <object>objects\obj_monster_parent</object>
       <object>objects\objGenerator</object>

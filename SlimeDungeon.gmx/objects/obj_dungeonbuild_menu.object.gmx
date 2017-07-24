@@ -32,7 +32,7 @@ buildmenu[0] = "Blocks";
 buildmenu[1] = "Traps";
 buildmenu[2] = "Tools";
 buildmenu[3] = "Items";
-buildmenu[4] = "Creaures";
+buildmenu[4] = "Creatures";
 
 isboundbox = false;
 issnap = true;

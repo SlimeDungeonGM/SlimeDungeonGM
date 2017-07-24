@@ -26,7 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>/// initialize the player stats
-if(instance_number(obj_dungeon_stats) &gt; 1) instance_destroy();
+if(instance_number(obj_dungeon_status) &gt; 1) instance_destroy();
+name = "unknown";
+race = "unknown";
+born_gender = gender.Genderless;
+age = 0;
 hp = 100;
 maxhp = hp;
 stamina = 100;
@@ -34,7 +38,11 @@ maxstamina = stamina;
 expr = 0;
 maxexpr = 3;
 level = 1;
-attack = 1;
+attack = 10;
+defense = 100;
+magicattack = 10;
+magicdefense = 100;
+threatlevel = "E";
 
 //dungeon stats
 dp = 1000;
@@ -43,13 +51,14 @@ maxdp = 1000;
 global.dm_creatures = ds_map_create();
 global.dm_inventory = ds_map_create();
 global.dm_abilities = ds_map_create();
-global.dm_skills = ds_map_create();
-global.dm_knownledge = ds_map_create(); 
+global.dm_skills = noone;
+global.dm_knowledges = ds_map_create(); 
 global.dm_map = ds_map_create();
+
+var test = 
 
 draw_set_font(fnt_text);
 draw_set_colour(c_white);
-
 
 helpkeys[0] = "Dungeon Keys";
 helpkeys[1] = "Tab Key | Camera Toggle";
@@ -59,13 +68,8 @@ helpkeys[4] = "Command Mode";
 helpkeys[5] = "Left Mouse | Select Select Unit";
 helpkeys[6] = "Right Mouse | Move Unit";
 
-
-
-
-
 //dungeon_ui = scr_dungeon_wave_hud;
 //dungeon_mode = scr_dungeon_wave_state;
-
 dungeon_ui = scr_dungeon_survival_hud;
 dungeon_mode = scr_dungeon_survival_state;
 
@@ -92,6 +96,12 @@ dung_floor_size[0] = 100;
 dung_floor_size[1] = 100;
 
 //Stores the map of the current floor.
+
+//setup tests!
+scr_init_skills();
+scr_init_items();
+scr_init_research();
+scr_init_creatures();
 
 </string>
           </argument>
@@ -197,7 +207,6 @@ if(reset_wave){
 
 //pause the game
 if(obj_input.dungeonmenu_key){
-    
     if(instance_exists(obj_dungeon_menu)){
         if(obj_dungeon_menu.bdisplay){
             obj_dungeon_menu.bdisplay = false;
@@ -205,8 +214,14 @@ if(obj_input.dungeonmenu_key){
             obj_dungeon_menu.bdisplay = true;
         }
     }
-    
 }
+
+if(obj_input.f2_key){
+    scr_getcreatures();
+
+}
+
+
 //make sure game dungeon game mode is set to it.
 script_execute(dungeon_mode);
 </string>

@@ -2,6 +2,21 @@
 var xx = display_get_gui_width()/2;
 var yy = display_get_gui_height()/2;
 draw_set_colour(c_white);
-draw_text(xx,yy-92, "Research Menu");
-draw_text(xx-64,yy-92, "Back[Z]");
+//draw_text(xx,yy-92, "Research Menu");
+//draw_text(xx-64,yy-92, "Back[Z]");
 
+var itemcounts = 0;
+if(instance_exists(obj_dungeon_status)){
+    itemcounts = array_height_2d(global.dm_knowledges);
+    
+}
+draw_text(xx,yy-92, "Research own:"+string(itemcounts));
+
+for(var i=0; i < array_height_2d(global.dm_knowledges);i++){
+
+    //draw_set_colour(c_gray)
+    //if(i == status_index){
+        //draw_set_colour(c_white);
+    //}
+    draw_text((xx)-256,yy-64+(i*32),global.dm_knowledges[i,0]+"");
+}
