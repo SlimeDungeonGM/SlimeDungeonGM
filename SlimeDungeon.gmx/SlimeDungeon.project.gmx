@@ -188,6 +188,7 @@
       <script>scripts\scr_calc_walls.gml</script>
       <script>scripts\scr_text.gml</script>
       <script>scripts\scr_getcreatures.gml</script>
+      <script>scripts\detect_mouse_area.gml</script>
     </scripts>
     <scripts name="bot state">
       <script>scripts\scr_bot_idle_state.gml</script>

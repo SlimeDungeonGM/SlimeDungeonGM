@@ -13,8 +13,9 @@ if(instance_exists(obj_dungeon_status)){
    status[4] = "Level:" + string(obj_dungeon_status.level);
    status[5] = "Rank:" + obj_dungeon_status.threatlevel;
 }
+draw_set_halign(fa_left);
 
-for(var i=0; i<= array_length_1d(status)-1;i++){
+for(var i=0; i < array_length_1d(status);i++){
     draw_set_colour(c_gray)
     if(i == status_index){
         draw_set_colour(c_white);

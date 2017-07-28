@@ -215,7 +215,7 @@ if (global._ishud)
         var xx = display_get_gui_width()/2;
         var yy = display_get_gui_height()/2;
         var screenx = device_mouse_x_to_gui(0);
-        var screeny = device_mouse_y_to_gui(0); 
+        var screeny = device_mouse_y_to_gui(0);
         var id_name = "none";
             
         if(pickid != -1){    
@@ -658,7 +658,7 @@ if (global._ishud)
                 list_index = array_height_2d(slotlist) - list_max;
             }
         }
-        //draw iamge and check if mouse is press left
+        //draw image and check if mouse is press left
         for (i = list_index; i &lt; array_height_2d(slotlist); i++){    
             if(list_count &gt;= list_max){
                 break;

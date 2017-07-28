@@ -40,7 +40,11 @@ status = noone;
 //status[2] = "Race:";
 //status[3] = "Titles:";
 
+list_max = 5;
+
 status_index = 0;
+
+abilities_index = 0;
 
 //menu index
 menu_index = 0;
