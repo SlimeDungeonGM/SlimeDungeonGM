@@ -309,6 +309,10 @@
       <script>scripts\scr_init_research.gml</script>
       <script>scripts\scr_init_creatures.gml</script>
     </scripts>
+    <scripts name="adventurers">
+      <script>scripts\scr_init_adventurers.gml</script>
+      <script>scripts\scr_create_adventurer.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -425,6 +429,8 @@
       <object>objects\objControl</object>
       <object>objects\obj_selected_monster</object>
       <object>objects\obj_wall_control</object>
+      <object>objects\obj_generate_adventurers</object>
+      <object>objects\obj_admin_controls</object>
     </objects>
     <objects name="traps">
       <object>objects\obj_box</object>
@@ -437,8 +443,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_dungeon_prototype</room>
     <room>rooms\rm_gen_dungeon_test</room>
-    <room>rooms\rm_world_layer</room>
     <room>rooms\rm_generate_dungeon</room>
     <room>rooms\rm_dungeon</room>
     <room>rooms\rm_dungeon_waves</room>

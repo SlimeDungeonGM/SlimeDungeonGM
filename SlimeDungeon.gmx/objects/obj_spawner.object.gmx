@@ -96,7 +96,7 @@ if(alarm[0] &lt;= 0){
             {
                 faction = other.faction;
             }
-            obj_dungeon_stats.creature_count++;
+            obj_dungeon_status.creature_count++;
             show_debug_message("spawning creature...");
             alarm[0] = room_speed * spawn_time;
         //}    
