@@ -188,7 +188,10 @@
       <script>scripts\scr_calc_walls.gml</script>
       <script>scripts\scr_text.gml</script>
       <script>scripts\scr_getcreatures.gml</script>
+      <script>scripts\scr_getadventurers.gml</script>
+      <script>scripts\gethierarchy.gml</script>
       <script>scripts\detect_mouse_area.gml</script>
+      <script>scripts\scr_objectcount.gml</script>
     </scripts>
     <scripts name="bot state">
       <script>scripts\scr_bot_idle_state.gml</script>
@@ -355,6 +358,13 @@
       </objects>
       <object>objects\obj_follow_target</object>
       <object>objects\obj_enemy_slime</object>
+      <objects name="adventurers">
+        <object>objects\obj_adventurer</object>
+        <object>objects\obj_thief</object>
+        <object>objects\ob_mage</object>
+        <object>objects\obj_cleric</object>
+        <object>objects\obj_warrior</object>
+      </objects>
     </objects>
     <objects name="buildings">
       <object>objects\obj_spawner</object>

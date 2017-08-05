@@ -3,7 +3,7 @@
   <spriteName>basic_slime</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-20</depth>
   <persistent>0</persistent>
   <parentName>obj_monster_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>

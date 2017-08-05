@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Phyic Lock
+            <string>event_inherited();
+/// Phyic Lock
 
-phy_fixed_rotation = true;
+//phy_fixed_rotation = true;
 </string>
           </argument>
         </arguments>
