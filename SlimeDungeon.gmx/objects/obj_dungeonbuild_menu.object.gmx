@@ -25,14 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialize build
+            <string>/// @description setup build menu
+// You can write your code in this editor
+/// initialize build
 isbuild = false;
 
-buildmenu[0] = "Blocks";
-buildmenu[1] = "Traps";
-buildmenu[2] = "Tools";
-buildmenu[3] = "Items";
-buildmenu[4] = "Creatures";
+//array_create()
 
 isboundbox = false;
 issnap = true;
@@ -59,6 +57,7 @@ pickid = -1;
 slotlist = noone;// ds_grid_create(0,4);
 
 //display name
+
 tileblock[0, 0] = "Wall";
 tileblock[0, 1] = spr_wall;
 tileblock[0, 2] = obj_wall;
@@ -95,7 +94,7 @@ tileblock[6, 2] = obj_lava;
 tileblock[6, 3] = obj_lava;
 
 traps[0,0] = "Box";
-traps[0,1] = spr_box_icon;
+traps[0,1] = spr_box;
 traps[0,2] = obj_box;
 traps[0,3] = obj_box;
 
@@ -104,59 +103,63 @@ traps[1,1] = spr_spike;
 traps[1,2] = obj_spike;
 traps[1,3] = obj_spike;
 
-tools = noone;
-items = noone;
+tools[0,0] = "Spike";
+tools[0,1] = spr_spike;
+tools[0,2] = obj_spike;
+tools[0,3] = obj_spike;
 
+items[0,0] = "Spike";
+items[0,1] = spr_spike;
+items[0,2] = obj_spike;
+items[0,3] = obj_spike;
 
 creatures[0,0] = "Slime"
-creatures[0,1] = basic_slime
-creatures[0,2] = obj_monster_slime
-creatures[0,3] = obj_monster_slime
+creatures[0,1] = spr_slime
+creatures[0,2] = obj_slime
+creatures[0,3] = obj_slime
 
 creatures[1,0] = "Slime Spawner"
 creatures[1,1] = spr_spawner
 creatures[1,2] = obj_spawner
-creatures[1,3] = obj_monster_slime
+creatures[1,3] = obj_slime
 
 slotlist = tileblock;
 
 
-//buildmenu[0] = "Blocks";
-//buildmenu[1] = "Traps";
-//buildmenu[2] = "Tools";
-//buildmenu[3] = "Items";
-//buildmenu[4] = "Creaures";
-
 buttontabs[0] = instance_create(0,0,obj_button);
 buttontabs[0].name = "Blocks";
+buttontabs[0].width = 144;
+buttontabs[0].brender = false;
 buttontabs[0].scriptfile = scr_buildtab_select;
 buttontabs[0].arg = 0;
-buttontabs[0].width = 144;
 
 buttontabs[1] = instance_create(0,0,obj_button);
 buttontabs[1].name = "Traps";
+buttontabs[1].width = 144;
+buttontabs[1].brender = false;
 buttontabs[1].scriptfile = scr_buildtab_select;
 buttontabs[1].arg = 1;
-buttontabs[1].width = 144;
 
 buttontabs[2] = instance_create(0,0,obj_button);
 buttontabs[2].name = "Tools";
+buttontabs[2].width = 144;
+buttontabs[2].brender = false;
 buttontabs[2].scriptfile = scr_buildtab_select;
 buttontabs[2].arg = 2;
-buttontabs[2].width = 144;
 
 buttontabs[3] = instance_create(0,0,obj_button);
 buttontabs[3].name = "Items";
+buttontabs[3].width = 144;
+buttontabs[3].brender = false;
 buttontabs[3].scriptfile = scr_buildtab_select;
 buttontabs[3].arg = 3;
-buttontabs[3].width = 144;
 
 buttontabs[4] = instance_create(0,0,obj_button);
 buttontabs[4].name = "Creaures";
+buttontabs[4].width = 144;
+buttontabs[4].brender = false;
 buttontabs[4].scriptfile = scr_buildtab_select;
 buttontabs[4].arg = 4;
-buttontabs[4].width = 144;
-
 
 </string>
           </argument>

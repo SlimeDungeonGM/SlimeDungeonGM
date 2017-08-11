@@ -1,5 +1,5 @@
 
-creatures[0] = obj_monster_slime;
+creatures[0] = obj_slime;
 
 var count = 0;
 

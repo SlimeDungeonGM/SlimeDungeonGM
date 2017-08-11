@@ -655,7 +655,7 @@
     <option_xbone_title_id></option_xbone_title_id>
   </Options>
   <ConfigConstants>
-    <constants number="20">
+    <constants number="24">
       <constant name="RETURN">0</constant>
       <constant name="NEW_ROOM">1</constant>
       <constant name="LOAD">2</constant>
@@ -676,6 +676,10 @@
       <constant name="VOID">2</constant>
       <constant name="PLACE">3</constant>
       <constant name="TRAP">4</constant>
+      <constant name="CELLWIDTH">32</constant>
+      <constant name="CELLHEIGHT">32</constant>
+      <constant name="ADVENTURER">5</constant>
+      <constant name="CREATURE">4</constant>
     </constants>
   </ConfigConstants>
 </Config>

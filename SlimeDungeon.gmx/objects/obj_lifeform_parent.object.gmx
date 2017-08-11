@@ -26,7 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>///initialize the lifeform
-phy_fixed_rotation = true;
+if(object_get_physics(object_index)){
+    phy_fixed_rotation = true;
+}
 hp = 3;
 maxhp = 3;
 monsterTier = 1;
@@ -119,7 +121,7 @@ mineStrength = 10;
           <argument>
             <kind>1</kind>
             <string>/// delete stuff
-death_loyalty();
+//death_loyalty();
 with(followTarget)
 {
     instance_destroy(); 

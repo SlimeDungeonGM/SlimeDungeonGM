@@ -8,7 +8,7 @@
   <parentName>obj_lifeform_parent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="4" ename="obj_lifeform_parent">
+    <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,23 +25,81 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (alarm[10] &lt;= 0)
+            <string>/// @description Insert description here
+// You can write your code in this editor
+event_inherited();
+//param status
+
+//AI bot setup
+script_state = noone;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @description Insert description here
+// You can write your code in this editor
+obj_dungeon_status.alarm[2] = room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @description Insert description here
+// You can write your code in this editor
+event_inherited();
+
+var inst,xx;
+
+inst = instance_nearest(x, y, obj_adventurer_parent);//works
+//draw_line(x, y, 0, 0);
+if inst != id
 {
-    if (faction != other.faction 
-        || (faction == factions.hunger &amp;&amp; other.faction == factions.hunger)
-        || (monsterTier &gt; other.monsterTier &amp;&amp; hunger &lt;= maxHunger*warningHunger))
-    {
-        var dir = point_direction(other.x, other.y, x, y);
-        var xdir = lengthdir_x(1, dir);
-        var ydir = lengthdir_y(1, dir);
-        
-        var damage = instance_create(other.x+xdir, other.y+ydir, obj_damage);
-        damage.creator = id;
-        damage.knockback = 1;
-        state = scr_bot_stall_state;
-        alarm[1] = room_speed;
-        alarm[10] = room_speed;
-    }
+	//draw_line(x, y, inst.x+8, inst.y+8);
+	if(distance_to_object(inst) &lt; 10){
+		script_state = scr_creature_attack;
+	}else{
+		
+	}
+	//show_debug_message("Line?");
+}
+
+if(script_state != noone){
+	script_execute(script_state);
 }
 </string>
           </argument>

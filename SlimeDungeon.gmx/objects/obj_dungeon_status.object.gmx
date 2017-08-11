@@ -25,11 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// initialize the player stats
+            <string>/// @description Setup some base dungeon status
+// You can write your code in this editor
+/// initialize the player stats
 if(instance_number(obj_dungeon_status) &gt; 1) instance_destroy();
+
 name = "unknown";
 race = "unknown";
-born_gender = gender.Genderless;
+born_gender = "unknown";
 age = 0;
 hp = 100;
 maxhp = hp;
@@ -47,6 +50,12 @@ threatlevel = "E";
 //dungeon stats
 dp = 1000;
 maxdp = 1000;
+
+b_dp_regan = true;
+dp_regan = 1;
+dp_regan_time = room_speed;
+
+
 //creates the ds_map for each of the inventories of the dungeon
 global.dm_creatures = ds_map_create();
 global.dm_inventory = ds_map_create();
@@ -55,23 +64,20 @@ global.dm_skills = noone;
 global.dm_knowledges = ds_map_create(); 
 global.dm_map = ds_map_create();
 
-draw_set_font(fnt_text);
-draw_set_colour(c_white);
+//creaturetexts[0] = "None";
 
-helpkeys[0] = "Dungeon Keys";
-helpkeys[1] = "Tab Key | Camera Toggle";
-helpkeys[2] = "B | Build Menu";
-helpkeys[3] = "A | Status Menu";
-helpkeys[4] = "Command Mode";
-helpkeys[5] = "Left Mouse | Select Select Unit";
-helpkeys[6] = "Right Mouse | Move Unit";
+
+//draw_set_font(defaultfont);
+draw_set_font(fnt_HUD);
+draw_set_colour(c_white);
 
 //dungeon_ui = scr_dungeon_wave_hud;
 //dungeon_mode = scr_dungeon_wave_state;
+
 dungeon_ui = scr_dungeon_survival_hud;
 dungeon_mode = scr_dungeon_survival_state;
 
-toggle_camera = false;
+toggle_camera = true;
 
 //wave control variables
 creature_count = 0;
@@ -95,12 +101,64 @@ dung_floor_size[1] = 100;
 
 //Stores the map of the current floor.
 
+
 //setup tests!
 scr_init_skills();
 scr_init_items();
 scr_init_research();
 scr_init_creatures();
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @description dungeon recovery points
+// You can write your code in this editor
+dp+=dp_regan;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @description update creatures list
+// You can write your code in this editor
+
+scr_getcreaturescount();
 </string>
           </argument>
         </arguments>
@@ -215,8 +273,22 @@ if(obj_input.dungeonmenu_key){
 }
 
 if(obj_input.f2_key){
-    scr_getcreatures();
+    //scr_getcreatures();
+	if(alarm[0] &lt;= 0){
+		//scr_roomobjects();
+		//scr_getcreaturescount();
+		//scr_getadventurercount();
+		if(instance_exists(obj_admin)){
+			if(obj_admin.bshow){
+				obj_admin.bshow = false;
+			}else{
+				obj_admin.bshow = true;
+			}
+		}
+		alarm[0] = room_speed / 6;
+	}
 }
+
 
 //make sure game dungeon game mode is set to it.
 script_execute(dungeon_mode);
@@ -261,6 +333,10 @@ script_execute(dungeon_mode);
 //}
 //room_persistent = false;
 //room_start_action = NEW_ROOM;
+
+scr_getcreaturescount();
+scr_getadventurercount();
+
 </string>
           </argument>
         </arguments>
@@ -283,27 +359,19 @@ script_execute(dungeon_mode);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// draw the hud
-var xx = display_get_gui_width()/2;
-var yy = display_get_gui_height()/2;
+            <string>/// @description Draw HUD
+// You can write your code in this editor
+
 
 //Fix when player death and presistent draw.
 //show_debug_message(string(g_display_dungeon));   
 if(global._display_dungeon){
     if(global._ishud){
-        //draw_set_colour(c_white);
-        //draw_set_halign(fa_left);
-        //draw_text(4,4, "Camera[Tab]:" + string(toggle_camera) + " Camera Pan:[Right Mouse], Camera zoom:[Wheel]");
-        //draw_text(4,16+4, "Dungeon Menu[A]");
-        //draw_text(xx,0, "Build Mode[B]");
+        //script_execute(scr_dungeon_hud);
         script_execute(dungeon_ui);
-        //draw_set_colour(c_white);
-        
-        if(obj_input.help_key){
-            script_execute(scr_display_help_key);
-        }    
     }
 }
+
 </string>
           </argument>
         </arguments>

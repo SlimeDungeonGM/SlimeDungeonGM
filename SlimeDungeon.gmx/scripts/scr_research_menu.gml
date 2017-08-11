@@ -10,6 +10,11 @@ if(instance_exists(obj_dungeon_status)){
     itemcounts = array_height_2d(global.dm_knowledges);
     
 }
+
+draw_set_color(c_blue);
+draw_rectangle(xx-392,yy-72,xx+392,yy+160,false);
+draw_set_color(c_white);
+
 draw_text(xx,yy-92, "Research own:"+string(itemcounts));
 
 for(var i=0; i < array_height_2d(global.dm_knowledges);i++){
@@ -20,3 +25,4 @@ for(var i=0; i < array_height_2d(global.dm_knowledges);i++){
     //}
     draw_text((xx)-256,yy-64+(i*32),global.dm_knowledges[i,0]+"");
 }
+
