@@ -73,6 +73,7 @@ Controls:
   
   RTS Comands:
   * Mouse Left and right
-  * Mouse Middle = Pan Camera View
+  * Mouse Middle Press = Pan Camera View
+  * Mouse Wheel = Zoom Camera View
   
  

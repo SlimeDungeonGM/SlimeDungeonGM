@@ -27,6 +27,8 @@
             <kind>1</kind>
             <string>/// camera move around
 zoom = 1;
+zoom_level = 1;
+
 bfollowplayer = false;
 bcameracontrol = true;
 
@@ -83,6 +85,20 @@ if(bfollowplayer){
 }
 
 if(bcameracontrol){
+    //zoom with mouse wheel
+    zoom_level = clamp(zoom_level + (((mouse_wheel_down() - mouse_wheel_up())) * 0.1), 0.1, 5);
+    //Step 1: get the current ratio of the mouse to the view
+    _mouse_x=(mouse_x-view_xview)/view_wview;
+    _mouse_y=(mouse_y-view_yview)/view_hview;
+    //Step 2: Update view widths and height.
+    view_wview = 320 / zoom_level;
+    view_hview = 240 / zoom_level;
+    //Step 3: Update position of view based on ratio and mouse position.
+    view_xview=mouse_x-view_wview*_mouse_x;
+    view_yview=mouse_y-view_hview*_mouse_y;
+    //
+
+    //drag camera
     if(mouse_check_button_pressed(mb_middle)){
         drag_x = mouse_x;
         drag_y = mouse_y;
@@ -105,7 +121,7 @@ if(bcameracontrol){
     if(mouse_check_button_released(mb_middle)){
         window_set_cursor(cr_default);
     }
-    
+    /*
     ///zoom
     if(mouse_wheel_up()){
         zoom = max(0.1,zoom - 0.10);    
@@ -113,86 +129,19 @@ if(bcameracontrol){
     if (mouse_wheel_down()){
         zoom +=0.10;   
     }
-    
+    */
+        
     //default view port init and sacle to 1
-    view_wview = 320 * zoom;
-    view_hview = 240 * zoom;
-}
-
-/*
-//make sure the right click hold move doesn't move if the position is same else move pan
-if(mouse_check_button_pressed(mb_right)){
-    if(ispress_right == false){
-//        selectbox1_x = mouse_x;
-//        selectbox1_y = mouse_y;
-        ispress_right = true;    
-    }
-}
-
-if(mouse_check_button_released(mb_right)){
-    ispress_right = false;  
-}
-
-if(ispress_right){
-//    selectbox2_x = mouse_x;
-//    selectbox2_y = mouse_y;
-//    if(selectbox1_x == selectbox2_x and selectbox1_y == selectbox2_y){
-        //show_debug_message("do nothing");
-//        exit;
-//    }else{
-        //show_debug_message("move?");    
-//    }
-}
-
-if(bcameracontrol){
-    ///zoom
-    if(mouse_wheel_up()){
-        zoom = max(0.1,zoom - 0.10);    
-    }
-    if (mouse_wheel_down()){
-        zoom +=0.10;   
-    }
+    //view_wview = 320 * zoom_level;
+    //view_hview = 240 * zoom_level;
     
-    //default view port init and sacle to 1
-    view_wview[0] = 320 * zoom;
-    view_hview[0] = 240 * zoom;
+    //view_wview = 320 * zoom_level;
+    //view_hview = 240 * zoom_level;
     
-    // This sets it up so that the camera is exactly in the middle of the screen at all times, regardless of zoom.
-    view_xview[0] = x - view_wview / 2;
-    view_yview[0] = y - view_hview / 2;
-    //panning view port
-    speed = 0;
-    //if (mouse_check_button(mb_middle))
-    {
-        if (mouse_x &gt; x + (0.5*view_wview) - 10 || mouse_x &lt; x - (0.5*view_wview) + 10 || mouse_y &gt; y + (0.5*view_hview) - 10 || mouse_y &lt; y - (0.5*view_hview) + 10)
-        {
-            // Points towards the mouse
-            direction = point_direction(x, y, mouse_x, mouse_y)
-            // Finds the distance from the camera object to the mouse, then divides it by (10 * zoom) so that the camera pan speed stays reasonable
-            speed = distance_to_point(mouse_x, mouse_y) / (10 * zoom)
-        }
-        if(mouse_x &gt; x + (0.5*view_wview))
-        {
-            display_mouse_set(x + (0.5*view_wview), mouse_y);
-        }
-        if(mouse_x &lt; x - (0.5*view_wview))
-        {
-            display_mouse_set(x - (0.5*view_wview), mouse_y);
-        }
-        if(mouse_y &gt; y + (0.5*view_hview))
-        {
-            display_mouse_set(mouse_x, y + (0.5*view_hview));
-        }
-        if(mouse_y &lt; y - (0.5*view_hview))
-        {
-            display_mouse_set(mouse_x, y - (0.5*view_hview));
-        }
-    }
-    //else{ speed = 0};
-    x += lengthdir_x(speed,direction);
-    y += lengthdir_y(speed,direction);
+    //view_xview[0] = view_wview / 2
+    //view_yview[0] = view_hview / 2
+
 }
-*/
 </string>
           </argument>
         </arguments>
