@@ -331,6 +331,7 @@
       <script>scripts\scr_floor_check.gml</script>
       <script>scripts\scr_wall_check.gml</script>
       <script>scripts\scr_trap_check.gml</script>
+      <script>scripts\scr_display_paths.gml</script>
     </scripts>
     <scripts name="admin_scripts">
       <script>scripts\scr_update_data.gml</script>

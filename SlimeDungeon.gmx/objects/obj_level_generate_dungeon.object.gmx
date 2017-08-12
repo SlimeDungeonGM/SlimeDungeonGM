@@ -25,57 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// create or load dungeon level
-script_execute(scr_level_generate_dungeon);
+            <string>/// @description Insert description here
+// You can write your code in this editor
+//script_execute(scr_level_generate_dungeon);
+scr_level_generate_dungeon();
+
+alarm[0] = room_speed;
+
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="7" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>601</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_execute_script</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>9</kind>
-            <script>scr_dungeon_update_paths</script>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="64">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -92,7 +55,9 @@ script_execute(scr_level_generate_dungeon);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//draw_text(64,64,"instance objects:" + string(instance_count));
+            <string>/// @description Insert description here
+// You can write your code in this editor
+scr_dungeon_update_paths();
 </string>
           </argument>
         </arguments>
@@ -115,14 +80,15 @@ script_execute(scr_level_generate_dungeon);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///draw floor and wall
+            <string>/// @description Draw map path
 //red is wall
 //green is floor
-if(bdraw_pathmap){
+if(global.bdisplay_map_path){
     draw_set_alpha(0.3);
     mp_grid_draw(grid_path);
     draw_set_alpha(1);
 }
+
 </string>
           </argument>
         </arguments>

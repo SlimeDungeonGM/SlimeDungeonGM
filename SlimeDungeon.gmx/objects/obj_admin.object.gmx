@@ -50,9 +50,9 @@ buttontabs[2].scriptfile = scr_admintabs;
 buttontabs[2].arg = 2;
 
 for(var i = 0; i &lt; array_length_1d(buttontabs);i++){
-	//buttons[i].brender = false;
-	buttontabs[i].x = (200*i) + 8*i;
-	buttontabs[i].width = 200;
+//buttons[i].brender = false;
+buttontabs[i].x = (200*i) + 8*i;
+buttontabs[i].width = 200;
 }
 
 btnadventures[0] = instance_create(0,0,obj_button);
@@ -85,10 +85,10 @@ btnadventures[5].scriptfile = scr_create_adventurer;
 btnadventures[5].arg = 4;
 
 for(var i = 0; i &lt; array_length_1d(btnadventures);i++){
-	//buttons[i].brender = false;
-	btnadventures[i].x = (128*i) + 8*i;
-	btnadventures[i].y = 42;
-	btnadventures[i].width = 128;
+//buttons[i].brender = false;
+btnadventures[i].x = (128*i) + 8*i;
+btnadventures[i].y = 42;
+btnadventures[i].width = 128;
 }
 
 
@@ -113,10 +113,10 @@ dungeonbtns[3].scriptfile = scr_dungeon_dp_regenerate;
 dungeonbtns[3].arg = 100;
 
 for(var i = 0; i &lt; array_length_1d(dungeonbtns);i++){
-	//buttons[i].brender = false;
-	//dungeonbtns[i].x = (160*i) + 8*i;
-	dungeonbtns[i].y = 42 + 32*i + 8*i;
-	dungeonbtns[i].width = 256;
+//buttons[i].brender = false;
+//dungeonbtns[i].x = (160*i) + 8*i;
+dungeonbtns[i].y = 42 + 32*i + 8*i;
+dungeonbtns[i].width = 256;
 }
 
 mapbtns[0] = instance_create(0,0,obj_button);
@@ -124,18 +124,22 @@ mapbtns[0].name = "Data";
 mapbtns[0].scriptfile = scr_update_data;
 
 mapbtns[1] = instance_create(0,0,obj_button);
-mapbtns[1].name = "Paths";
+mapbtns[1].name = "U Paths";
 mapbtns[1].scriptfile = scr_update_paths;
 
 mapbtns[2] = instance_create(0,0,obj_button);
-mapbtns[2].name = "Tiles";
-mapbtns[2].scriptfile = scr_update_tiles;
+mapbtns[2].name = "D Paths";
+mapbtns[2].scriptfile = scr_display_paths;
+
+mapbtns[3] = instance_create(0,0,obj_button);
+mapbtns[3].name = "Tiles";
+mapbtns[3].scriptfile = scr_update_tiles;
 
 for(var i = 0; i &lt; array_length_1d(mapbtns);i++){
-	//buttons[i].brender = false;
-	mapbtns[i].x = (160*i) + 8*i;
-	mapbtns[i].y = 42;
-	mapbtns[i].width = 160;
+//buttons[i].brender = false;
+mapbtns[i].x = (160*i) + 8*i;
+mapbtns[i].y = 42;
+mapbtns[i].width = 160;
 }
 
 </string>

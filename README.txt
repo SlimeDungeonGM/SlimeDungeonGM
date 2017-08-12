@@ -53,7 +53,7 @@ ToDoList:
   * Build Menu (WIP)
   * RTS Command Menu (WIP)
   * Camera HUD (WIP)
-  * Creature Health Bar (N/A)
+  * Creature Health Bar (WIP)
   * Status Menu (WIP)
   * Inventory (N/A)
   * Pause Menu (WIP)
@@ -65,10 +65,14 @@ Controls:
   * X = Attack
   * C = Dash
   * V = Fire Projectile
+  
   * B =  build menu
   * Tab = Camera toggle
+  * F2 = Debug Menu
+  * Q = Status Menu
   
   RTS Comands:
   * Mouse Left and right
+  * Mouse Middle = Pan Camera View
   
  

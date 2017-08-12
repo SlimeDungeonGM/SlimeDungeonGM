@@ -237,6 +237,12 @@ scr_getcreaturescount();
 //    stamina++;
 //}
 
+if(b_dp_regan){
+    if(alarm[11] &lt;= 0){
+        alarm[11] = dp_regan_time;
+    }
+}
+
 //dungeon reset
 if(reset_wave){    
     hp = 5;
@@ -274,19 +280,19 @@ if(obj_input.dungeonmenu_key){
 
 if(obj_input.f2_key){
     //scr_getcreatures();
-	if(alarm[0] &lt;= 0){
-		//scr_roomobjects();
-		//scr_getcreaturescount();
-		//scr_getadventurercount();
-		if(instance_exists(obj_admin)){
-			if(obj_admin.bshow){
-				obj_admin.bshow = false;
-			}else{
-				obj_admin.bshow = true;
-			}
-		}
-		alarm[0] = room_speed / 6;
-	}
+if(alarm[0] &lt;= 0){
+//scr_roomobjects();
+//scr_getcreaturescount();
+//scr_getadventurercount();
+if(instance_exists(obj_admin)){
+if(obj_admin.bshow){
+obj_admin.bshow = false;
+}else{
+obj_admin.bshow = true;
+}
+}
+alarm[0] = room_speed / 6;
+}
 }
 
 

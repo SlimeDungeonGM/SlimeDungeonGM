@@ -25,8 +25,8 @@ if(global.level_generate){
     
     //create pathfinding grid
     grid_path = mp_grid_create(0,0,width,height,_CELLWIDTH,_CELLHEIGHT);
-	
-	global.grid_path = grid_path;
+
+global.grid_path = grid_path;
     
     //create object grid instance object
     grid_tileobjects = ds_grid_create(width, height);
@@ -58,7 +58,7 @@ if(global.level_generate){
     
     //create the player
     //instance_create((cx*CELL_WIDTH)+(CELL_WIDTH/2),(cy*CELL_HEIGHT)+(CELL_HEIGHT/2), obj_dungeon_core);
-    instance_create_layer((cx*_CELLWIDTH),(cy*_CELLHEIGHT),"dungeonlayout", obj_dungeon_core);
+    instance_create((cx*_CELLWIDTH),(cy*_CELLHEIGHT), obj_dungeon_core);
     
     //floor
     grid[# cx, cy] = _FLOOR; //center 
@@ -77,14 +77,14 @@ if(global.level_generate){
     for(var yy = 1;yy < height - 1;yy++){
         for(var xx = 1;xx < width - 1;xx++){
             if(grid[# xx,yy] == _FLOOR){
-                var _floor = instance_create_layer(xx*_CELLWIDTH,yy*_CELLHEIGHT,"dungeonlayout", obj_floor);
+                var _floor = instance_create(xx*_CELLWIDTH,yy*_CELLHEIGHT, obj_floor);
                 grid_tileobjects[# xx, yy] = _floor;
             }else{
                 //wall or no go path
                 mp_grid_add_cell(grid_path, xx, yy);
             }
             if(grid[# xx,yy] == _WALL){
-                var _wall = instance_create_layer(xx*_CELLWIDTH,yy*_CELLHEIGHT,"dungeonlayout", obj_wall);
+                var _wall = instance_create(xx*_CELLWIDTH,yy*_CELLHEIGHT, obj_wall);
                 grid_tileobjects[# xx, yy] = _wall;            
             }
         }
@@ -94,7 +94,7 @@ if(global.level_generate){
     //show_debug_message(string(grid));
 }else{
 
-	//set the grid and height
+//set the grid and height
     var width = room_width div _CELLWIDTH;
     var height = room_height div _CELLHEIGHT;
     
@@ -103,8 +103,8 @@ if(global.level_generate){
     
     //create pathfinding grid
     grid_path = mp_grid_create(0,0,width,height,_CELLWIDTH,_CELLHEIGHT);
-	
-	global.grid_path = grid_path;
+
+global.grid_path = grid_path;
     
     //create object grid instance object
     //grid_tileobjects = ds_grid_create(width, height);

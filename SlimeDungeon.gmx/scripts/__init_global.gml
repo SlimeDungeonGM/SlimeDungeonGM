@@ -20,6 +20,9 @@ global.Dungeon_RNGTime = 0;
 global.Dungeon_Upgrading = false; //for kick party for dungeon upgrading
 global.level_generate = false;
 
+//debug tools
+global.bdisplay_map_path = false;
+global.bdisplay_creature_path = false;
 
 global._ismenu = true;
 global._ishud = true;
