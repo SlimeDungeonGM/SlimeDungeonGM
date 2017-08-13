@@ -4,39 +4,38 @@ inst = instance_nearest(x, y, obj_adventurer_parent);//works
 
 if inst != id
 {
-	if(inst == noone){
-		exit;
-	}
-	
-	if(inst.hp <= 0){
-		exit;
-	}
-	var dir = point_direction(x,y,inst.x,inst.y);
-	var dirx = lengthdir_x(32,dir);
-	var diry = lengthdir_y(32,dir);
-	
-	if(alarm[10] <= 0){
-		//show_debug_message("DIR:"+string(dir));
-		//show_debug_message("HEALTH:"+string(hp));
-		show_debug_message("HEALTH EMENY:"+string(inst.hp));
-		
-		show_debug_message("Creature POINT DIR:"+string(dirx) +":"+ string(diry));
-		
-		dirx = x + dirx;
-		diry = y + diry;
+    if(inst == noone){
+        exit;
+    }
 
-		//show_debug_message("DIR:"+string(dirx) +":"+ string(diry));
-		
-		var damage = instance_create(dirx,diry, obj_damage);
-		//var damage = instance_create_layer(x,y,"effects", obj_damage);
-		//damage.sprite_index = //image draw
-		damage.creator = id;
-		//damage.damage = obj_player_stats.attack;
-		damage.damage = 5;
-		
-		//attacked = true;
-		alarm[10] = room_speed *2;
-	}
+    if(inst.hp <= 0){
+        exit;
+    }
+    var dir = point_direction(x,y,inst.x,inst.y);
+    var dirx = lengthdir_x(32,dir);
+    var diry = lengthdir_y(32,dir);
+
+    if(alarm[10] <= 0){
+        //show_debug_message("DIR:"+string(dir));
+        //show_debug_message("HEALTH:"+string(hp));
+        show_debug_message("HEALTH EMENY:"+string(inst.hp));
+        show_debug_message("Creature POINT DIR:"+string(dirx) +":"+ string(diry));
+
+        dirx = x + dirx;
+        diry = y + diry;
+
+        //show_debug_message("DIR:"+string(dirx) +":"+ string(diry));
+
+        var damage = instance_create(dirx,diry, obj_damage);
+        //var damage = instance_create_layer(x,y,"effects", obj_damage);
+        //damage.sprite_index = //image draw
+        damage.creator = id;
+        //damage.damage = obj_player_stats.attack;
+        damage.damage = attack;
+
+        //attacked = true;
+        alarm[10] = room_speed *1;
+    }
 }
 
 

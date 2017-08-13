@@ -102,6 +102,20 @@ dung_floor_size[1] = 100;
 //Stores the map of the current floor.
 
 
+//help text
+helpkeys[0] = "Dungeon Keys";
+helpkeys[1] = "Tab Key | Camera Toggle";
+helpkeys[2] = "B | Build Menu";
+helpkeys[3] = "Q | Status Menu";
+helpkeys[4] = "F2 | Debug Menu";
+helpkeys[5] = "Mouse Wheel | Zome Camera";
+helpkeys[6] = "Mouse Middle | Pan Camera";
+helpkeys[7] = "";
+helpkeys[8] = "Command Mode";
+helpkeys[9] = "Left Mouse | Select Select Unit";
+helpkeys[10] = "Right Mouse | Move Unit";
+
+
 //setup tests!
 scr_init_skills();
 scr_init_items();
@@ -280,19 +294,22 @@ if(obj_input.dungeonmenu_key){
 
 if(obj_input.f2_key){
     //scr_getcreatures();
-if(alarm[0] &lt;= 0){
-//scr_roomobjects();
-//scr_getcreaturescount();
-//scr_getadventurercount();
-if(instance_exists(obj_admin)){
-if(obj_admin.bshow){
-obj_admin.bshow = false;
+    if(alarm[0] &lt;= 0){
+        if(instance_exists(obj_admin)){
+            if(obj_admin.bshow){
+                obj_admin.bshow = false;
+            }else{
+                obj_admin.bshow = true;
+            }
+        }
+        alarm[0] = room_speed / 6;
+    }
+}
+
+if(obj_input.help_key){
+    	bhelpkey = true;
 }else{
-obj_admin.bshow = true;
-}
-}
-alarm[0] = room_speed / 6;
-}
+    	bhelpkey = false;
 }
 
 
@@ -366,18 +383,18 @@ scr_getadventurercount();
           <argument>
             <kind>1</kind>
             <string>/// @description Draw HUD
-// You can write your code in this editor
-
 
 //Fix when player death and presistent draw.
-//show_debug_message(string(g_display_dungeon));   
-if(global._display_dungeon){
-    if(global._ishud){
+if(global._ishud){
+    if(global._display_dungeon){
         //script_execute(scr_dungeon_hud);
         script_execute(dungeon_ui);
     }
 }
 
+if(bhelpkey){
+    script_execute(scr_display_help_key);
+}
 </string>
           </argument>
         </arguments>

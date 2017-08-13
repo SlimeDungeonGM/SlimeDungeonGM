@@ -29,14 +29,37 @@
 if(object_get_physics(object_index)){
     phy_fixed_rotation = true;
 }
+//base info creature status
 hp = 3;
 maxhp = 3;
+mp = 0;
+maxmp = mp;
+
+level = 0;
+experience = 0;
+nextexperience = 10;
+dpconvertrate = 10;//hp + mp / dpconvertrate = dp
+
+//battle settings
+attack = 0;
+defense = 0;
+magicattack = 0;
+magicdefense = 0;
+
+
 monsterTier = 1;
 name = "testName";
 spd = 1;
 issnap = false;
 isfixed = false;
 objtype = VOID;
+
+//paramse
+name = "testname";
+bsingle_select = false;
+teamid = -1;
+owner = "";
+creator = "";
 
 //health bar
 bdisplay_healthbar = true;
@@ -59,13 +82,7 @@ followTarget = instance_create(x,y,obj_follow_target);
 followTarget.owner = self;
 point = 0;
 path_done = 0;
-
-//paramse
-name = "testname";
-bsingle_select = false;
-teamid = -1;
-owner = "";
-creator = "";
+path = path_add();
 
 //loyalty
 loyalty = 50;
@@ -122,6 +139,17 @@ mineStrength = 10;
             <kind>1</kind>
             <string>/// delete stuff
 //death_loyalty();
+var dp = (maxhp + maxmp)/dpconvertrate;
+show_debug_message("Dead dp:"+ string(dp))
+
+//add dungeon poitns
+obj_dungeon_status.dp += dp;
+
+//delete path
+if(path_exists(path)){
+    path_delete(path);
+}
+
 with(followTarget)
 {
     instance_destroy(); 
@@ -244,12 +272,13 @@ if ( hunger &lt;= 0) {
 }
 
 if(hp &lt;= 0){
-    var corpse = instance_create(x,y,obj_corpse_parent);
-    corpse.food = maxHunger/2;
-    corpse.sprite_index = death_sprite;
+    //var corpse = instance_create(x,y,obj_corpse_parent);
+    //corpse.food = maxHunger/2;
+    //corpse.sprite_index = death_sprite;
     instance_destroy();
 }
-var corpse = collision_point(x,y,obj_corpse_parent,false,true);
+//var corpse = collision_point(x,y,obj_corpse_parent,false,true);
+/*
 if (corpse &amp;&amp; alarm[11] &lt;= 0)
 {
     var eatAmount = max(0,min(maxHunger-hunger,corpse.food,maxHunger/10));
@@ -258,8 +287,7 @@ if (corpse &amp;&amp; alarm[11] &lt;= 0)
     alarm[11] = 1*room_speed;
     loyalty += 5;
 }
-
-
+*/
 </string>
           </argument>
         </arguments>

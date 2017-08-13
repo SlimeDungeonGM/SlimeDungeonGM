@@ -110,8 +110,8 @@ if(bcameracontrol){
         view_xview = drag_x - (mouse_x - view_xview);
         view_yview = drag_y - (mouse_y - view_yview[0]);
         //doesn't go outside view
-        view_xview = max(0,min(view_xview, room_width - view_wview));
-        view_yview = max(0,min(view_yview, room_height - view_hview));    
+        //view_xview = max(0,min(view_xview, room_width - view_wview));
+        //view_yview = max(0,min(view_yview, room_height - view_hview));    
         //change cursor
         window_set_cursor(cr_size_all);
         //show_debug_message("drag? "+string(drag_x)+":"+string(drag_y));

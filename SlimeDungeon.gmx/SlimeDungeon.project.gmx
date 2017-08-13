@@ -223,6 +223,7 @@
       <scripts name="creature_script">
         <script>scripts\scr_creature_attack.gml</script>
         <script>scripts\scr_creature_return_spawn.gml</script>
+        <script>scripts\scr_creature_move_to_target.gml</script>
       </scripts>
       <scripts name="adventure_script">
         <script>scripts\scr_move_to_dugeonexit.gml</script>
