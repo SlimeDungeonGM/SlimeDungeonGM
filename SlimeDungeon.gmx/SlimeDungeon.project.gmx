@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="8" name="datafiles">
-    <datafiles number="8" name="Dialog">
+  <datafiles number="47" name="datafiles">
+    <datafiles number="47" name="Dialog">
       <datafile>
         <name>0.txt</name>
         <exists>-1</exists>
@@ -23,7 +23,7 @@
         <filename>0.txt</filename>
       </datafile>
     </datafiles>
-    <datafiles number="8" name="Core">
+    <datafiles number="47" name="Core">
       <datafile>
         <name>Core.txt</name>
         <exists>-1</exists>
@@ -59,11 +59,11 @@
         <filename>craftingList.txt</filename>
       </datafile>
     </datafiles>
-    <datafiles number="8" name="slime">
+    <datafiles number="47" name="slime">
       <datafile>
         <name>slime.scml</name>
         <exists>-1</exists>
-        <size>1618</size>
+        <size>13559</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -80,7 +80,7 @@
       <datafile>
         <name>slime01.png</name>
         <exists>-1</exists>
-        <size>258</size>
+        <size>297</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -97,7 +97,7 @@
       <datafile>
         <name>slime02.png</name>
         <exists>-1</exists>
-        <size>272</size>
+        <size>298</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -114,7 +114,7 @@
       <datafile>
         <name>slime03.png</name>
         <exists>-1</exists>
-        <size>266</size>
+        <size>311</size>
         <exportAction>2</exportAction>
         <exportDir></exportDir>
         <overwrite>0</overwrite>
@@ -127,6 +127,572 @@
           </Config>
         </ConfigOptions>
         <filename>slime03.png</filename>
+      </datafile>
+      <datafiles number="47" name="blue">
+        <datafile>
+          <name>slime_blue_01.png</name>
+          <exists>-1</exists>
+          <size>290</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_blue_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_blue_02.png</name>
+          <exists>-1</exists>
+          <size>299</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_blue_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_blue_03.png</name>
+          <exists>-1</exists>
+          <size>314</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_blue_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="brown">
+        <datafile>
+          <name>slime_brown_01.png</name>
+          <exists>-1</exists>
+          <size>290</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_brown_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_brown_02.png</name>
+          <exists>-1</exists>
+          <size>301</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_brown_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_brown_03.png</name>
+          <exists>-1</exists>
+          <size>327</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_brown_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="dark">
+        <datafile>
+          <name>slime_dark_01.png</name>
+          <exists>-1</exists>
+          <size>271</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_dark_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_dark_02.png</name>
+          <exists>-1</exists>
+          <size>281</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_dark_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_dark_03.png</name>
+          <exists>-1</exists>
+          <size>301</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_dark_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="gray">
+        <datafile>
+          <name>slime_gray_01.png</name>
+          <exists>-1</exists>
+          <size>287</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_gray_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_gray_02.png</name>
+          <exists>-1</exists>
+          <size>295</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_gray_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_gray_03.png</name>
+          <exists>-1</exists>
+          <size>321</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_gray_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="green">
+        <datafile>
+          <name>slime_green_01.png</name>
+          <exists>-1</exists>
+          <size>297</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_green_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_green_02.png</name>
+          <exists>-1</exists>
+          <size>297</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_green_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_green_03.png</name>
+          <exists>-1</exists>
+          <size>304</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_green_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="orange">
+        <datafile>
+          <name>slime_orange_01.png</name>
+          <exists>-1</exists>
+          <size>289</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_orange_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_orange_02.png</name>
+          <exists>-1</exists>
+          <size>298</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_orange_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_orange_03.png</name>
+          <exists>-1</exists>
+          <size>313</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_orange_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="purple">
+        <datafile>
+          <name>slime_purple_01.png</name>
+          <exists>-1</exists>
+          <size>290</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_purple_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_purple_02.png</name>
+          <exists>-1</exists>
+          <size>299</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_purple_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_purple_03.png</name>
+          <exists>-1</exists>
+          <size>335</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_purple_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="red">
+        <datafile>
+          <name>slime_red_01.png</name>
+          <exists>-1</exists>
+          <size>290</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_red_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_red_02.png</name>
+          <exists>-1</exists>
+          <size>300</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_red_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_red_03.png</name>
+          <exists>-1</exists>
+          <size>323</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_red_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="white">
+        <datafile>
+          <name>slime_white_01.png</name>
+          <exists>-1</exists>
+          <size>272</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_white_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_white_02.png</name>
+          <exists>-1</exists>
+          <size>281</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_white_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_white_03.png</name>
+          <exists>-1</exists>
+          <size>298</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_white_03.png</filename>
+        </datafile>
+      </datafiles>
+      <datafiles number="47" name="yellow">
+        <datafile>
+          <name>slime_yellow_01.png</name>
+          <exists>-1</exists>
+          <size>290</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_yellow_01.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_yellow_02.png</name>
+          <exists>-1</exists>
+          <size>302</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_yellow_02.png</filename>
+        </datafile>
+        <datafile>
+          <name>slime_yellow_03.png</name>
+          <exists>-1</exists>
+          <size>319</size>
+          <exportAction>2</exportAction>
+          <exportDir></exportDir>
+          <overwrite>0</overwrite>
+          <freeData>-1</freeData>
+          <removeEnd>0</removeEnd>
+          <store>0</store>
+          <ConfigOptions>
+            <Config name="Default">
+              <CopyToMask>9223372036854775807</CopyToMask>
+            </Config>
+          </ConfigOptions>
+          <filename>slime_yellow_03.png</filename>
+        </datafile>
+      </datafiles>
+    </datafiles>
+    <datafiles number="47" name="dungeon_core01">
+      <datafile>
+        <name>dungeon_core01.scml</name>
+        <exists>-1</exists>
+        <size>1369</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>dungeon_core01.scml</filename>
+      </datafile>
+      <datafile>
+        <name>dungeon_core_crtystal.png</name>
+        <exists>-1</exists>
+        <size>350</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>dungeon_core_crtystal.png</filename>
       </datafile>
     </datafiles>
   </datafiles>

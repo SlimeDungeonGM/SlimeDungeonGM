@@ -1,12 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r9" pixel_mode="1">
+<spriter_data scml_version="1.0" generator="BrashMonkey Spriter" generator_version="r11" pixel_mode="1">
     <folder id="0">
         <file id="0" name="slime01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
         <file id="1" name="slime02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
         <file id="2" name="slime03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
     </folder>
+    <folder id="1" name="purple">
+        <file id="0" name="purple/slime_purple_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="purple/slime_purple_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="purple/slime_purple_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="2" name="blue">
+        <file id="0" name="blue/slime_blue_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="blue/slime_blue_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="blue/slime_blue_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="3" name="brown">
+        <file id="0" name="brown/slime_brown_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="brown/slime_brown_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="brown/slime_brown_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="4" name="dark">
+        <file id="0" name="dark/slime_dark_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="dark/slime_dark_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="dark/slime_dark_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="5" name="gray">
+        <file id="0" name="gray/slime_gray_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="gray/slime_gray_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="gray/slime_gray_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="6" name="green">
+        <file id="0" name="green/slime_green_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="green/slime_green_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="green/slime_green_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="7" name="orange">
+        <file id="0" name="orange/slime_orange_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="orange/slime_orange_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="orange/slime_orange_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="8" name="red">
+        <file id="0" name="red/slime_red_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="red/slime_red_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="red/slime_red_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="9" name="white">
+        <file id="0" name="white/slime_white_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="white/slime_white_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="white/slime_white_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
+    <folder id="10" name="yellow">
+        <file id="0" name="yellow/slime_yellow_01.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="1" name="yellow/slime_yellow_02.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+        <file id="2" name="yellow/slime_yellow_03.png" width="48" height="48" pivot_x="0.492114" pivot_y="0.189274"/>
+    </folder>
     <entity id="0" name="slime">
         <character_map id="0" name="Idle"/>
+        <character_map id="1" name="slime_purple">
+            <map folder="0" file="0" target_folder="1" target_file="0"/>
+            <map folder="0" file="1" target_folder="1" target_file="1"/>
+            <map folder="0" file="2" target_folder="1" target_file="2"/>
+        </character_map>
+        <character_map id="2" name="slime_blue">
+            <map folder="0" file="0" target_folder="2" target_file="0"/>
+            <map folder="0" file="1" target_folder="2" target_file="1"/>
+            <map folder="0" file="2" target_folder="2" target_file="2"/>
+        </character_map>
+        <character_map id="3" name="slime_red">
+            <map folder="0" file="0" target_folder="8" target_file="0"/>
+            <map folder="0" file="1" target_folder="8" target_file="1"/>
+            <map folder="0" file="2" target_folder="8" target_file="2"/>
+        </character_map>
+        <character_map id="4" name="slime_white">
+            <map folder="0" file="0" target_folder="9" target_file="0"/>
+            <map folder="0" file="1" target_folder="9" target_file="1"/>
+            <map folder="0" file="2" target_folder="9" target_file="2"/>
+        </character_map>
+        <character_map id="5" name="slime_dark">
+            <map folder="0" file="0" target_folder="4" target_file="0"/>
+            <map folder="0" file="1" target_folder="4" target_file="1"/>
+            <map folder="0" file="2" target_folder="4" target_file="2"/>
+        </character_map>
+        <character_map id="6" name="slime_orange">
+            <map folder="0" file="0" target_folder="7" target_file="0"/>
+            <map folder="0" file="1" target_folder="7" target_file="1"/>
+            <map folder="0" file="2" target_folder="7" target_file="2"/>
+        </character_map>
+        <character_map id="7" name="slime_brown">
+            <map folder="0" file="0" target_folder="3" target_file="0"/>
+            <map folder="0" file="1" target_folder="3" target_file="1"/>
+            <map folder="0" file="2" target_folder="3" target_file="2"/>
+        </character_map>
+        <character_map id="8" name="slime_yellow">
+            <map folder="0" file="0" target_folder="10" target_file="0"/>
+            <map folder="0" file="1" target_folder="10" target_file="1"/>
+            <map folder="0" file="2" target_folder="10" target_file="2"/>
+        </character_map>
+        <character_map id="9" name="slime_gray">
+            <map folder="0" file="0" target_folder="5" target_file="0"/>
+            <map folder="0" file="1" target_folder="5" target_file="1"/>
+            <map folder="0" file="2" target_folder="5" target_file="2"/>
+        </character_map>
+        <character_map id="10" name="slime_green">
+            <map folder="0" file="0" target_folder="6" target_file="0"/>
+            <map folder="0" file="1" target_folder="6" target_file="1"/>
+            <map folder="0" file="2" target_folder="6" target_file="2"/>
+        </character_map>
         <animation id="0" name="IDLE" length="1000" interval="100">
             <mainline>
                 <key id="0">
@@ -25,6 +125,117 @@
                 </key>
                 <key id="1" time="399" spin="0">
                     <object folder="0" file="1" angle="0"/>
+                </key>
+                <key id="2" time="700" spin="0">
+                    <object folder="0" file="2" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="1" name="right" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="400">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="401">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="700">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="slime01">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0"/>
+                </key>
+                <key id="1" time="400" spin="0">
+                    <object folder="0" file="0" x="3" angle="0" scale_x="1.130505" scale_y="1.257265"/>
+                </key>
+                <key id="2" time="401" spin="0">
+                    <object folder="0" file="0" x="3" angle="0" scale_x="0.931614" scale_y="0.89091"/>
+                </key>
+                <key id="3" time="700" spin="0">
+                    <object folder="0" file="2" x="2" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="2" name="up" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="400">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="700">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="slime01">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0"/>
+                </key>
+                <key id="1" time="400" spin="0">
+                    <object folder="0" file="1" y="4" angle="0"/>
+                </key>
+                <key id="2" time="700" spin="0">
+                    <object folder="0" file="2" y="2" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="3" name="left" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="399">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="2" time="645">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+                <key id="3" time="700">
+                    <object_ref id="0" timeline="0" key="3" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="slime01">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" x="-3" angle="0" scale_x="1.000228"/>
+                </key>
+                <key id="1" time="399" spin="0">
+                    <object folder="0" file="1" angle="0"/>
+                </key>
+                <key id="2" time="645" spin="0">
+                    <object folder="0" file="1" angle="0" scale_x="1.053204" scale_y="1.053204"/>
+                </key>
+                <key id="3" time="700" spin="0">
+                    <object folder="0" file="2" angle="0"/>
+                </key>
+            </timeline>
+        </animation>
+        <animation id="4" name="forward" length="1000" interval="100">
+            <mainline>
+                <key id="0">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="1" time="399">
+                    <object_ref id="0" timeline="0" key="0" z_index="0"/>
+                </key>
+                <key id="2" time="400">
+                    <object_ref id="0" timeline="0" key="1" z_index="0"/>
+                </key>
+                <key id="3" time="700">
+                    <object_ref id="0" timeline="0" key="2" z_index="0"/>
+                </key>
+            </mainline>
+            <timeline id="0" name="slime01">
+                <key id="0" spin="0">
+                    <object folder="0" file="0" angle="0"/>
+                </key>
+                <key id="1" time="400" spin="0">
+                    <object folder="0" file="1" y="-1" angle="0" scale_x="0.99009" scale_y="0.991167"/>
                 </key>
                 <key id="2" time="700" spin="0">
                     <object folder="0" file="2" angle="0"/>
