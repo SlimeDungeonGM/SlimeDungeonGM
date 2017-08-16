@@ -3,8 +3,8 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="3" name="datafiles">
-    <datafiles number="3" name="Dialog">
+  <datafiles number="8" name="datafiles">
+    <datafiles number="8" name="Dialog">
       <datafile>
         <name>0.txt</name>
         <exists>-1</exists>
@@ -23,7 +23,7 @@
         <filename>0.txt</filename>
       </datafile>
     </datafiles>
-    <datafiles number="3" name="Core">
+    <datafiles number="8" name="Core">
       <datafile>
         <name>Core.txt</name>
         <exists>-1</exists>
@@ -59,8 +59,80 @@
         <filename>craftingList.txt</filename>
       </datafile>
     </datafiles>
+    <datafiles number="8" name="slime">
+      <datafile>
+        <name>slime.scml</name>
+        <exists>-1</exists>
+        <size>1618</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>slime.scml</filename>
+      </datafile>
+      <datafile>
+        <name>slime01.png</name>
+        <exists>-1</exists>
+        <size>258</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>slime01.png</filename>
+      </datafile>
+      <datafile>
+        <name>slime02.png</name>
+        <exists>-1</exists>
+        <size>272</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>slime02.png</filename>
+      </datafile>
+      <datafile>
+        <name>slime03.png</name>
+        <exists>-1</exists>
+        <size>266</size>
+        <exportAction>2</exportAction>
+        <exportDir></exportDir>
+        <overwrite>0</overwrite>
+        <freeData>-1</freeData>
+        <removeEnd>0</removeEnd>
+        <store>0</store>
+        <ConfigOptions>
+          <Config name="Default">
+            <CopyToMask>9223372036854775807</CopyToMask>
+          </Config>
+        </ConfigOptions>
+        <filename>slime03.png</filename>
+      </datafile>
+    </datafiles>
   </datafiles>
-  <NewExtensions/>
+  <NewExtensions>
+    <extension index="0">extensions\spriterGM</extension>
+  </NewExtensions>
   <sounds name="sound">
     <sound>sound\snd_expr</sound>
     <sound>sound\snd_player_takes_damage</sound>
@@ -340,6 +412,44 @@
       <script>scripts\scr_admintabs.gml</script>
       <script>scripts\scr_update_tiles.gml</script>
     </scripts>
+    <scripts name="spriterGM">
+      <script>scripts\spriter_load.gml</script>
+      <script>scripts\spriter_update.gml</script>
+      <script>scripts\spriter_render.gml</script>
+      <script>scripts\spriter_set_current_animation.gml</script>
+      <script>scripts\spriter_apply_character_map.gml</script>
+      <script>scripts\spriter_remove_character_map.gml</script>
+      <script>scripts\spriter_remove_all_character_map.gml</script>
+      <script>scripts\spriter_set_playback_speed_ratio.gml</script>
+      <script>scripts\spriter_start_resume_playback.gml</script>
+      <script>scripts\spriter_pause_playback.gml</script>
+      <script>scripts\spriter_set_time_ratio.gml</script>
+      <script>scripts\spriter_animation_just_finished.gml</script>
+      <script>scripts\spriter_check_errors.gml</script>
+      <script>scripts\spriter_is_trigger.gml</script>
+      <scripts name="point">
+        <script>scripts\spriter_get_point_y1.gml</script>
+        <script>scripts\spriter_get_point_y2.gml</script>
+        <script>scripts\spriter_get_point_x1.gml</script>
+        <script>scripts\spriter_get_point_x2.gml</script>
+        <script>scripts\spriter_get_point_direction.gml</script>
+      </scripts>
+      <scripts name="box">
+        <script>scripts\spriter_get_box_point_x.gml</script>
+        <script>scripts\spriter_get_box_point_y.gml</script>
+        <script>scripts\spriter_get_box_collision_rectangle.gml</script>
+      </scripts>
+      <script>scripts\spriter_destroy_instance.gml</script>
+      <script>scripts\spriter_find_object.gml</script>
+      <scripts name="IK">
+        <script>scripts\spriter_set_IK_mode.gml</script>
+        <script>scripts\spriter_is_IK_mode.gml</script>
+        <script>scripts\spriter_is_manual_control.gml</script>
+        <script>scripts\spriter_set_manual_control.gml</script>
+        <script>scripts\spriter_set_IK_position.gml</script>
+        <script>scripts\spriter_set_manual_angle.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_HUD</font>
@@ -350,6 +460,7 @@
     <objects name="Test Player">
       <object>objects\Player_Slime</object>
       <object>objects\obj_dm</object>
+      <object>objects\o_slime_s</object>
     </objects>
     <objects name="System">
       <object>objects\s_Camera</object>
